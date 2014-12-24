@@ -127,7 +127,7 @@
     <br/><br/><br/>
 
     <div align="center" style="border-top: 1px solid #981A1E;">
-      Copyright &copy;&nbsp;Dance-X-Treme 2014 &nbsp;&nbsp; &nbsp;&nbsp;
+      Copyright &copy;&nbsp;Dance-X-Treme <?php echo date("Y") ?> &nbsp;&nbsp; &nbsp;&nbsp;
       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
