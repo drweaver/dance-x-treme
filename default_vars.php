@@ -12,7 +12,7 @@ $t_description = '';
 $t_altcss_inc = './empty_content.php';
 $t_head_inc = './empty_content.php';
 $t_banner = $banner_list[ rand( 0, count($banner_list) -1 ) ];
-$t_banner_num = '1';
+$t_banner_num = rand(1,5);
 $t_content_inc = './empty_content.php';
 $t_rightbox_inc = './right_box.php';
 ?>
