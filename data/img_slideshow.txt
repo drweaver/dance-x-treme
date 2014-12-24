@@ -1,0 +1,14 @@
+[
+	{
+		"id": "small-img-slideshow", 
+		"baseurl": "http://dl.dropboxusercontent.com/u/7799785/nextdanceimage/DSC_",
+		"min": 1, "max": 50, "ext": "jpg", "padding": 4, "delay": 3,
+		"href": "gallery.html"
+	},
+	{
+		"id": "big-img-slideshow", 
+		"baseurl": "http://dl.dropboxusercontent.com/u/7799785/frontpageslideshow/DSC_",
+		"min": 1, "max": 100, "ext": "jpg", "padding": 4, "delay": 5,
+		"href" : "gallery.html"
+	}
+]
