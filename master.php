@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="css/template.css" type="text/css">
   <link rel="stylesheet" href="css/style.css" type="text/css">
   <?php include($t_head_inc); ?>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/dancextreme.js"></script>
 </head>
 <body>

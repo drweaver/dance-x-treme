@@ -8,7 +8,7 @@
 		<div id="next-event"></div>
                 <div id="small-img-slideshow" class="img-slideshow">
                     <a href="gallery">
-                        <img alt="Gallery" src="http://dl.dropboxusercontent.com/u/7799785/nextdanceimage/DSC_0001.jpg" class="active"/>
+                        <img alt="Gallery" src="//dl.dropboxusercontent.com/u/7799785/nextdanceimage/DSC_0001.jpg" class="active"/>
                     </a>
                 </div>
 	</div>

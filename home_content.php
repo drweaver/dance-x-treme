@@ -25,7 +25,7 @@
 <div style="overflow: hidden; width: 500px; height: 500px;">
 <div id="big-img-slideshow" class="img-slideshow">
     <a href="gallery">
-        <img src="http://dl.dropboxusercontent.com/u/7799785/frontpageslideshow/DSC_0001.jpg" alt="Gallery" class="active"/>
+        <img src="//dl.dropboxusercontent.com/u/7799785/frontpageslideshow/DSC_0001.jpg" alt="Gallery" class="active"/>
     </a>
 </div>
 </div>
