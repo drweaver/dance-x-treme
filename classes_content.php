@@ -2,7 +2,7 @@
 <p>
 Dancing classes for all ages and abilities, couples and singles. We teach Ballroom and Latin with a 
 great selection of music. Our classes are held at safe, superb facilities at all our 
-<a href="venues.html">venues</a>. <a href="private_lessons.html">Private lessons</a>
+<a href="venues">venues</a>. <a href="private-lessons">Private lessons</a>
  are also available.
 </p>
 <div id="classes-by-day-loading" class="hidden"><img src="img/spinner.gif"/> Loading...</div>

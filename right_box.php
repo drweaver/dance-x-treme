@@ -7,14 +7,14 @@
 	<div style="overflow: hidden; width: 220px; height: 233px;">
 		<div id="next-event"></div>
                 <div id="small-img-slideshow" class="img-slideshow">
-                    <a href="gallery.html">
+                    <a href="gallery">
                         <img alt="Gallery" src="http://dl.dropboxusercontent.com/u/7799785/nextdanceimage/DSC_0001.jpg" class="active"/>
                     </a>
                 </div>
 	</div>
 	<div style="overflow: hidden; width: 220px;">
 		<div style="text-align: center;">
-			<a href="events.html">See our upcoming social and practice dance
+			<a href="events">See our upcoming social and practice dance
 				calendar</a>
 		</div>
 	</div>

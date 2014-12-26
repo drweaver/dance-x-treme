@@ -1,8 +1,7 @@
-http://www.dance-x-treme.co.uk/index
+http://www.dance-x-treme.co.uk/
 http://www.dance-x-treme.co.uk/classes
 http://www.dance-x-treme.co.uk/events
 http://www.dance-x-treme.co.uk/venues
 http://www.dance-x-treme.co.uk/gallery
-http://www.dance-x-treme.co.uk/contact
 http://www.dance-x-treme.co.uk/about
-http://www.dance-x-treme.co.uk/private_lessons
+http://www.dance-x-treme.co.uk/private-lessons

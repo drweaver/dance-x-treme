@@ -11,7 +11,7 @@
 <br />
 <p>
   <a
-    href="gallery.html"><br />See
+    href="gallery"><br />See
     what went on at our last event</a>
 </p>
 <br />
@@ -27,7 +27,7 @@
 <p>
   <a
     
-    href="venues.html">Click
+    href="venues">Click
     here</a> for venue addresses and directions
 </p>
 <br />

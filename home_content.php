@@ -10,7 +10,7 @@
     enjoyment and fun.</p>
 <br />
 <p>
-    <a href="classes.html">Classes</a> start at just &pound;4.50 and are held in Wolverhampton, Stourbridge,
+    <a href="classes">Classes</a> start at just &pound;4.50 and are held in Wolverhampton, Stourbridge,
     Halesowen, Walsall and Sutton Coldfield. 
 </p>
 <br />
@@ -24,7 +24,7 @@
 
 <div style="overflow: hidden; width: 500px; height: 500px;">
 <div id="big-img-slideshow" class="img-slideshow">
-    <a href="gallery.html">
+    <a href="gallery">
         <img src="http://dl.dropboxusercontent.com/u/7799785/frontpageslideshow/DSC_0001.jpg" alt="Gallery" class="active"/>
     </a>
 </div>

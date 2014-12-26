@@ -354,7 +354,7 @@ Venue = {
 
             classDetails.append($('<h3/>').text('Address'));
             classDetails.append($('<p/>').text(venue.address));
-            classDetails.append($('<a/>', {href: 'venues.html#/venue/' + venue.id}).text('View Map'));
+            classDetails.append($('<a/>', {href: 'venues#/venue/' + venue.id}).text('View Map'));
 
             function isDetailsInView()
             {
@@ -407,7 +407,7 @@ Venue = {
                             "<a target=\"_blank\" href=\"" + v.svUrl + "\">Get Directions</a>" +
                             "</p>";
                     if (v.timetable && v.timetable.length) {
-                        contentString = contentString + "<p><a href=\"classes.html#/class/" + v.id + "\">Class timetable</a></p>";
+                        contentString = contentString + "<p><a href=\"classes#/class/" + v.id + "\">Class timetable</a></p>";
                     }
                     infoWindow.setContent(contentString);
                     infoWindow.open(map, marker);
