@@ -1,4 +1,8 @@
-<h1>Events</h1>
+<div class="container">
+	
+<div class="page-header">
+  <h1>Events</h1>
+  </div>
 <p>
   At Dance-X-Treme we think the best way to practice your new found
   dancing skills is, <i>believe it or not,</i> to go dancing.
@@ -45,3 +49,4 @@
   style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px"
   height="600" frameborder="0" width="750" scrolling="no"
   src="http://www.google.com/calendar/embed?title=Dance%20Calendar&amp;showTabs=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=eekb8u8h6bc0ode46dqveji0mo%40group.calendar.google.com&amp;color=%2342104A&amp;src=mtjt1tm2mjrgf0mnan2or7su50%40group.calendar.google.com&amp;color=%23125A12&amp;src=k9r659lk7fiqdshd2eql8ss1v8%40group.calendar.google.com&amp;color=%23060D5E&amp;ctz=Europe%2FLondon"></iframe>
+</div>

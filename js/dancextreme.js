@@ -273,7 +273,7 @@ var Gallery = {
 var DOW = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var MOY = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-Venue = {
+var Venue = {
     initClassesByDay: function(jsonArray) {
 
         var classesByDay = $('#classes-by-day');

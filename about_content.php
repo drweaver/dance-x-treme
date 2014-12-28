@@ -1,4 +1,8 @@
-<h1>About Dance-X-Treme</h1>
+<div class="container">
+	
+<div class="page-header">
+    <h1>About Dance-X-Treme</h1>
+    </div>
 <h5>
 <i>When former competition dancers, George and Sue Weaver, set up 
 Dance-X-Treme in 2008 neither of them imagined how popular it would become.</i></h5>
@@ -35,3 +39,4 @@ and you're confident just take to the dance floor for total satisfaction&quot;. 
 satisfaction at the next dance you go to, call George and Sue or just go along to any lesson and see 
 for yourself. Happy dancing from Dance-X-Treme!
 </p>
+</div>

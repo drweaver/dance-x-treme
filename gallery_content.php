@@ -1,4 +1,9 @@
-<h1>Gallery</h1>
+<div class="container">
+	
+<div class="page-header">
+	<h1>Gallery</h1>
+	</div>
+	<div class="jumbotron">
 <div id="dance-galleries-loading" class="hidden"><img src="img/spinner.gif"/> Loading...</div>
 <div id="dance-galleries">
 <noscript>
@@ -19,4 +24,6 @@ foreach ($gallery_data as $g) {
 
 ?>
 </noscript>
+</div>
+</div>
 </div>

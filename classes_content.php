@@ -1,14 +1,35 @@
-<h1>Dance Classes</h1>
-<p>
-Dancing classes for all ages and abilities, couples and singles. We teach Ballroom and Latin with a 
-great selection of music. Our classes are held at safe, superb facilities at all our 
-<a href="venues">venues</a>. <a href="private-lessons">Private lessons</a>
- are also available.
-</p>
-<div id="classes-by-day-loading" class="hidden"><img src="img/spinner.gif"/> Loading...</div>
-<div id="classes-by-day"></div>
-<hr/>
-<div id="class-details">
+<!-- classes -->
+<div class="container">
+	
+<div class="page-header">
+    <h1>Dance Classes</h1>
+</div>
+<p>Dance classes for all ages and abilities, couples and singles. We teach Ballroom and Latin with a great selection of music. 
+Our classes are held at safe, superb facilities at all our venues. Private lessons are also available.</p>
+
+<div class="row featurette">
+    <div class="col-md-6">
+        <div class="jumbotron">
+            <p>Classes by Day</p>
+            <div id="classes-by-day-loading" class="hidden"><img src="img/spinner.gif" /> Loading...</div>
+            <div id="classes-by-day"></div>
+
+        </div>
+
+
+    </div>
+    <div class="col-md-6">
+        <div class="jumbotron">
+            <p>Class Details <span class="text-muted">Hint: click a class link</span>
+            </p>
+            <div id="class-details"></div>
+        </div>
+        <!--
+          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          -->
+    </div>
+</div>
+</div>
 <noscript>
 <?php 
 
@@ -56,4 +77,3 @@ foreach ($venues_data as $g) {
 }
 ?>
 </noscript>
-</div>
