@@ -126,10 +126,11 @@ body {
     font-size: 21px;
     line-height: 1.4;
   }
-
+/*
   .featurette-heading {
     font-size: 50px;
   }
+  */
 }
 
 @media (min-width: 992px) {

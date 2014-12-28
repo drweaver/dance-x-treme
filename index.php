@@ -10,3 +10,17 @@ $t_navname = 'nav-home';
 include('./master.php');
 
 ?>
+<script>
+
+     setInterval(function() {
+        var id = 'next-event-slideshow';
+        console.log(' doing swap ');
+        var $active = $('#'+id+' .active');
+        var $next = ($('#'+id+' .active').next().length > 0) ? $('#' + id + ' .active').next() : $('#' + id + ' img:first');
+        $active.fadeOut(600, function() {
+            $active.removeClass('active');
+        });
+        $next.fadeIn(600).addClass('active');
+    }, 3000);
+    
+</script>

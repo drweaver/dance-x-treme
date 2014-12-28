@@ -15,8 +15,8 @@
           <img src="img/main_image1.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Strictly fun - learn to dance with Sue and George.</h1>
-              <p>We teach Ballroom and Latin with a great selection of music.</p>
+              <h1>we teach Ballroom and Latin with a great selection of music</h1>
+              <p></p>
               <p><a class="btn btn-lg btn-primary" href="/classes" role="button">View Class Timetables</a></p>
             </div>
           </div>
@@ -25,9 +25,9 @@
           <img src="img/main_image2.jpg" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Lets get social! Fun dance events to perfect your skills.</h1>
-              <p>we have a full programme of social dances that you can go to.</p>
-              <p><a class="btn btn-lg btn-primary" href="/events" role="button">Find Events</a></p>
+              <h1>and a full programme of social dances that you can go to</h1>
+              <p></p>
+              <p><a class="btn btn-lg btn-primary" href="/events" role="button">View Upcoming Events</a></p>
             </div>
           </div>
         </div>
@@ -35,8 +35,8 @@
           <img src="img/main_image3.jpg" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>From beginners to advanced go with <span style="white-space: nowrap;">Dance-X-Treme</span></h1>
-              <p>TBD</p>
+              <h1>see what went on at previous <span style="white-space: nowrap;">Dance-X-Treme</span> events</h1>
+              <p></p>
               <p><a class="btn btn-lg btn-primary" href="/gallery" role="button">Browse Gallery</a></p>
             </div>
           </div>
@@ -45,8 +45,8 @@
           <img src="img/main_image4.jpg" alt="Forth slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>From beginners to advanced go with <span style="white-space: nowrap;">Dance-X-Treme</span></h1>
-              <p>TBD</p>
+              <h1>our classes are held in Wolverhampton, Stourbridge, Halesowen, Walsall and Sutton Coldfield</h1>
+              <p></p>
               <p><a class="btn btn-lg btn-primary" href="/venues" role="button">Find Venues</a></p>
             </div>
           </div>
@@ -55,9 +55,9 @@
           <img src="img/main_image5.jpg" alt="Fifth slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>From beginners to advanced go with <span style="white-space: nowrap;">Dance-X-Treme</span></h1>
-              <p>TBD</p>
-              <p><a class="btn btn-lg btn-primary" href="/contact" role="button">Book Private Lessons</a></p>
+              <h1>we also teach private lessons on Sunday's in Halesowen</h1>
+              <p></p>
+              <p><a class="btn btn-lg btn-primary" href="/contact" role="button">Book Now</a></p>
             </div>
           </div>
         </div>
@@ -65,10 +65,10 @@
           <img src="img/main_image3.jpg" alt="News">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Keep up to date on your favourite social media service.</span></h1>
-              <p>TBD</p>
-              <p><a class="btn btn-lg btn-primary" href="https://twitter.com/Dance_X_Treme" role="button">Twitter</a>
-              <a class="btn btn-lg btn-primary" href="http://www.facebook.com/Dance.X.Treme.UK" role="button">Facebook</a></p>
+              <h1>get status updates with your favourite social media</span></h1>
+              <p></p>
+              <p><a class="btn btn-lg btn-primary" href="https://twitter.com/Dance_X_Treme" role="button">twitter</a>
+              <a class="btn btn-lg btn-primary" href="http://www.facebook.com/Dance.X.Treme.UK" role="button">facebook</a></p>
             </div>
           </div>
         </div>
