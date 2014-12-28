@@ -37,11 +37,12 @@ function print_heading($venue, $id) {
     print('</a></h4></div>');
 }
 
-function print_timetable($venue, $timetable, $id) {
+function print_timetable($venue, $timetable, $id, $day) {
 	print('<div id="collapse'.$id.'" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading'.$id.'">');
     print('<div class="panel-body">');
-    print('<div class="container"><div class="row"><div class="col-xs-10 col-sm-8">');
-	print('<table class="table table-striped table-hover">');
+    print('<h4>'.$day.'</h4>');
+    print('<div class=""><div class="row"><div class="col-xs-12 col-sm-8">');
+	print('<table class="table table-striped table-hover small">');
 	print('<thead><tr><th>Time</th><th>Duration</th><th>Style</th><th>Level</th><th>Price</th></tr></thead><tbody>');
 	$i=0;
 	foreach ($timetable as $t) {
@@ -56,7 +57,7 @@ function print_timetable($venue, $timetable, $id) {
 	}
 	print('</tbody></table>');
 	print('</div>');
-	print('<div class="col-xs-2 col-sm-4"><address>'.str_replace(',', '<br/>', $venue['address']).'</address><a href="/venues#/venue/'.$venue['id'].'">View Map</a></div>');
+	print('<div class="col-xs-6 col-sm-4"><address><strong>'.$venue['name'].'</strong><br/>'.str_replace(',', '<br/>', $venue['address']).'</address><a href="/venues#/venue/'.$venue['id'].'">View Map</a></div>');
 	// row
 	print('</div>');
 	// container
@@ -79,7 +80,7 @@ foreach( array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday
 				print '<div class="panel panel-default">';
 				$id = $g['id'].$day;
 				print_heading($g, $id);
-				print_timetable($g, $t_day['time'], $id);
+				print_timetable($g, $t_day['time'], $id, $day);
 				print '</div>';
 			}
 		}
