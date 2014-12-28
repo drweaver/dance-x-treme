@@ -11,7 +11,7 @@ Our classes are held at safe, superb facilities at all our <a href="/venues">ven
   <dt>Do I need to book?</dt>
   <dd>No, just turn up at a class at the appropriate time</dd>
   <dt>Is there a booking fee?</dt>
-  <dd>No booking fees</dd>
+  <dd>No</dd>
   <dt>How do I pay?</dt>
   <dd>Just pay for individual classes as and when you attend</dd>
   <dt>Can I attend multiple?</dt>
@@ -19,7 +19,7 @@ Our classes are held at safe, superb facilities at all our <a href="/venues">ven
   <dt>What shall I wear?</dt>
   <dd>Comfortable shoes and casual clothing</dd>
   <dt>I have more questions</dt>
-  <dd>Feel free to <a href="/contact">contact us</a></dd>
+  <dd>Don't hestitate to <a href="/contact">contact us</a></dd>
   
 </dl>
 <hr/>

@@ -173,10 +173,11 @@ var Gallery = {
                 loading.css("display", "none");
             }
             Gallery.parseAndSortDate(json);
-            var danceGalleries = $('#dance-galleries');
-            danceGalleries.append(Gallery.yearList(json));
-            var albums = $('<div/>').addClass('albums');
-            danceGalleries.append(albums);
+            //var danceGalleries = $('#dance-galleries');
+            var yearList = $('#dance-galleries div.album-years');
+            yearList.append(Gallery.yearList(json));
+            //var albums = $('<div/>').addClass('albums');
+            //danceGalleries.append(albums);
             // bind hash changed here
             $(window).bind('hashchange', function() {
                 if (location.hash.indexOf('#/gallery/') !== 0) {
@@ -244,6 +245,7 @@ var Gallery = {
         return ul;
     },
     album: function(albumData) {
+
         var container = $('<div/>', {style: "display: inline; padding: 2px"});
         var tbody = $('<tbody/>').appendTo(
                 $('<table/>', {style: "display:inline-table; width:194px;"}).appendTo(
@@ -265,7 +267,6 @@ var Gallery = {
                 $('<td/>', {style: "width: 160px;text-align:center;font-family:arial,sans-serif;font-size:11px"}).appendTo(
                 $('<tr/>').appendTo(
                 tbody)));
-
         return container;
     }
 };

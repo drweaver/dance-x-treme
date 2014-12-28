@@ -3,9 +3,11 @@
 <div class="page-header">
 	<h1>Gallery</h1>
 	</div>
-	<div class="jumbotron">
+	
 <div id="dance-galleries-loading" class="hidden"><img src="img/spinner.gif"/> Loading...</div>
 <div id="dance-galleries">
+	<div class="jumbotron album-years"></div>
+	<div class="albums"></div>
 <noscript>
 <?php
 
@@ -24,6 +26,5 @@ foreach ($gallery_data as $g) {
 
 ?>
 </noscript>
-</div>
 </div>
 </div>
