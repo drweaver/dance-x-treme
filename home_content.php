@@ -14,7 +14,7 @@
         </div>
         <div class=" col-sm-5 col-md-5">
                         	<a class="twitter-timeline" data-widget-id="358887851666055168"
-		href="https://twitter.com/Dance_X_Treme" width="250"> Tweets by
+		href="https://twitter.com/Dance_X_Treme" > Tweets by
 		@Dance_X_Treme</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
 if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
@@ -61,7 +61,11 @@ fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script
               $gallery_data = json_decode( file_get_contents('data/dance_galleries.txt'), true );
               $active = 'active';
               $display = 'inline';
-              foreach ($gallery_data as $g) {
+              $start = rand(0,count($gallery_data)-5);
+              $end = $start + 5;
+              for( $i=$start; $i<$end; $i++) {
+                $g = $gallery_data[$i];
+              // foreach ($gallery_data as $g) {
               	print('<img class="img-circle '.$active.'" style="width: 140px; height: 140px; display:'.$display.'; position:absolute" src="'.$g['thumbnail'].'">');
               	$active = '';
               	$display = 'none';
@@ -80,9 +84,12 @@ fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script
           <p><a class="btn btn-default" href="/events" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class=" col-sm-4">
-          <a href="https://twitter.com/Dance_X_Treme">
-          <img class="img-circle" src="img/twitter_logo_white2.png" alt="Generic placeholder image" style="width: 140px; height: 140px; background: #55ACEE">
-          </a>
+          <div style="height: 140px; width: 140px;" id="social-media-icon">
+            <a href="https://twitter.com/Dance_X_Treme">
+              <img class="img-circle active" src="img/twitter_logo_white2.png" alt="Generic placeholder image" style="width: 140px; height: 140px; position: absolute; background: #55ACEE">
+              <img class="img-circle" src="img/facebook_logo_blue_144.png" alt="Generic placeholder image" style="width: 140px; height: 140px; display:none; position: absolute; ">
+            </a>
+          </div>
           <h2>Social Media</h2>
           <p>
 <div class="fb-like-box" data-href="http://www.facebook.com/Dance.X.Treme.UK" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="true"></div>

@@ -6,11 +6,11 @@
 
 <dl class="dl-horizontal">
   <dt>Mobile</dt>
-  <dd>07971 579626</dd>
+  <dd><a href="tel:07971579626">07971 579626</a></dd>
   <dt>Land-line</dt>
-  <dd>01384 352564</dd>
+  <dd><a href="tel:01384352564">01384 352564</a></dd>
   <dt>Email</dt>
-  <dd>sue@dance-x-treme.co.uk</dd>
+  <dd><a href="mailto:sue@dance-x-treme.co.uk">sue@dance-x-treme.co.uk</a></dd>
 </dl>
 
 	<div class="jumbotron">

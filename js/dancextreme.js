@@ -53,7 +53,7 @@ var DateUtil = {
     datePattern: /^(\d{4})-(\d{2})-(\d{2})$/,
     sameDOW: function(dateString, dayString) {
         var date = DateUtil.parse(dateString);
-        return date == null ? false : DateUtil.DAY_LONG[DateUtil.parse(dateString).getDay()] === dayString;
+        return date === null ? false : DateUtil.DAY_LONG[DateUtil.parse(dateString).getDay()] === dayString;
     },
     formatLong: function(dateString) {
         var date = DateUtil.parse(dateString);
@@ -107,167 +107,6 @@ var Event = {
             }
         });
 
-    }
-};
-
-var Slideshow = {
-    init: function() {
-        if ($(".img-slideshow").length) {
-            loadJson('data/img_slideshow.txt', function(json) {
-                $.each(json, function(index, value) {
-                    Slideshow.start(value);
-                });
-            });
-        }
-    },
-    start: function(data) {
-        var holder = $('#' + data.id + ' a');
-        if (holder.length) {
-            Slideshow.addNextImage(data)
-            setInterval(function() {
-                Slideshow.swapImages(data.id);
-                Slideshow.addNextImage(data);
-            }, data.delay * 1000);
-        }
-    },
-    addNextImage: function(data) {
-        var holder = $('#' + data.id + ' a');
-        var imgs = $('#' + data.id + ' a img');
-        var count = imgs.length;
-        var nextNum = count + data.min;
-        if (nextNum <= data.max) {
-            holder.append($('<img/>', {src: data.baseurl + Slideshow.pad(nextNum, data.padding) + '.' + data.ext}));
-        }
-    },
-    swapImages: function(id) {
-        console.log(' doing swap ');
-        var $active = $('#' + id + ' .active');
-        var $next = ($('#' + id + ' .active').next().length > 0) ? $('#' + id + ' .active').next() : $('#' + id + ' img:first');
-        $active.fadeOut(600, function() {
-            $active.removeClass('active');
-            
-        });
-        $next.fadeIn(600).addClass('active');
-    },
-    pad: function(num, pad) {
-        var val = num.toString();
-        var len = val.length;
-        while (len < pad) {
-            val = "0" + val;
-            len = val.length;
-        }
-        return val;
-    }
-};
-
-var Gallery = {
-    init: function() {
-
-        if (!$('#dance-galleries').length) {
-            return;
-        }
-
-        loadJson('data/dance_galleries.txt', function(json) {
-            var loading = $('#dance-galleries-loading');
-            if (loading.length) {
-                loading.css("display", "none");
-            }
-            Gallery.parseAndSortDate(json);
-            //var danceGalleries = $('#dance-galleries');
-            var yearList = $('#dance-galleries div.album-years');
-            yearList.append(Gallery.yearList(json));
-            //var albums = $('<div/>').addClass('albums');
-            //danceGalleries.append(albums);
-            // bind hash changed here
-            $(window).bind('hashchange', function() {
-                if (location.hash.indexOf('#/gallery/') !== 0) {
-                    return;
-                }
-                // clear the holder
-                var albums = $('#dance-galleries div.albums');
-                albums.empty();
-                var closure = function(album) {
-                    return '#/gallery/' + album.dateYear === location.hash;
-                };
-
-                if (location.hash === '#/gallery/Latest') {
-                    closure = (function() {
-                        var count = 0;
-                        return function(album) {
-                            count++;
-                            return count <= 8;
-                        };
-                    })();
-                }
-
-                var title = location.hash.substring(10);
-                $('<h1/>').text(title + " Albums").appendTo(albums);
-
-                $.each(json, function(index, value) {
-                    closure(value) && albums.append(Gallery.album(value));
-                });
-            });
-            if (location.hash && location.hash.match("^#/gallery/")) {
-                $(window).trigger('hashchange', [location.hash]);
-            } else {
-                location.hash = '/gallery/Latest';
-            }
-            ;
-        });
-    },
-    parseAndSortDate: function(json) {
-        $.each(json, function(index, value) {
-            value.dateParsed = DateUtil.parse(value.date);
-            value.datePretty = value.dateParsed.toLocaleDateString();
-            value.dateYear = value.dateParsed.getFullYear();
-        });
-        json.sort(function(a, b) {
-            return b.dateParsed.getTime() - a.dateParsed.getTime();
-        });
-    },
-    years: function(json) {
-        var years = {};
-        $.each(json, function(index, value) {
-            years[value.dateYear] = true;
-        });
-        var yearsArray = [];
-        $.each(years, function(iy, y) {
-            yearsArray.push(iy)
-        });
-        return yearsArray.sort().reverse();
-    },
-    yearList: function(json) {
-        var ul = $('<ul/>');
-        $('<a/>', {href: '#/gallery/Latest', html: 'Latest'}).appendTo($('<li/>').appendTo(ul));
-        $.each(Gallery.years(json), function(index, value) {
-            $('<a/>', {href: '#/gallery/' + value, html: value}).appendTo($('<li/>').appendTo(ul));
-        });
-        return ul;
-    },
-    album: function(albumData) {
-
-        var container = $('<div/>', {style: "display: inline; padding: 2px"});
-        var tbody = $('<tbody/>').appendTo(
-                $('<table/>', {style: "display:inline-table; width:194px;"}).appendTo(
-                container
-                ));
-
-        $('<img/>', {src: albumData.thumbnail, height: "160", width: "160", style: "margin:1px 0 0 4px"}).appendTo(
-                $('<a/>', {target: "_blank", href: albumData.url}).appendTo(
-                $('<td/>', {align: "center", style: "height:194px;background:url(img/transparent_album_background.gif) no-repeat left"}).appendTo(
-                $('<tr/>').appendTo(
-                tbody))));
-
-        $('<span>' + albumData.name + '<span/>').appendTo(
-                $('<td/>', {style: "width: 160px;text-align:center;font-family:arial,sans-serif;font-size:11px"}).appendTo(
-                $('<tr/>').appendTo(
-                tbody)));
-
-        $('<span>' + albumData.datePretty + '<span/>').appendTo(
-                $('<td/>', {style: "width: 160px;text-align:center;font-family:arial,sans-serif;font-size:11px"}).appendTo(
-                $('<tr/>').appendTo(
-                tbody)));
-        return container;
     }
 };
 
@@ -573,4 +412,44 @@ $(document).ready(function() {
     Gallery.init();
     Slideshow.init();
     Event.init();
+});
+
+var app = angular.module('dancextremeApp', []);
+
+app.controller('GalleryController', function ($scope, $http) {
+    $http.get('data/dance_galleries.txt').success(function(data) {
+        $scope.query = 'latest';
+        parseAndSortDate(data);
+        $.each(data, function(index, value) { index < 8 ? value.latest = 'latest' : value.latest = 'oldest' });
+        $.each(data, function(index, value) { value.all = 'all'; });
+        $scope.albums = data;
+        $scope.canned = years(data).concat(['Pelsall', 'Coven', 'Tower', 'Cornbow', 'Latest', 'All' ]);
+    });
+    $scope.search = function(query) {
+        $scope.query = query;  
+    };
+    
+    function parseAndSortDate(json) {
+        $.each(json, function(index, value) {
+            value.dateParsed = DateUtil.parse(value.date);
+            value.datePretty = value.dateParsed.toLocaleDateString();
+            value.dateYear = value.dateParsed.getFullYear();
+        });
+        json.sort(function(a, b) {
+            return b.dateParsed.getTime() - a.dateParsed.getTime();
+        });
+    }
+    
+    function years(json) {
+        var years = {};
+        $.each(json, function(index, value) {
+            years[value.dateYear] = true;
+        });
+        var yearsArray = [];
+        $.each(years, function(iy, y) {
+            yearsArray.push(iy)
+        });
+        return yearsArray.sort().reverse();
+    }
+    
 });
