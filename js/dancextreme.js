@@ -114,113 +114,6 @@ var DOW = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Sa
 var MOY = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 var Venue = {
-    initClassesByDay: function(jsonArray) {
-
-        var classesByDay = $('#classes-by-day');
-        if (!classesByDay.length) {
-            return;
-        }
-
-        $.each(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], function(iday, day) {
-            var venues = Venue.classesForDay(jsonArray, day);
-            if (venues.length) {
-                classesByDay.append($('<h3/>').text(day + 's'));
-                var ul = $('<ul/>');
-                classesByDay.append(ul);
-                $.each(venues, function(venuei, venue) {
-                    ul.append($('<li/>').html('<a href="#/class/' + venue.id + '">' + venue.name + '</a>, <b>' + venue.area + '</b>'));
-                });
-            }
-        });
-
-        var classDetails = $('#class-details');
-        if (!classDetails.length) {
-            return;
-        }
-
-        $(window).bind('hashchange', function() {
-            var venue;
-            $.each(jsonArray, function(iv, v) {
-                if (location.hash === '#/class/' + v.id) {
-                    venue = v;
-                }
-            });
-            if (!venue) {
-                return;
-            }
-            classDetails.empty();
-            classDetails.append($('<h2/>').text(venue.name));
-
-            $.each(venue.timetable, function(itimetable, timetable) {
-                classDetails.append($('<h3/>').text(timetable.day + 's'));
-                var table = $('<table/>').addClass('class-timetable');
-                classDetails.append(table);
-                table.append(
-                        $('<tr/>')
-                        .append($('<th>').text('Time'))
-                        .append($('<th>').text('Duration'))
-                        .append($('<th>').text('Style'))
-                        .append($('<th>').text('Level'))
-                        .append($('<th>').text('Price')));
-
-                var count = 0;
-                $.each(timetable.time, function(it, t) {
-                    table.append(
-                            $('<tr/>').addClass(count % 2 ? "alt" : "")
-                            .append($('<td>').text(t.startTime))
-                            .append($('<td>').text(t.duration))
-                            .append($('<td>').text(t.style))
-                            .append($('<td>').text(t.level))
-                            .append($('<td>').text(t.price)));
-
-                    count++;
-                });
-
-                var closureDates = "";
-                var sep = "";
-                $.each(venue.closures, function(ic, c) {
-                    if (DateUtil.sameDOW(c, timetable.day)) {
-                        closureDates = closureDates + sep + DateUtil.formatShort(c);
-                        sep = ", ";
-                    }
-                });
-                if (closureDates.length) {
-                    classDetails.append($('<p/>').html('<b>Holiday Closures:</b> <span class="closures">' + closureDates + '</span>'));
-                }
-
-                classDetails.append($('<br/>'));
-
-            });
-
-            classDetails.append($('<h3/>').text('Address'));
-            classDetails.append($('<p/>').text(venue.address));
-            classDetails.append($('<a/>', {href: 'venues#/venue/' + venue.id}).text('View Map'));
-
-            function isDetailsInView()
-            {
-                var docViewTop = $(window).scrollTop();
-                var docViewBottom = docViewTop + $(window).height();
-
-                var elemTop = classDetails.offset().top;
-                var elemBottom = elemTop + classDetails.height();
-
-                return docViewBottom > elemTop;
-            }
-
-            if (!isDetailsInView()) {
-                $('html, body').animate({
-                    scrollTop: classDetails.offset().top
-                }, 2000);
-            }
-
-        });
-
-        if (location.hash && location.hash.match("^#/class/")) {
-            console.log("Firing class bind");
-            $(window).trigger('hashchange', [location.hash]);
-        }
-
-    },
     initMap: function(jsonArray) {
         console.log('loading map');
         var venueMap = $('#venue-map');
@@ -310,33 +203,6 @@ var Venue = {
         addAreaBounds('All', jsonArray);
         $.each(Venue.venuesByArea(jsonArray), addAreaBounds);
 
-
-//        $.each(Venue.venuesByArea(jsonArray), function(area, venues) {
-
-
-
-//            var areaTable = $('<table/>', {style: "display:inline-table; width:160px;"});
-//            $('<th/>').text(area).appendTo(  $('<tr/>').appendTo( areaTable ) );
-//            $.each(venues, function(iv, v) {
-//                $('<a/>', { href:'#'+hash.make(v.id)}).text(v.name).appendTo( $('<td/>').appendTo( $('<tr/>').appendTo(areaTable)));
-//            });
-//            areaTable.appendTo( $('<div/>', {style: 'display: inline; padding: 2px;'}).appendTo( areaDiv ) );
-
-//            $('<a/>').text(area).click(function() {
-//                var areaBounds = new google.maps.LatLngBounds();
-//                $.each(venues, function(iv, v) {
-//                    console.log(v.position);
-//                    areaBounds.extend(new google.maps.LatLng(v.position.lat, v.position.lng));
-//                });
-//                map.fitBounds(areaBounds);
-//                if (map.getZoom() > 15) {
-//                    map.setZoom(15);
-//                }
-//                console.log(map.getZoom());
-//            }).appendTo(areaDiv);
-
-//        });
-
         $(window).bind('hashchange', venueChanged);
         setTimeout(function() {
             venueChanged();
@@ -351,7 +217,6 @@ var Venue = {
                 jsonArray = Venue.removeDisabled(jsonArray);
                 Venue.cleanClosures(jsonArray);
 
-                Venue.initClassesByDay(jsonArray);
                 Venue.initMap(jsonArray);
 
             });
@@ -409,8 +274,6 @@ var Venue = {
 
 $(document).ready(function() {
     Venue.init();
-    Gallery.init();
-    Slideshow.init();
     Event.init();
 });
 
