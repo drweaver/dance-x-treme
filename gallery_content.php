@@ -10,7 +10,7 @@
 			</form>
 		</div>
 	
-	  <div class="panel panel-default ng-cloak" ng-repeat="album in albums | filter:query" style="width: 190px; display:inline-block; margin:5px;">
+	  <div class="panel panel-default ng-cloak album-animate" ng-repeat="album in albums | filter:query" style="width: 190px; display:inline-block; margin:5px;">
 
 	    <div class="panel-body">
 	    	<a ng-href="{{album.url}}" target="_blank">
@@ -19,7 +19,6 @@
 	      </div>
 	      <div class="panel-footer">
 	        <p class="small ng-cloak" style="min-height: 35px;" title="{{album.datePretty}}">{{album.name}}</p>
-	        <!--<p class="small">{{album.datePretty}}</p>-->
 	        <p><a ng-href="{{album.url}}" class="btn btn-default" role="button">View Album &raquo;</a></p>
 	      </div>
 	    </div>

@@ -218,3 +218,26 @@ table.class-timetable tr td  {
 #gmap { 
     height: 700px; width: 95% 
 }
+
+
+/* album-animate 
+---------------------------*/
+
+.album-animate.ng-move,
+.album-animate.ng-enter
+/*,.album-animate.ng-leave */{
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.album-animate.ng-leave.ng-leave-active,
+.album-animate.ng-move,
+.album-animate.ng-enter {
+  opacity:0;
+}
+
+.album-animate.ng-leave,
+.album-animate.ng-move.ng-move-active,
+.album-animate.ng-enter.ng-enter-active {
+  opacity:1;
+}

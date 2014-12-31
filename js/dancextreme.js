@@ -250,10 +250,9 @@ var Venue = {
 
 $(document).ready(function() {
     Venue.init();
-    Event.init();
 });
 
-var app = angular.module('dancextremeApp', []);
+var app = angular.module('dancextremeApp', [ 'ngAnimate']);
 
 app.controller('GalleryController', function ($scope, $http) {
     $http.get('data/dance_galleries.txt').success(function(data) {
