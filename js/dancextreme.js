@@ -1,5 +1,3 @@
-var nextEventUrl = "http://www.google.com/calendar/feeds/k9r659lk7fiqdshd2eql8ss1v8%40group.calendar.google.com/public/full?alt=json&orderby=starttime&max-results=1&singleevents=true&sortorder=ascending&futureevents=true";
-
 function loadJson(url, successCallback) {
     $.ajax({
         url: url,
@@ -85,28 +83,6 @@ var DateUtil = {
             return null;
         }
         return new Date(result[1], result[2] - 1, result[3], 0, 0, 0, 0);
-    }
-};
-
-var Event = {
-    init: function() {
-
-        var nextEvent = $('#next-event');
-        if (!nextEvent.length) {
-            return;
-        }
-
-        loadJson(nextEventUrl, function(json) {
-            var events = json.feed.entry;
-            if (events.length) {
-                var event = events[0];
-                var title = event.title.$t;
-                var time = event.gd$when[0].startTime;
-                time = time.substring(0, time.indexOf('T'));
-                nextEvent.text(title + ' on ' + DateUtil.formatLong(time));
-            }
-        });
-
     }
 };
 
@@ -315,4 +291,32 @@ app.controller('GalleryController', function ($scope, $http) {
         return yearsArray.sort().reverse();
     }
     
+});
+
+//var socialCal = 'https://www.googleapis.com/calendar/v3/calendars/k9r659lk7fiqdshd2eql8ss1v8%40group.calendar.google.com/events/?key=AIzaSyAzo-Q6qXNjbhaTknSH9K7lsZnlgAkhV3I&singleEvents=true&maxResults=1&orderBy=startTime';
+var g_api_key = 'AIzaSyAzo-Q6qXNjbhaTknSH9K7lsZnlgAkhV3I';
+
+
+app.factory('getNextEvent', ['$http',
+  function($http) {
+      var baseUrl = '//www.googleapis.com/calendar/v3/calendars/';
+      var params = 'singleEvents=true&maxResults=1&orderBy=startTime';
+      return function(calendarId, callback) {
+          var url = baseUrl + calendarId + '/events/' + '?' + params + '&' + 'key='+g_api_key+'&timeMin='+ new Date().toJSON();
+            $http.get(url).success(function(data) {
+                if( data.items && data.items.length > 0 ) {
+                    callback( { title: data.items[0].summary, date: data.items[0].start.dateTime }  );
+                } 
+            });
+        };
+      }
+  ]);
+
+app.controller('NextSocialDanceController', function( $scope, getNextEvent ) {
+    $scope.events = [ { title: "being scheduled, please remind Sue!", date: '3000-01-01', hideMe: true } ];
+    $.each(['k9r659lk7fiqdshd2eql8ss1v8%40group.calendar.google.com','mtjt1tm2mjrgf0mnan2or7su50%40group.calendar.google.com'], function(i, id) {
+        getNextEvent(id, function(data) {
+          $scope.events.push(data);
+        });    
+    });
 });

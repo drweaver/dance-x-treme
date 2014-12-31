@@ -79,7 +79,12 @@ fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script
           </a>
           <h2>Get Dancing</h2>
           <p>
-          <div id="next-event"></div>
+          <div ng-controller="NextSocialDanceController">
+            <p ng-repeat="event in events | orderBy:'+date' | limitTo:1">Our next social event is <span ng-hide="event.hideMe">a </span>
+              <strong>{{event.title}}</strong>
+              <span ng-hide="event.hideMe"> on <strong>{{event.date | date:'EEEE d MMM yyyy'}}</strong></span>
+            </p>
+          </div>
           </p>
           <p><a class="btn btn-default" href="/events" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->

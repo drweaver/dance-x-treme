@@ -14,7 +14,7 @@ include('./master.php');
 
      setInterval(function() {
         var id = 'next-event-slideshow';
-        console.log(' doing swap ');
+        // console.log(' doing swap ');
         var $active = $('#'+id+' .active');
         var $next = ($('#'+id+' .active').next().length > 0) ? $('#' + id + ' .active').next() : $('#' + id + ' img:first');
         $active.fadeOut(600, function() {
@@ -25,7 +25,7 @@ include('./master.php');
     
     setInterval(function() {
         var id = 'social-media-icon';
-        console.log(' doing swap ');
+        // console.log(' doing swap ');
         var $active = $('#'+id+' .active');
         var $next = ($('#'+id+' .active').next().length > 0) ? $('#' + id + ' .active').next() : $('#' + id + ' img:first');
         $active.fadeOut(600, function() {
