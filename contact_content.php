@@ -3,7 +3,7 @@
 <div class="page-header">
     <h1>Contact US</h1>
     </div>
-
+<p>Contact Sue or George anytime at</p>
 <dl class="dl-horizontal">
   <dt>Mobile</dt>
   <dd><a href="tel:07971579626">07971 579626</a></dd>

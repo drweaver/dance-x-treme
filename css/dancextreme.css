@@ -1,5 +1,13 @@
 /* GLOBAL STYLES
--------------------------------------------------- */
+
+/*---------------
+ CLOAK NG Directives */
+ 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/*-------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
 body {

@@ -73,14 +73,11 @@ fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script
             
             ?>
             </div>
-            <!--
-          <img class="img-circle" src="https://lh6.googleusercontent.com/-CUUxHM_bsLc/VJTKV7aDLGE/AAAAAAABfGY/-DOfKtUlghU/s160-c/ChristmasBallPelsall2014.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-          -->
           </a>
           <h2>Get Dancing</h2>
           <p>
           <div ng-controller="NextSocialDanceController">
-            <p ng-repeat="event in events | orderBy:'+date' | limitTo:1">Our next social event is <span ng-hide="event.hideMe">a </span>
+            <p ng-repeat="event in events | orderBy:'+date' | limitTo:1" class="ng-cloak">Our next social event is <span ng-hide="event.hideMe">a </span>
               <strong>{{event.title}}</strong>
               <span ng-hide="event.hideMe"> on <strong>{{event.date | date:'EEEE d MMM yyyy'}}</strong></span>
             </p>

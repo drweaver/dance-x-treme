@@ -305,16 +305,21 @@ app.factory('getNextEvent', ['$http',
           var url = baseUrl + calendarId + '/events/' + '?' + params + '&' + 'key='+g_api_key+'&timeMin='+ new Date().toJSON();
             $http.get(url).success(function(data) {
                 if( data.items && data.items.length > 0 ) {
-                    callback( { title: data.items[0].summary, date: data.items[0].start.dateTime }  );
+                    var item = data.items[0];
+                    callback( { title: item.summary, date: item.start.dateTime ? item.start.dateTime : item.start.date }  );
                 } 
             });
         };
       }
   ]);
 
+var socialCal = 'k9r659lk7fiqdshd2eql8ss1v8%40group.calendar.google.com';
+var practiceCal = 'mtjt1tm2mjrgf0mnan2or7su50%40group.calendar.google.com';
+var holidayCal = 'eekb8u8h6bc0ode46dqveji0mo%40group.calendar.google.com';
+
 app.controller('NextSocialDanceController', function( $scope, getNextEvent ) {
     $scope.events = [ { title: "being scheduled, please remind Sue!", date: '3000-01-01', hideMe: true } ];
-    $.each(['k9r659lk7fiqdshd2eql8ss1v8%40group.calendar.google.com','mtjt1tm2mjrgf0mnan2or7su50%40group.calendar.google.com'], function(i, id) {
+    $.each([socialCal, practiceCal, holidayCal], function(i, id) {
         getNextEvent(id, function(data) {
           $scope.events.push(data);
         });    
