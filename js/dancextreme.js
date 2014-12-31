@@ -299,7 +299,7 @@ var g_api_key = 'AIzaSyAzo-Q6qXNjbhaTknSH9K7lsZnlgAkhV3I';
 
 app.factory('getNextEvent', ['$http',
   function($http) {
-      var baseUrl = '//www.googleapis.com/calendar/v3/calendars/';
+      var baseUrl = 'https://www.googleapis.com/calendar/v3/calendars/';
       var params = 'singleEvents=true&maxResults=1&orderBy=startTime';
       return function(calendarId, callback) {
           var url = baseUrl + calendarId + '/events/' + '?' + params + '&' + 'key='+g_api_key+'&timeMin='+ new Date().toJSON();
