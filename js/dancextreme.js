@@ -354,7 +354,5 @@ app.controller('SocialMediaImageController', function($scope, $interval) {
     $interval(function() {
         $scope.count++;
         $scope.selected = $scope.count % $scope.images.length;
-        console.log('length='+$scope.images.length)
-        console.log('selected='+$scope.selected);
     }, $scope.interval);
 });
