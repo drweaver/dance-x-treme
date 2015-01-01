@@ -260,18 +260,14 @@ app.filter('splitCommas', function() {
   };
 });
 
-app.controller('ClassController', function($scope, $http) {
-    $scope.areas = ['in Wolverhampton', 'in Walsall'];
-    $scope.days = ['on Mondays', 'on Tuesdays'];
+app.controller('ClassController', function($scope, $http, $location) {
     $scope.dataArray = [];
     $scope.byArea = [];
     $scope.byDay = [];
     $scope.byVenue = [];
     var dayOrder = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     $scope.dayIndex = function(data) {
-        // console.log(day);
         var dayStripped = data.index.replace(/^on /, '').replace(/s$/, '');
-        // console.log(day);
         return dayOrder.indexOf(dayStripped);
     };
     $scope.search = function(query) {
@@ -315,6 +311,22 @@ app.controller('ClassController', function($scope, $http) {
            $scope.byVenue.push( { index: i, venues: v, btnClass: 'btn-success', type: 'by-venue' } );
         });
         $scope.dataArray = $scope.byArea.concat($scope.byDay).concat($scope.byVenue);
+        $scope.$watch(
+            function() {return $location.path();},
+            function(newVal, oldVal) {
+                var results = /class\/(.*)/.exec(newVal);
+                if( results !== null ) {
+                    var id = results[1];
+                    console.log(id);
+                    $.each(data, function(i,v) {
+                       if( v.id == id ) {
+                           $scope.search('at '+v.name);
+                           return false;
+                       } 
+                    });
+                } 
+            }
+        );
     });
 });
 
