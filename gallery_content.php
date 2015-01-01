@@ -2,11 +2,12 @@
 	
 	<div class="page-header"><h1>Gallery</h1></div>
 
+	<p>View photos from our social dance events.  Click or search for albums using the form below.</p>
 	<div ng-controller="GalleryController">
 		<div class="jumbotron ng-cloak">
 			<form class="form-inline">
 			Search: <input ng-model="query" class="form-control form-inline">
-			<button class="btn btn-primary" type="button" ng-click="search(can)" ng-repeat="can in canned" style="margin: 4px;">{{can}}</a>
+			<button class="btn btn-primary" type="button" ng-click="search(can)" ng-repeat="can in canned" style="margin: 4px;">{{can}}</button>
 			</form>
 		</div>
 	

@@ -23,70 +23,53 @@ Our classes are held at safe, superb facilities at all our <a href="/venues">ven
   
 </dl>
 <hr/>
-<h2>Timetables <span class="text-info small">click to expand</span></h2>
+	<div ng-controller="ClassController">
+		<div class="jumbotron">
+			<form class="form-inline" id="a">
+				Filter: <input ng-model="query.index" class="form-control form-inline">
+				<button class="btn ng-cloak btn-default" type="button" ng-click="searchByType('by-area')" style="margin: 4px;">All</button>
+				<button class="btn ng-cloak" ng-class="data.btnClass" type="button" ng-click="search(data.index)" ng-repeat="data in dataArray | orderBy:'+index'" style="margin: 4px;">{{data.index}}</button>
+			</form>
+		</div>
+		<div ng-repeat="data in dataArray | filter:query:false | orderBy:'+index'" >
+			<h1 class="ng-cloak">{{data.index}}</h1>
+			<div ng-repeat="venue in data.venues | orderBy:'+name'" class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title ng-cloak">{{venue.name}}</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<!-- timetable column -->
+						<div class="col-xs-12 col-sm-8">
+							<div ng-repeat="day in venue.timetable">
+								<h4 class="ng-cloak">{{day.day}}</h4>
+									<table class="table table-striped table-hover small">
+										<thead><tr><th>Time</th><th>Duration</th><th>Style</th><th>Level</th><th>Price</th></tr></thead>
+										<tbody>
+											<tr class="ng-cloak" ng-repeat="time in day.time"><td>{{time.startTime}}</td>
+												<td>{{time.duration}} mins</td>
+												<td>{{time.style}}</td>
+												<td>{{time.level}}</td>
+												<td>&pound;{{time.price}}</td>
+											</tr>
+										</tbody>
+									</table>
+							
+							</div>
+						</div>
+						<!-- address column -->
+						<div class="col-xs-6 col-sm-4">
+							<address class="ng-cloak">
+								<strong>{{venue.name}}</strong><span ng-repeat="line in (venue.address | splitCommas ) track by $index"><br/>{{line}}</span></address>
+								<a href="/venues#/venue/'.$venue['id'].'">View Map</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 <div class="panel-group ng-cloak" id="accordion" role="tablist" aria-multiselectable="true">
-<?php 
 
-$venues_data = json_decode( file_get_contents('data/dance_venues.txt'), true );
-
-function print_heading($venue, $id) {
-	print('<div class="panel-heading" role="tab" id="heading'.$id.'">');
-    print('<h4 class="panel-title">');
-    print('<a data-toggle="collapse" data-parent="#accordion" href="#collapse'.$id.'" aria-expanded="false" aria-controls="collapse'.$id.'">');
-    print('<span class="text-primary">'.$venue['name'].'</span>, <span class="text-info small">'.$venue['area'].'</span>');
-    print('</a></h4></div>');
-}
-
-function print_timetable($venue, $timetable, $id, $day) {
-	print('<div id="collapse'.$id.'" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading'.$id.'">');
-    print('<div class="panel-body">');
-    print('<h4>'.$day.'</h4>');
-    print('<div class=""><div class="row"><div class="col-xs-12 col-sm-8">');
-	print('<table class="table table-striped table-hover small">');
-	print('<thead><tr><th>Time</th><th>Duration</th><th>Style</th><th>Level</th><th>Price</th></tr></thead><tbody>');
-	$i=0;
-	foreach ($timetable as $t) {
-		$style = '';
-		$i = $i+1;
-		if( $i % 2 == 0 ) $style = '';
-	    print('<tr class="'.$style.'"><td>'.$t['startTime'].'</td>');
-		print('<td>'.$t['duration'].' mins</td>');
-		print('<td>'.$t['style'].'</td>');
-		print('<td>'.$t['level'].'</td>');
-		print('<td>&pound;'.$t['price'].'</td></tr>');
-	}
-	print('</tbody></table>');
-	print('</div>');
-	print('<div class="col-xs-6 col-sm-4"><address><strong>'.$venue['name'].'</strong><br/>'.str_replace(',', '<br/>', $venue['address']).'</address><a href="/venues#/venue/'.$venue['id'].'">View Map</a></div>');
-	// row
-	print('</div>');
-	// container
-	print('</div>');
-	// collapse, panel-body
-	print('</div></div>');
-}
-		
-foreach( array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday') as $day ) {
-	$day_title = '<h3>'.$day.'s</h3>';
-	foreach( $venues_data as $g ) {
-		if( $g['enabled'] == FALSE )
-			continue;
-		if( !array_key_exists('timetable', $g) )
-			continue;
-		foreach( $g['timetable'] as $t_day ) {
-			if( $t_day['day'] == $day ) {
-				print $day_title;
-				$day_title = '';
-				print '<div class="panel panel-default">';
-				$id = $g['id'].$day;
-				print_heading($g, $id);
-				print_timetable($g, $t_day['time'], $id, $day);
-				print '</div>';
-			}
-		}
-	}
-}
-?>
 </div>
 <noscript>
 <?php 

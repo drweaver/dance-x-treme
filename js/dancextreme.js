@@ -254,6 +254,60 @@ $(document).ready(function() {
 
 var app = angular.module('dancextremeApp', [ 'ngAnimate']);
 
+app.filter('splitCommas', function() {
+  return function(text) {
+    return text.split(/,/g);
+  };
+});
+
+app.controller('ClassController', function($scope, $http) {
+    $scope.areas = ['in Wolverhampton', 'in Walsall'];
+    $scope.days = ['on Mondays', 'on Tuesdays'];
+    $scope.dataArray = [];
+    $scope.search = function(query) {
+        if( query && query.length ) {
+            $scope.query = { index: query };
+        } else {
+            $scope.searchByType('by-area');
+        }
+    };
+    $scope.searchByType = function(query) {
+        $scope.query = { type: query };
+    };
+    $scope.searchByType('by-area');
+    $http.get('data/dance_venues.txt').success(function(data) {
+        var aMap = {};
+        var dMap = {};
+        var vMap = {};
+        $.each(data, function(index,venue) {
+            if( !venue.enabled || !venue.timetable ) return true; // continue
+            var aKey = 'in '+venue.area;
+            if( !aMap[aKey] ) aMap[aKey] = [];
+            aMap[aKey].push(venue);
+            $.each(venue.timetable, function(ti,t) {
+                var dKey = 'on '+t.day+'s';
+               if( !dMap[dKey] ) dMap[dKey] = [];
+               var venueForDay = $.extend({}, venue);
+               venueForDay.timetable = [ t ];
+               dMap[dKey].push(venueForDay);
+            });     
+            var vKey = 'at '+venue.name;
+            if( !vMap[vKey] ) vMap[vKey] = [];
+            vMap[vKey].push(venue);
+        });
+        $.each( aMap, function(i,v) {
+           $scope.dataArray.push( { index: i, venues: v, btnClass: 'btn-warning', type: 'by-area' } );
+        });
+        $.each( dMap, function(i,v) {
+           $scope.dataArray.push( { index: i, venues: v, btnClass: 'btn-info', type: 'by-day' } );
+        });
+        $.each( vMap, function(i,v) {
+           $scope.dataArray.push( { index: i, venues: v, btnClass: 'btn-success', type: 'by-venue' } );
+        });
+        console.log( $scope.dataArray );
+    });
+});
+
 app.controller('GalleryController', function ($scope, $http) {
     $http.get('data/dance_galleries.txt').success(function(data) {
         $scope.query = 'latest';
