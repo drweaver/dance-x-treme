@@ -54,25 +54,9 @@ fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script
       <div class="row">
         <div class=" col-sm-4">
           <a href="/events">
-            <div id="next-event-slideshow" style="height: 140px; width: 140px;">
-              
-            <?php
-
-              $gallery_data = json_decode( file_get_contents('data/dance_galleries.txt'), true );
-              $active = 'active';
-              $display = 'inline';
-              $start = rand(0,count($gallery_data)-5);
-              $end = $start + 5;
-              for( $i=$start; $i<$end; $i++) {
-                $g = $gallery_data[$i];
-              // foreach ($gallery_data as $g) {
-              	print('<img class="img-circle '.$active.'" style="width: 140px; height: 140px; display:'.$display.'; position:absolute" src="'.$g['thumbnail'].'">');
-              	$active = '';
-              	$display = 'none';
-              }
-            
-            ?>
-            </div>
+           <div id="img-cross-fade" style="height: 140px; width: 140px;" ng-controller="NextDanceImageController">
+             <img class="img-cross-fade img-circle" ng-if="selected==$index" ng-repeat="image in images" ng-src="{{image.src}}" style="width: 140px; height: 140px; position: absolute; background: #55ACEE">
+          </div>
           </a>
           <h2>Get Dancing</h2>
           <p>
@@ -86,11 +70,10 @@ fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script
           <p><a class="btn btn-default" href="/events" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class=" col-sm-4">
-          <div style="height: 140px; width: 140px;" id="social-media-icon">
-            <a href="https://twitter.com/Dance_X_Treme">
-              <img class="img-circle active" src="img/twitter_logo_white2.png" alt="Generic placeholder image" style="width: 140px; height: 140px; position: absolute; background: #55ACEE">
-              <img class="img-circle" src="img/facebook_logo_blue_144.png" alt="Generic placeholder image" style="width: 140px; height: 140px; display:none; position: absolute; ">
-            </a>
+          <div id="img-cross-fade" style="height: 140px; width: 140px;" ng-controller="SocialMediaImageController">
+              <a ng-href="{{images[selected].href}}" >
+                  <img class="img-cross-fade img-circle" ng-if="selected==$index" ng-repeat="image in images" ng-src="{{image.src}}" style="width: 140px; height: 140px; position: absolute; background: #55ACEE">
+              </a>
           </div>
           <h2>Social Media</h2>
           <p>

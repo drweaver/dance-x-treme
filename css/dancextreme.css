@@ -224,8 +224,7 @@ table.class-timetable tr td  {
 ---------------------------*/
 
 .album-animate.ng-move,
-.album-animate.ng-enter
-/*,.album-animate.ng-leave */{
+.album-animate.ng-enter {
   -webkit-transition:all linear 0.5s;
   transition:all linear 0.5s;
 }
@@ -239,5 +238,24 @@ table.class-timetable tr td  {
 .album-animate.ng-leave,
 .album-animate.ng-move.ng-move-active,
 .album-animate.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+.img-cross-fade.ng-move,
+.img-cross-fade.ng-enter,
+.img-cross-fade.ng-leave {
+  -webkit-transition:all linear 1s;
+  transition:all linear 1s;
+}
+
+.img-cross-fade.ng-leave.ng-leave-active,
+.img-cross-fade.ng-move,
+.img-cross-fade.ng-enter {
+  opacity:0;
+}
+
+.img-cross-fade.ng-leave,
+.img-cross-fade.ng-move.ng-move-active,
+.img-cross-fade.ng-enter.ng-enter-active {
   opacity:1;
 }

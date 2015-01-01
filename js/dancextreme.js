@@ -324,3 +324,37 @@ app.controller('NextSocialDanceController', function( $scope, getNextEvent ) {
         });    
     });
 });
+
+app.controller('NextDanceImageController', function( $scope, $interval, $http ) {
+    $scope.interval = 5000;
+    $scope.selected = 0;
+    $scope.count = 0;
+    $scope.images = [];
+    $http.get('data/dance_galleries.txt').success(function(data) {
+        var start = Math.floor((Math.random() * (data.length-5)));
+        for( var i=start; i<(start+5); i++) {
+            $scope.images.push( { src: data[i].thumbnail });
+        }
+        $interval(function() {
+            $scope.count++;
+            $scope.selected = $scope.count % $scope.images.length;
+        }, $scope.interval);
+    });
+});
+
+app.controller('SocialMediaImageController', function($scope, $interval) {
+    $scope.images =  
+        [
+        { src: "img/twitter_logo_white2.png",    href:"https://twitter.com/Dance_X_Treme" },
+        { src: "img/facebook_logo_blue_144.png", href:"http://www.facebook.com/Dance.X.Treme.UK" }
+        ];
+    $scope.interval = 8000;
+    $scope.selected = 0;
+    $scope.count = 0;
+    $interval(function() {
+        $scope.count++;
+        $scope.selected = $scope.count % $scope.images.length;
+        console.log('length='+$scope.images.length)
+        console.log('selected='+$scope.selected);
+    }, $scope.interval);
+});
