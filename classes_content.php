@@ -26,12 +26,14 @@ Our classes are held at safe, superb facilities at all our <a href="/venues">ven
 	<div ng-controller="ClassController">
 		<div class="jumbotron">
 			<form class="form-inline" id="a">
-				Filter: <input ng-model="query.index" class="form-control form-inline">
-				<button class="btn ng-cloak btn-default" type="button" ng-click="searchByType('by-area')" style="margin: 4px;">All</button>
-				<button class="btn ng-cloak" ng-class="data.btnClass" type="button" ng-click="search(data.index)" ng-repeat="data in dataArray | orderBy:'+index'" style="margin: 4px;">{{data.index}}</button>
+				Filter: <!--<input ng-model="query.index" class="form-control form-inline">-->
+				<button class="btn ng-cloak btn-default btn-sm" type="button" ng-click="searchByType('by-area')" style="margin: 4px;">All</button>
+				<button class="btn ng-cloak btn-sm" ng-class="data.btnClass" type="button" ng-click="search(data.index)" ng-repeat="data in byArea | orderBy:'+index'" style="margin: 4px;">{{data.index}}</button>
+				<button class="btn ng-cloak btn-sm" ng-class="data.btnClass" type="button" ng-click="search(data.index)" ng-repeat="data in byDay | orderBy:dayIndex" style="margin: 4px;">{{data.index}}</button>
+				<button class="btn ng-cloak btn-sm" ng-class="data.btnClass" type="button" ng-click="search(data.index)" ng-repeat="data in byVenue | orderBy:'+index'" style="margin: 4px;">{{data.index}}</button>
 			</form>
 		</div>
-		<div ng-repeat="data in dataArray | filter:query:false | orderBy:'+index'" >
+		<div ng-repeat="data in dataArray | filter:query:false | orderBy:'+index'" class="album-animate">
 			<h1 class="ng-cloak">{{data.index}}</h1>
 			<div ng-repeat="venue in data.venues | orderBy:'+name'" class="panel panel-default">
 				<div class="panel-heading">
@@ -61,7 +63,7 @@ Our classes are held at safe, superb facilities at all our <a href="/venues">ven
 						<div class="col-xs-6 col-sm-4">
 							<address class="ng-cloak">
 								<strong>{{venue.name}}</strong><span ng-repeat="line in (venue.address | splitCommas ) track by $index"><br/>{{line}}</span></address>
-								<a href="/venues#/venue/'.$venue['id'].'">View Map</a>
+								<a ng-href="/venues#/venue/{{venue.id}}">View Map</a>
 						</div>
 					</div>
 				</div>

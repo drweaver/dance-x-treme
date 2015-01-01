@@ -264,6 +264,16 @@ app.controller('ClassController', function($scope, $http) {
     $scope.areas = ['in Wolverhampton', 'in Walsall'];
     $scope.days = ['on Mondays', 'on Tuesdays'];
     $scope.dataArray = [];
+    $scope.byArea = [];
+    $scope.byDay = [];
+    $scope.byVenue = [];
+    var dayOrder = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    $scope.dayIndex = function(data) {
+        // console.log(day);
+        var dayStripped = data.index.replace(/^on /, '').replace(/s$/, '');
+        // console.log(day);
+        return dayOrder.indexOf(dayStripped);
+    };
     $scope.search = function(query) {
         if( query && query.length ) {
             $scope.query = { index: query };
@@ -296,15 +306,15 @@ app.controller('ClassController', function($scope, $http) {
             vMap[vKey].push(venue);
         });
         $.each( aMap, function(i,v) {
-           $scope.dataArray.push( { index: i, venues: v, btnClass: 'btn-warning', type: 'by-area' } );
+           $scope.byArea.push( { index: i, venues: v, btnClass: 'btn-warning', type: 'by-area' } );
         });
         $.each( dMap, function(i,v) {
-           $scope.dataArray.push( { index: i, venues: v, btnClass: 'btn-info', type: 'by-day' } );
+           $scope.byDay.push( { index: i, venues: v, btnClass: 'btn-info', type: 'by-day' } );
         });
         $.each( vMap, function(i,v) {
-           $scope.dataArray.push( { index: i, venues: v, btnClass: 'btn-success', type: 'by-venue' } );
+           $scope.byVenue.push( { index: i, venues: v, btnClass: 'btn-success', type: 'by-venue' } );
         });
-        console.log( $scope.dataArray );
+        $scope.dataArray = $scope.byArea.concat($scope.byDay).concat($scope.byVenue);
     });
 });
 
