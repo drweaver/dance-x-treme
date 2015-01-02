@@ -122,8 +122,8 @@
           {
             "day": "Wednesday",
             "time": 
-               [ { "startTime": "8:00pm", "duration": "60", "price": "5.50", "level": "New Beginners", "style": "Ballroom, Latin & Salsa" }, 
-                 { "startTime": "9:00pm", "duration": "60", "price": "5.50", "level": "Improvers / Intermediate",  "style": "Ballroom, Latin & Salsa" }
+               [ { "startTime": "8:00pm", "duration": "60", "price": "5.50", "level": "Improvers", "style": "Ballroom, Latin & Salsa" }, 
+                 { "startTime": "9:00pm", "duration": "60", "price": "5.50", "level": "Intermediate",  "style": "Ballroom, Latin & Salsa" }
                ]
           }
         ],         
@@ -173,7 +173,7 @@
             "day": "Tuesday",
             "time": 
                [ { "startTime": "7:00pm", "duration": "45", "price": "5.00", "level": "New Beginners", "style": "Ballroom & Latin" }, 
-                 { "startTime": "7:45pm", "duration": "75", "price": "5.50", "level": "Advanced",  "style": "Ballroom & Latin" }
+                 { "startTime": "7:45pm", "duration": "60", "price": "5.00", "level": "Advanced",  "style": "Ballroom & Latin" }
                ]
           }
         ],         
@@ -359,7 +359,7 @@
             "time": 
                [ { "startTime": "7:00pm", "duration": "45", "price": "5.00", "level": "New Beginners", "style": "Ballroom, Latin & Salsa" }, 
                  { "startTime": "7:45pm", "duration": "45", "price": "5.00", "level": "Improvers", "style": "Ballroom, Latin & Salsa" }, 
-                 { "startTime": "8:30pm", "duration": "90", "price": "5.50", "level": "Intermediate",  "style": "Ballroom, Latin & Salsa" }
+                 { "startTime": "8:30pm", "duration": "60", "price": "5.00", "level": "Intermediate",  "style": "Ballroom, Latin & Salsa" }
                ]
           }
         ],
