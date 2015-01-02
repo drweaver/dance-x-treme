@@ -23,7 +23,10 @@
     <![endif]-->
 
     <!-- Custom styles for this template -->
+    <style> <?php include('./css/dancextreme.css');?> </style>
+    <!--
     <link href="css/dancextreme.css" rel="stylesheet">
+    -->
   </head>
 <!-- NAVBAR
 ================================================== -->
