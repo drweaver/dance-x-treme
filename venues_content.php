@@ -3,6 +3,7 @@
 <div class="page-header">
 <h1>Venues</h1>
 </div>
+<p>Find venues where we host dance classes and social events below.</p>
 <div id="venue-map-loading" class="hidden"><img src="img/spinner.gif"/> Loading...</div>
 <div id="venue-map">
 <noscript>
