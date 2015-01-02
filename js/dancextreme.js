@@ -281,7 +281,7 @@ app.controller('ClassController', function($scope, $http, $location) {
         $scope.query = { type: query };
     };
     $scope.searchByType('by-area');
-    $http.get('data/dance_venues.txt').success(function(data) {
+    $http.get('data/dance_venues.txt?_='+ new Date().getTime()).success(function(data) {
         var aMap = {};
         var dMap = {};
         var vMap = {};
@@ -331,7 +331,7 @@ app.controller('ClassController', function($scope, $http, $location) {
 });
 
 app.controller('GalleryController', function ($scope, $http) {
-    $http.get('data/dance_galleries.txt').success(function(data) {
+    $http.get('data/dance_galleries.txt?_='+ new Date().getTime()).success(function(data) {
         $scope.query = 'latest';
         parseAndSortDate(data);
         $.each(data, function(index, value) { index < 8 ? value.latest = 'latest' : value.latest = 'oldest' });
@@ -406,7 +406,7 @@ app.controller('NextDanceImageController', function( $scope, $interval, $http ) 
     $scope.selected = 0;
     $scope.count = 0;
     $scope.images = [];
-    $http.get('data/dance_galleries.txt').success(function(data) {
+    $http.get('data/dance_galleries.txt?_='+ new Date().getTime()).success(function(data) {
         var start = Math.floor((Math.random() * (data.length-5)));
         for( var i=start; i<(start+5); i++) {
             $scope.images.push( { src: data[i].thumbnail });
