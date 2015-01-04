@@ -25,15 +25,24 @@ Our classes are held at safe, superb facilities at all our <a href="/venues">ven
 <hr/>
 	<div ng-controller="ClassController">
 		<div class="jumbotron">
-			<form class="form-inline" id="a">
-				Filter: <!--<input ng-model="query.index" class="form-control form-inline">-->
-				<button class="btn ng-cloak btn-default btn-sm" type="button" ng-click="searchByType('by-area')" style="margin: 4px;">All</button>
-				<button class="btn ng-cloak btn-sm" ng-class="data.btnClass" type="button" ng-click="search(data.index)" ng-repeat="data in byArea | orderBy:'+index'" style="margin: 4px;">{{data.index}}</button>
-				<button class="btn ng-cloak btn-sm" ng-class="data.btnClass" type="button" ng-click="search(data.index)" ng-repeat="data in byDay | orderBy:dayIndex" style="margin: 4px;">{{data.index}}</button>
-				<button class="btn ng-cloak btn-sm" ng-class="data.btnClass" type="button" ng-click="search(data.index)" ng-repeat="data in byVenue | orderBy:'+index'" style="margin: 4px;">{{data.index}}</button>
+			<form class="form-inline">
+				<div class="row">
+					<div class="col-sm-1">
+						<h5 >Class Filter:</h5> 
+					</div>	
+					<div class="col-sm-11">
+						<button class="btn btn-primary" type="button" ng-click="searchByType('by-area', '+index')" ng-class="typeButtonClass('by-area')" style="margin: 4px;">By Location</button>
+						<button class="btn btn-primary" type="button" ng-click="searchByType('by-day', dayIndex)" ng-class="typeButtonClass('by-day')"style="margin: 4px;">By Day</button>
+						<button class="btn btn-primary" type="button" ng-click="searchByType('by-venue', '+index')" ng-class="typeButtonClass('by-venue')"style="margin: 4px;">By Venue</button>
+						<br/>
+						<button class="btn ng-cloak btn-sm" ng-if="query.type == 'by-area'" ng-class="data.btnClass" type="button" ng-click="search('by-area', data.index, '+index')" ng-repeat="data in byArea | orderBy:'+index'" style="margin: 4px;">{{data.index}}</button>
+						<button class="btn ng-cloak btn-sm" ng-if="query.type == 'by-day'" ng-class="data.btnClass" type="button" ng-click="search('by-day', data.index, dayIndex)" ng-repeat="data in byDay | orderBy:dayIndex" style="margin: 4px;">{{data.index}}</button>
+						<button class="btn ng-cloak btn-sm" ng-if="query.type == 'by-venue'" ng-class="data.btnClass" type="button" ng-click="search('by-venue', data.index, '+index')" ng-repeat="data in byVenue | orderBy:'+index'" style="margin: 4px;">{{data.index}}</button>
+					</div>
+				</div>
 			</form>
 		</div>
-		<div ng-repeat="data in dataArray | filter:query:false | orderBy:'+index'" class="album-animate">
+		<div ng-repeat="data in dataArray | filter:query:false | orderBy:order" class="album-animate">
 			<h1 class="ng-cloak">{{data.index}}</h1>
 			<div ng-repeat="venue in data.venues | orderBy:'+name'" class="panel panel-default">
 				<div class="panel-heading">

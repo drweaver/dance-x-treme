@@ -265,22 +265,31 @@ app.controller('ClassController', function($scope, $http, $location) {
     $scope.byArea = [];
     $scope.byDay = [];
     $scope.byVenue = [];
-    var dayOrder = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    $scope.order = '';
+    var dayOrder = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     $scope.dayIndex = function(data) {
         var dayStripped = data.index.replace(/^on /, '').replace(/s$/, '');
         return dayOrder.indexOf(dayStripped);
     };
-    $scope.search = function(query) {
-        if( query && query.length ) {
-            $scope.query = { index: query };
-        } else {
-            $scope.searchByType('by-area');
-        }
+    $scope.search = function(type, query, order) {
+        $scope.query = { type: type, index: query };
+        $scope.order = order;
     };
-    $scope.searchByType = function(query) {
+    $scope.searchByType = function(query, order) {
         $scope.query = { type: query };
+        $scope.order = order;
     };
-    $scope.searchByType('by-area');
+    $scope.typeButtonClass = function(type) {
+        if( $scope.query.type == type ) 
+            return 'active';
+        return 'not-active';
+    };
+    $scope.indexButtonClass = function(index) {
+        if( $scope.query.index == index ) 
+            return 'active';
+        return 'not-active';
+    };
+    $scope.searchByType('by-area', '+index');
     $http.get('data/dance_venues.txt?_='+ new Date().getTime()).success(function(data) {
         var aMap = {};
         var dMap = {};
@@ -320,7 +329,7 @@ app.controller('ClassController', function($scope, $http, $location) {
                     console.log(id);
                     $.each(data, function(i,v) {
                        if( v.id == id ) {
-                           $scope.search('at '+v.name);
+                           $scope.search('by-venue', 'at '+v.name, '+index');
                            return false;
                        } 
                     });
