@@ -7,7 +7,7 @@
 		<div class="jumbotron ng-cloak">
 			<form class="form-inline">
 			Search: <input ng-model="query" class="form-control form-inline">
-			<button class="btn btn-primary" type="button" ng-click="search(can)" ng-repeat="can in canned" style="margin: 4px;">{{can}}</button>
+			<button class="btn btn-primary ng-cloak" type="button" ng-click="search(can)" ng-repeat="can in canned" style="margin: 4px;">{{can}}</button>
 			</form>
 		</div>
 	

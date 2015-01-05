@@ -377,9 +377,7 @@ app.controller('GalleryController', function ($scope, $http) {
     
 });
 
-//var socialCal = 'https://www.googleapis.com/calendar/v3/calendars/k9r659lk7fiqdshd2eql8ss1v8%40group.calendar.google.com/events/?key=AIzaSyAzo-Q6qXNjbhaTknSH9K7lsZnlgAkhV3I&singleEvents=true&maxResults=1&orderBy=startTime';
 var g_api_key = 'AIzaSyAzo-Q6qXNjbhaTknSH9K7lsZnlgAkhV3I';
-
 
 app.factory('getNextEvent', ['$http',
   function($http) {
