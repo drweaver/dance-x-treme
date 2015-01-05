@@ -2,6 +2,7 @@
     {
         "id": "coven",
         "name": "Coven Memorial Hall",
+        "nickname": "Coven",
         "enabled": true,
         "address": "Brewood Road, Coven,Wolverhampton, WV9 5DL",
         "area": "Wolverhampton",
@@ -38,6 +39,7 @@
     {
         "id": "greatbarr",
         "name": "Great Barr Memorial Hall",
+        "nickname": "Great Barr",
         "enabled": true,
         "address": "Corner of Chapel Lane & Birmingham Rd, B43 7BD",
         "area": "Great Barr",
@@ -62,20 +64,9 @@
         "svUrl": "http://maps.google.co.uk/maps?daddr=52.556929,-1.935761&cbll=52.556939,-1.935705&panoid=Nfaov5rS-WW9SprwHYhQwg&cbp=12,322.06,,0,17.04&layer=c&output=classic"
     },
     {
-        "id": "jubileehall",
-        "name": "Jubilee Hall",
-        "enabled": false,
-        "address": "Bargate Street, Brewood, ST19 9BB",
-        "area": "Wolverhampton",
-        "position": {
-            "lat": 52.677254,
-            "lng": -2.174349
-        },
-        "svUrl": "null"
-    },
-    {
         "id": "bluecoatacademy",
         "name": "Blue Coat Academy",
+        "nickname": "Blue Coat",
         "enabled": true,
         "address": "Birmingham Street, Walsall, West Midlands, WS1 2ND",
         "area": "Walsall",
@@ -100,20 +91,9 @@
         "svUrl": "http://maps.google.co.uk/maps?daddr=52.5807768,-1.9756287&cbll=52.580741,-1.975667&panoid=pPAfDZH5RBvKXKN7Sp1-8Q&cbp=12,13.73,,0,8.92&layer=c&output=classic"
     },
     {
-        "id": "shareshill",
-        "name": "Shareshill Village Hall",
-        "enabled": false,
-        "address": "1 Elms Lane, Shareshill, Wolverhampton, WV10 7JS",
-        "area": "Wolverhampton",
-        "position": {
-            "lat": 52.654555,
-            "lng": -2.083299
-        },
-        "svUrl": "null"
-    },
-    {
         "id": "stchads",
         "name": "St Chad's Church Hall",
+        "nickname": "St Chad's",
         "enabled": true,
         "address": "Hollyfield Road, Sutton Coldfield, B75 7SN",
         "area": "Sutton Coldfield",
@@ -138,20 +118,9 @@
         "svUrl": "https://maps.google.co.uk/maps?q=B75+7SN&daddr=52.563132,-1.803415&hl=en&ll=52.563132,-1.803415&spn=0.001017,0.005681&sll=52.448356,-2.049567&sspn=0.002262,0.005681&gl=uk&hnear=Sutton+Coldfield+B75+7SN,+United+Kingdom&t=m&z=18&layer=c&cbll=52.563132,-1.803416&panoid=zJxqP22FUpCeKZull63CdA&cbp=11,291.59,,0,-3.48&output=classic"
     },
     {
-        "id": "bishopswood",
-        "name": "Bishops Wood Village Hall",
-        "enabled": false,
-        "address": "Ivetsey Bank Road, Bishops Wood, ST19 9AE",
-        "area": "Wolverhampton",
-        "position": {
-            "lat": 52.680328,
-            "lng": -2.24357
-        },
-        "svUrl": "null"
-    },
-    {
         "id": "pelsall",
         "name": "Pelsall Community Centre",
+        "nickname": "Pelsall",
         "enabled": true,
         "address": "Station Road, Pelsall, WS3 4BQ",
         "area": "Pelsall",
@@ -164,6 +133,7 @@
     {
         "id": "shelfield",
         "name": "Shelfield Community Acadamy Dance Studio",
+        "nickname": "Shelfield",
         "enabled": true,
         "address": "Broad Way, Pelsall, WS4 1BW",
         "area": "Pelsall",
@@ -189,44 +159,9 @@
         "svUrl": "http://maps.google.co.uk/maps?daddr=52.622933,-1.952139&cbll=52.622829,-1.95204&panoid=SYS1_v_1rT2GQMBmoOl0yA&cbp=12,50.34,,0,12.9&layer=c&output=classic"
     },
     {
-        "id": "stkenelmns",
-        "name": "St Kenelm's C of E Primary School",
-        "enabled": false,
-        "address": "Bromsgrove Road, Romsley, Halesowen, B62 0LF",
-        "area": "Halesowen",
-        "position": {
-            "lat": 52.414776,
-            "lng": -2.055044
-        },
-        "svUrl": "null"
-    },
-    {
-        "id": "moreton",
-        "name": "Moreton School",
-        "enabled": false,
-        "address": "Old Fallings Lane, Bushbury, Wolverhampton, WV10 8BY",
-        "area": "Wolverhampton",
-        "position": {
-            "lat": 52.616755,
-            "lng": -2.110544
-        },
-        "svUrl": "null"
-    },
-    {
-        "id": "fallingspark",
-        "name": "Fallings Park Methodist Church Hall",
-        "enabled": false,
-        "address": "Wimbourne Road, Wolverhampton, WV10 0NR",
-        "area": "Wolverhampton",
-        "position": {
-            "lat": 52.603113,
-            "lng": -2.102401
-        },
-        "svUrl": "null"
-    },
-    {
         "id": "claregate",
         "name": "Claregate Primary School",
+        "nickname": "Claregate",
         "enabled": true,
         "address": "Chester Avenue, Wolverhampton, WV6 9JU",
         "area": "Wolverhampton",
@@ -253,33 +188,6 @@
         "svUrl": "http://maps.google.co.uk/maps?q=WV6+9JU&ie=UTF8&hq=&hnear=Wolverhampton,+West+Midlands+WV6+9JU,+United+Kingdom&gl=uk&daddr=52.607608,-2.155166&ll=52.607608,-2.155166&spn=0.008196,0.016608&z=16&layer=c&cbll=52.607692,-2.155201&panoid=HNMvVtO0rR0bV_vVb7FYdg&cbp=12,135.58,,0,7.56&output=classic"
     },
     {
-        "id": "fellowshiphall",
-        "name": "Fellowship Hall",
-        "enabled": false,
-        "address": "South Parade, Off Upper Holland Road (Opposite Plantsbrooke School), Sutton Coldfield, B72 1QY",
-        "area": "Sutton Coldfield",
-      	"timetable":
-        [
-          {
-            "day": "Monday",
-            "time": 
-               [ { "startTime": "7:00pm", "duration": "60", "price": "5.50", "level": "NEW Beginners", "style": "Ballroom, Latin & Salsa" }, 
-                 { "startTime": "8:00pm", "duration": "60", "price": "5.50", "level": "Improvers",  "style": "Ballroom, Latin & Salsa" },
-                 { "startTime": "9:00pm", "duration": "60", "price": "5.50", "level": "Intermediate", "style": "Ballroom & Latin Practice" }
-               ]
-          }
-        ],
-        "closures": [
-        	"2014-04-21", "2014-05-26", "2014-08-18", "2014-08-25"
-        	
-        ],        
-        "position": {
-            "lat": 52.560435,
-            "lng": -1.820614
-        },
-        "svUrl": "https://maps.google.co.uk/maps?q=B72+1QU&daddr=52.560435,-1.820614&ll=52.560435,-1.820614&spn=0.002749,0.004807&client=safari&oe=UTF-8&hnear=Sutton+Coldfield+B72+1QU,+United+Kingdom&gl=uk&z=18&layer=c&cbll=52.560356,-1.820472&panoid=OGyUH_7NxQcXc_U1_8lW1A&cbp=12,211.06,,0,3.72&output=classic"
-    },
-    {
         "id": "cornbowhall",
         "name": "Cornbow Hall",
         "enabled": true,
@@ -294,6 +202,7 @@
     {
         "id": "halesowenrugbyclub",
         "name": "Old Halesonians Rugby Club",
+        "nickname": "Halesowen Rugby Club",
         "enabled": true,
         "address": "Wassell Grove Lane, Hagley, Stourbridge, DY9 9JP",
         "area": "Stourbridge",
@@ -322,6 +231,7 @@
     {
         "id": "lutley",
         "name": "Lutley Community Centre",
+        "nickname": "Lutley",
         "enabled": true,
         "address": "Brookwillow Road, Halesowen, B63 1BU",
         "area": "Halesowen",

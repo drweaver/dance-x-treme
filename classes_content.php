@@ -24,7 +24,8 @@ Our classes are held at safe, superb facilities at all our <a href="/venues">ven
 </dl>
 <hr/>
 	<div ng-controller="ClassController">
-		<div class="jumbotron">
+		<p ng-if="loading">Loading class timetables, dance shoes, please wait...</p>
+		<div class="jumbotron ng-cloak" ng-if="!loading">
 			<form class="form-inline">
 				<div class="row">
 					<div class="col-sm-1">
@@ -42,11 +43,12 @@ Our classes are held at safe, superb facilities at all our <a href="/venues">ven
 				</div>
 			</form>
 		</div>
+		
 		<div ng-repeat="data in dataArray | filter:query:false | orderBy:order" class="album-animate">
 			<h1 class="ng-cloak">{{data.index}}</h1>
-			<div ng-repeat="venue in data.venues | orderBy:'+name'" class="panel panel-default">
+			<div ng-repeat="venue in data.venues | orderBy:'+name'" class="panel panel-default ng-cloak">
 				<div class="panel-heading">
-					<h3 class="panel-title ng-cloak">{{venue.name}}</h3>
+					<h3 class="panel-title">{{venue.nickname || venue.name}}</h3>
 				</div>
 				<div class="panel-body">
 					<div class="row">
@@ -57,7 +59,7 @@ Our classes are held at safe, superb facilities at all our <a href="/venues">ven
 									<table class="table table-striped table-hover small">
 										<thead><tr><th>Time</th><th>Duration</th><th>Style</th><th>Level</th><th>Price</th></tr></thead>
 										<tbody>
-											<tr class="ng-cloak" ng-repeat="time in day.time"><td>{{time.startTime}}</td>
+											<tr ng-repeat="time in day.time"><td>{{time.startTime}}</td>
 												<td>{{time.duration}} mins</td>
 												<td>{{time.style}}</td>
 												<td>{{time.level}}</td>
@@ -70,7 +72,7 @@ Our classes are held at safe, superb facilities at all our <a href="/venues">ven
 						</div>
 						<!-- address column -->
 						<div class="col-xs-6 col-sm-4">
-							<address class="ng-cloak">
+							<address>
 								<strong>{{venue.name}}</strong><span ng-repeat="line in (venue.address | splitCommas ) track by $index"><br/>{{line}}</span></address>
 								<a ng-href="/venues#/venue/{{venue.id}}">View Map</a>
 						</div>

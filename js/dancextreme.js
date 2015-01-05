@@ -261,6 +261,7 @@ app.filter('splitCommas', function() {
 });
 
 app.controller('ClassController', function($scope, $http, $location) {
+    $scope.loading = true;
     $scope.dataArray = [];
     $scope.byArea = [];
     $scope.byDay = [];
@@ -306,7 +307,7 @@ app.controller('ClassController', function($scope, $http, $location) {
                venueForDay.timetable = [ t ];
                dMap[dKey].push(venueForDay);
             });     
-            var vKey = 'at '+venue.name;
+            var vKey = 'at '+ (venue.nickname || venue.name );
             if( !vMap[vKey] ) vMap[vKey] = [];
             vMap[vKey].push(venue);
         });
@@ -336,10 +337,12 @@ app.controller('ClassController', function($scope, $http, $location) {
                 } 
             }
         );
+        $scope.loading = false;
     });
 });
 
 app.controller('GalleryController', function ($scope, $http) {
+    $scope.loading = true;
     $http.get('data/dance_galleries.txt?_='+ new Date().getTime()).success(function(data) {
         $scope.query = 'latest';
         parseAndSortDate(data);
@@ -347,6 +350,7 @@ app.controller('GalleryController', function ($scope, $http) {
         $.each(data, function(index, value) { value.all = 'all'; });
         $scope.albums = data;
         $scope.canned = years(data).concat(['Pelsall', 'Coven', 'Tower', 'Cornbow', 'Latest', 'All' ]);
+        $scope.loading = false;
     });
     $scope.search = function(query) {
         $scope.query = query;  

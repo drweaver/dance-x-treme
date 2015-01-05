@@ -68,8 +68,8 @@
             <div class="carousel-caption">
               <h1>get status updates with your favourite social media</span></h1>
               <p></p>
-              <p><a class="btn btn-lg btn-primary" href="https://twitter.com/Dance_X_Treme" role="button">twitter</a>
-              <a class="btn btn-lg btn-primary" href="http://www.facebook.com/Dance.X.Treme.UK" role="button">facebook</a></p>
+              <p><a class="btn btn-lg btn-primary" href="https://twitter.com/Dance_X_Treme" role="button" target="_blank">twitter</a>
+              <a class="btn btn-lg btn-primary" href="http://www.facebook.com/Dance.X.Treme.UK" role="button" target="_blank">facebook</a></p>
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@
 	<div class="page-header"><h1>Gallery</h1></div>
 
 	<p>View photos from our social dance events.  Click or search for albums using the form below.</p>
+	<p ng-if="loading">Loading galleries, best dress, dance partner, please wait...</p>
 	<div ng-controller="GalleryController">
 		<div class="jumbotron ng-cloak">
 			<form class="form-inline">
@@ -19,8 +20,8 @@
 	    	</a>
 	      </div>
 	      <div class="panel-footer">
-	        <p class="small ng-cloak" style="min-height: 35px;" title="{{album.datePretty}}">{{album.name}}</p>
-	        <p><a ng-href="{{album.url}}" class="btn btn-default" role="button">View Album &raquo;</a></p>
+	        <p class="small" style="min-height: 35px;" title="{{album.datePretty}}">{{album.name}}</p>
+	        <p><a ng-href="{{album.url}}" target="_blank" class="btn btn-default" role="button">View Album &raquo;</a></p>
 	      </div>
 	    </div>
 	  </div>
@@ -35,7 +36,7 @@
 	foreach ($gallery_data as $g) {
 	    
 	    print('<table><tr><td>');
-		print('<a href="'.$g['url'].'"><img height="160" width="160" src="'.$g['thumbnail'].'"></a>');
+		print('<a href="'.$g['url'].'" target="_blank"><img height="160" width="160" src="'.$g['thumbnail'].'"></a>');
 		print('</td></tr><tr><td style="text-align:center;">');
 		print($g['name']);
 		print('</td></tr><tr><td style="text-align:center;">');
