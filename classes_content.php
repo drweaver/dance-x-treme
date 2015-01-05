@@ -35,9 +35,9 @@ Our classes are held at safe, superb facilities at all our <a href="/venues">ven
 						<button class="btn btn-primary" type="button" ng-click="searchByType('by-day', dayIndex)" ng-class="typeButtonClass('by-day')"style="margin: 4px;">By Day</button>
 						<button class="btn btn-primary" type="button" ng-click="searchByType('by-venue', '+index')" ng-class="typeButtonClass('by-venue')"style="margin: 4px;">By Venue</button>
 						<br/>
-						<button class="btn ng-cloak btn-sm" ng-if="query.type == 'by-area'" ng-class="data.btnClass" type="button" ng-click="search('by-area', data.index, '+index')" ng-repeat="data in byArea | orderBy:'+index'" style="margin: 4px;">{{data.index}}</button>
-						<button class="btn ng-cloak btn-sm" ng-if="query.type == 'by-day'" ng-class="data.btnClass" type="button" ng-click="search('by-day', data.index, dayIndex)" ng-repeat="data in byDay | orderBy:dayIndex" style="margin: 4px;">{{data.index}}</button>
-						<button class="btn ng-cloak btn-sm" ng-if="query.type == 'by-venue'" ng-class="data.btnClass" type="button" ng-click="search('by-venue', data.index, '+index')" ng-repeat="data in byVenue | orderBy:'+index'" style="margin: 4px;">{{data.index}}</button>
+						<button class="btn ng-cloak btn-sm album-animate" ng-if="query.type == 'by-area'" ng-class="data.btnClass" type="button" ng-click="search('by-area', data.index, '+index')" ng-repeat="data in byArea | orderBy:'+index'" style="margin: 4px;">{{data.index}}</button>
+						<button class="btn ng-cloak btn-sm album-animate" ng-if="query.type == 'by-day'" ng-class="data.btnClass" type="button" ng-click="search('by-day', data.index, dayIndex)" ng-repeat="data in byDay | orderBy:dayIndex" style="margin: 4px;">{{data.index}}</button>
+						<button class="btn ng-cloak btn-sm album-animate" ng-if="query.type == 'by-venue'" ng-class="data.btnClass" type="button" ng-click="search('by-venue', data.index, '+index')" ng-repeat="data in byVenue | orderBy:'+index'" style="margin: 4px;">{{data.index}}</button>
 					</div>
 				</div>
 			</form>
