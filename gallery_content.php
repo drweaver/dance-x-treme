@@ -1,14 +1,15 @@
 <div class="container">
 	
 	<div class="page-header"><h1>Gallery</h1></div>
-
 	<p>View photos from our social dance events.  Click or search for albums using the form below.</p>
-	<p ng-if="loading">Loading galleries, best dress, dance partner, please wait...</p>
+
+	<div class="alert alert-info" ng-if="loading"><div class="loader" >Loading...</div>Loading galleries, best dress, dance partner, please wait...</div>
+	
 	<div ng-controller="GalleryController">
-		<div class="jumbotron ng-cloak">
+		<div class="jumbotron ng-cloak" nf-if="!loading">
 			<form class="form-inline">
 			Search: <input ng-model="query" class="form-control form-inline">
-			<button class="btn btn-primary ng-cloak" type="button" ng-click="search(can)" ng-repeat="can in canned" style="margin: 4px;">{{can}}</button>
+			<button  class="btn btn-primary ng-cloak" type="button" ng-click="search(can)" ng-repeat="can in canned" style="margin: 4px;">{{can}}</button>
 			</form>
 		</div>
 	

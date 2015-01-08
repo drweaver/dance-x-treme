@@ -260,6 +260,7 @@ app.filter('splitCommas', function() {
   };
 });
 
+
 app.controller('ClassController', function($scope, $http, $location) {
     $scope.loading = true;
     $scope.dataArray = [];
@@ -291,7 +292,7 @@ app.controller('ClassController', function($scope, $http, $location) {
         return 'not-active';
     };
     $scope.searchByType('by-area', '+index');
-    $http.get('data/dance_venues.txt?_='+ new Date().getTime()).success(function(data) {
+    function load(data) {
         var aMap = {};
         var dMap = {};
         var vMap = {};
@@ -338,21 +339,13 @@ app.controller('ClassController', function($scope, $http, $location) {
             }
         );
         $scope.loading = false;
-    });
+    }
+    $http.get('data/dance_venues.txt?_='+ new Date().getTime()).success(load);
 });
 
 app.controller('GalleryController', function ($scope, $http) {
     $scope.loading = true;
-    $http.get('data/dance_galleries.txt?_='+ new Date().getTime()).success(function(data) {
-        $scope.query = 'latest';
-        parseAndSortDate(data);
-        $.each(data, function(index, value) { index < 8 ? value.latest = 'latest' : value.latest = 'oldest' });
-        $.each(data, function(index, value) { value.all = 'all'; });
-        $scope.albums = data;
-        $scope.canned = years(data).concat(['Pelsall', 'Coven', 'Tower', 'Cornbow', 'Latest', 'All' ]);
-        $scope.loading = false;
-    });
-    $scope.search = function(query) {
+        $scope.search = function(query) {
         $scope.query = query;  
     };
     
@@ -378,6 +371,16 @@ app.controller('GalleryController', function ($scope, $http) {
         });
         return yearsArray.sort().reverse();
     }
+    $http.get('data/dance_galleries.txt?_='+ new Date().getTime()).success(function(data) {
+        $scope.query = 'latest';
+        parseAndSortDate(data);
+        $.each(data, function(index, value) { index < 8 ? value.latest = 'latest' : value.latest = 'oldest' });
+        $.each(data, function(index, value) { value.all = 'all'; });
+        $scope.albums = data;
+        $scope.canned = years(data).concat(['Pelsall', 'Coven', 'Tower', 'Cornbow', 'Latest', 'All' ]);
+        $scope.loading = false;
+    });
+
     
 });
 
@@ -443,3 +446,4 @@ app.controller('SocialMediaImageController', function($scope, $interval) {
         $scope.selected = $scope.count % $scope.images.length;
     }, $scope.interval);
 });
+

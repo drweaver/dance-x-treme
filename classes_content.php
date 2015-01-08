@@ -24,7 +24,7 @@ Our classes are held at safe, superb facilities at all our <a href="/venues">ven
 </dl>
 <hr/>
 	<div ng-controller="ClassController">
-		<p ng-if="loading">Loading class timetables, dance shoes, please wait...</p>
+		<div class="alert alert-info" ng-if="loading"><div class="loader" >Loading...</div>Loading class timetables, dance shoes, good posture, please wait...</div>
 		<div class="jumbotron ng-cloak" ng-if="!loading">
 			<form class="form-inline">
 				<div class="row">
