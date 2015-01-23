@@ -4,7 +4,7 @@
 <div class="page-header">
     <h1>Classes</h1>
 </div>
-<p>Dance classes for all ages and abilities, couples and singles. We teach Ballroom and Latin with a great selection of music. 
+<p>Dance classes for adults of all ages and abilities, couples and singles. We teach Ballroom and Latin with a great selection of music. 
 Our classes are held at safe, superb facilities at all our <a href="/venues">venues</a>. <a href="/contact">Private lessons</a> are also available.</p>
 
 <dl class="dl-horizontal">
