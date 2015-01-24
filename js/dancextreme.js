@@ -328,11 +328,11 @@ app.controller('ClassController', function($scope, $http, $location) {
                 var results = /class\/(.*)/.exec(newVal);
                 if( results !== null ) {
                     var id = results[1];
-                    console.log(id);
+                    //console.log(id);
                     $.each(data, function(i,v) {
                        if( id === v.id ) {
                            var venueName = v.nickname || v.name;
-                           console.log( venueName );
+                           //console.log( venueName );
                            $scope.search('by-venue', 'at '+ venueName, '+index');
                            return false;
                        } 
