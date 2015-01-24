@@ -18,10 +18,12 @@ Our classes are held at safe, superb facilities at all our <a href="/venues">ven
   <dd>Yes, absolutely</dd>
   <dt>What shall I wear?</dt>
   <dd>Comfortable shoes and casual clothing</dd>
+  <dt>Do you teach children?</dt>
+  <dd>No, Adults only</dd>
   <dt>I have more questions</dt>
   <dd>Don't hestitate to <a href="/contact">contact us</a></dd>
-  
 </dl>
+
 <hr/>
 	<div ng-controller="ClassController">
 		<div class="alert alert-info" ng-if="loading"><div class="loader" >Loading...</div>Loading class timetables, dance shoes, good posture, please wait...</div>

@@ -330,8 +330,10 @@ app.controller('ClassController', function($scope, $http, $location) {
                     var id = results[1];
                     console.log(id);
                     $.each(data, function(i,v) {
-                       if( v.id == id ) {
-                           $scope.search('by-venue', 'at '+v.name, '+index');
+                       if( id === v.id ) {
+                           var venueName = v.nickname || v.name;
+                           console.log( venueName );
+                           $scope.search('by-venue', 'at '+ venueName, '+index');
                            return false;
                        } 
                     });
