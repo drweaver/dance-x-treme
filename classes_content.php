@@ -69,7 +69,15 @@ Our classes are held at safe, superb facilities at all our <a href="/venues">ven
 											</tr>
 										</tbody>
 									</table>
-							
+									<div ng-init="validClosures = (venue.closures | closureFilter:day.day | orderBy:getTime)">
+										<div class="alert alert-danger" role="alert" ng-if="validClosures.length" >
+											<span ng-repeat="closure in validClosures">
+												<span ng-if="$first">{{day.day}} classes at {{venue.nickname || venue.name}} will be closed on </span>
+												<span ng-if="$last && !$first"> &amp; </span><span ng-if="!$last && !$first">, </span>
+												{{closure | date:'d-MMM-yyyy'}}</span>
+										</div>
+									</div>
+										
 							</div>
 						</div>
 						<!-- address column -->

@@ -260,6 +260,21 @@ app.filter('splitCommas', function() {
   };
 });
 
+app.filter('closureFilter', function($filter) {
+    
+    var cutoffTime = new Date().getTime() - 259200000;
+    
+    return function(dates, dayFilter) {
+        var validClosures = [];
+        $.each(dates, function(i,date) {
+           if( DateUtil.sameDOW(date, dayFilter) && DateUtil.parse(date).getTime() > cutoffTime ) {
+               validClosures.push(date);
+           }
+        });
+        return validClosures;
+    };
+});
+
 
 app.controller('ClassController', function($scope, $http, $location) {
     $scope.loading = true;
@@ -290,6 +305,9 @@ app.controller('ClassController', function($scope, $http, $location) {
         if( $scope.query.index == index ) 
             return 'active';
         return 'not-active';
+    };
+    $scope.getTime = function(dateString) {
+        return DateUtil.parse(dateString).getTime();
     };
     $scope.searchByType('by-area', '+index');
     function load(data) {
