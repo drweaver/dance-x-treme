@@ -1,7 +1,7 @@
 <div class="container">
 	
 <div class="page-header">
-    <h1>Contact US</h1>
+    <h1>Contact Us</h1>
     </div>
 <p>Contact Sue or George anytime at</p>
 <dl class="dl-horizontal">
