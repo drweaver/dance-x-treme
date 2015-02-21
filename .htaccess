@@ -28,9 +28,15 @@ ErrorDocument 404 /404.php
 
     <Files ~ "_(content|head).php$">
      order allow,deny
-     deny from all #Prevent directory listings
+     deny from all 
     </Files>
 
+    <Files README.md>
+     order allow,deny
+     deny from all
+    </Files>
+
+    #Prevent directory listings
     Options All -Indexes
 
     # This will redirect you from http:#www.example.com/username to 
