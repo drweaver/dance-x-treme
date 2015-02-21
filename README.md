@@ -2,7 +2,7 @@
 
 Code used for [Dance-X-Treme](www.dance-x-treme.co.uk) website.
 
-Making heavy use of [Bootstrap](https://getbootstrap.com) and [Angular](https://angularjs.org).
+Making heavy use of [Bootstrap](http://getbootstrap.com) and [Angular](https://angularjs.org).
 
 
 ## Validating JSON files
