@@ -15,3 +15,8 @@ Validate:
 
 `for i in data/*; do echo Validating $i; jsonlint -q $i; done`
 
+## To Do
+
+* Automated test for testing JSON validity
+* Continuous Integration (at least for JSON file validation)
+* Automated deployment (tagged releases only?)
