@@ -10,7 +10,7 @@
 <?php
 $venues_data = json_decode( file_get_contents('data/dance_venues.txt'), true );
 
-$key_param='&key=AIzaSyAzo-Q6qXNjbhaTknSH9K7lsZnlgAkhV3I';
+$key_param='&key=AIzaSyAnZG8goK-RU8FGq6MCS31bjgYzi5YF_rQ';
 
 $markers = '';
 $sep = '';
