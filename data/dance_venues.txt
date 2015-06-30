@@ -143,7 +143,7 @@
             "day": "Tuesday",
             "time": 
                [ { "startTime": "7:00pm", "duration": "45", "price": "5.00", "level": "New Beginners", "style": "Ballroom & Latin" }, 
-                 { "startTime": "7:45pm", "duration": "60", "price": "5.00", "level": "Advanced",  "style": "Ballroom & Latin" }
+                 { "startTime": "7:45pm", "duration": "60", "price": "5.50", "level": "Advanced",  "style": "Ballroom & Latin" }
                ]
           }
         ],         
@@ -219,7 +219,7 @@
           }
         ],     
         "closures": [
-        	"2014-07-29", "2014-08-05", "2014-08-12"
+        	"2015-08-25"
         	
         ],        
         "position": {
