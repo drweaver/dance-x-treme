@@ -17,6 +17,7 @@ body {
 }
 
 
+
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
@@ -293,6 +294,11 @@ table.class-timetable tr td  {
 
 #gmap { 
     height: 700px; width: 95% 
+}
+
+.angular-google-map-container { 
+  height: 700px; 
+  width: 95%;
 }
 
 

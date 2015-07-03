@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-controller="venueController">
 	
 <div class="page-header">
 <h1>Venues</h1>
@@ -6,6 +6,9 @@
 <p>Find venues where we host dance classes and social events below.</p>
 <div id="venue-map-loading" class="hidden"><img src="img/spinner.gif"/> Loading...</div>
 <div id="venue-map">
+	<ui-gmap-google-map center='map.center' zoom='map.zoom' options='options' control="mapControl">
+		<ui-gmap-markers models="venues" idkey="id" coords="'position'" icon="'icon'" click="markerClick" control="markerControl"></ui-gmap-markers>
+	</ui-gmap-google-map>
 <noscript>
 <?php
 $venues_data = json_decode( file_get_contents('data/dance_venues.txt'), true );

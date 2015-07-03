@@ -249,10 +249,10 @@ var Venue = {
 };
 
 $(document).ready(function() {
-    Venue.init();
+    //Venue.init();
 });
 
-var app = angular.module('dancextremeApp', [ 'ngAnimate']);
+var app = angular.module('dancextremeApp', [ 'ngAnimate', 'uiGmapgoogle-maps']);
 
 app.filter('splitCommas', function() {
   return function(text) {
@@ -274,6 +274,63 @@ app.filter('closureFilter', function($filter) {
         return validClosures;
     };
 });
+
+app.controller('venueController', function($scope, $http, $location, uiGmapIsReady) {
+
+    $scope.map = { center: { latitude: 52.5530, longitude: -2.0393 }, zoom: 10 };
+    $scope.options = {scrollwheel: false};
+    $scope.venues = [];
+    $scope.mapControl = {};
+    $scope.markerControl = {};
+
+    var infoWindow = new google.maps.InfoWindow();
+    
+    $scope.markerClick = function(marker, event, obj) {
+      obj.showInfoWindow();
+    };
+    
+    function load(data) {
+        $.each(data, function(index,venue) {
+            if( !venue.enabled || !venue.timetable ) return true; // continue
+            venue.showInfoWindow = function() {
+                var contentString = "<img src='img/dance-x-treme-small.jpg'/>" +
+                    "<p><b>" + venue.name + "</b><br/>" +
+                    venue.address + "<br/>" +
+                    "<a target=\"_blank\" href=\"" + venue.svUrl + "\">Get Directions</a>" +
+                    "</p>";
+                if (venue.timetable && venue.timetable.length) {
+                    contentString = contentString + "<p><a href=\"classes#/class/" + venue.id + "\">Class timetable</a></p>";
+                }
+                infoWindow.setContent(contentString);
+                infoWindow.open($scope.mapControl.getGMap(), $scope.markerControl.getPlurals().get(venue.id).gObject);
+            };
+            $scope.venues.push(venue);
+        });
+        
+
+        
+        uiGmapIsReady.promise(1).then(function(instances) {
+            $scope.$watch(
+                function() {
+                return $location.path();
+            },
+            function(newVal, oldVal) {
+                var results = /venue\/(.*)/.exec(newVal);
+                if (results !== null) {
+                    var id = results[1];
+                     $scope.markerControl.getPlurals().get(id).model.showInfoWindow();
+                }
+            }
+        );
+        });
+    
+    };
+    
+    $http.get('data/dance_venues.txt?_='+ new Date().getTime()).success(load);
+
+
+});
+
 
 
 app.controller('ClassController', function($scope, $http, $location) {

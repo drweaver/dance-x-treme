@@ -31,8 +31,8 @@
         	
         ],
         "position": {
-            "lat": 52.66024,
-            "lng": -2.137742
+            "latitude": 52.66024,
+            "longitude": -2.137742
         },
         "svUrl": "http://maps.google.co.uk/maps?daddr=52.66024,-2.137742&cbll=52.660204,-2.137706&panoid=SaKUJm5GwMHotdvntDzX1w&cbp=12,350.26,,0,5.35&layer=c&output=classic"
     },
@@ -58,8 +58,8 @@
         	"2015-08-30", "2015-10-11"
         ],  
         "position": {
-            "lat": 52.556929,
-            "lng": -1.935761
+            "latitude": 52.556929,
+            "longitude": -1.935761
         },
         "svUrl": "http://maps.google.co.uk/maps?daddr=52.556929,-1.935761&cbll=52.556939,-1.935705&panoid=Nfaov5rS-WW9SprwHYhQwg&cbp=12,322.06,,0,17.04&layer=c&output=classic"
     },
@@ -85,8 +85,8 @@
         	"2015-08-20", "2015-08-27"
         ],  
         "position": {
-            "lat": 52.5807768,
-            "lng": -1.9756287
+            "latitude": 52.5807768,
+            "longitude": -1.9756287
         },
         "svUrl": "http://maps.google.co.uk/maps?daddr=52.5807768,-1.9756287&cbll=52.580741,-1.975667&panoid=pPAfDZH5RBvKXKN7Sp1-8Q&cbp=12,13.73,,0,8.92&layer=c&output=classic"
     },
@@ -112,8 +112,8 @@
         ],        
          
         "position": {
-            "lat": 52.564114,
-            "lng": -1.804075
+            "latitude": 52.564114,
+            "longitude": -1.804075
         },
         "svUrl": "https://maps.google.co.uk/maps?q=B75+7SN&daddr=52.563132,-1.803415&hl=en&ll=52.563132,-1.803415&spn=0.001017,0.005681&sll=52.448356,-2.049567&sspn=0.002262,0.005681&gl=uk&hnear=Sutton+Coldfield+B75+7SN,+United+Kingdom&t=m&z=18&layer=c&cbll=52.563132,-1.803416&panoid=zJxqP22FUpCeKZull63CdA&cbp=11,291.59,,0,-3.48&output=classic"
     },
@@ -125,8 +125,8 @@
         "address": "Station Road, Pelsall, WS3 4BQ",
         "area": "Pelsall",
         "position": {
-            "lat": 52.627305,
-            "lng": -1.965877
+            "latitude": 52.627305,
+            "longitude": -1.965877
         },
         "svUrl": "http://maps.google.co.uk/maps?daddr=52.627305,-1.965877&cbll=52.627207,-1.965807&panoid=SzU8h26nq6--wUWy0NBCRg&cbp=12,64.14,,0,6.6&layer=c&output=classic"
     },
@@ -153,8 +153,8 @@
         ],        
         
         "position": {
-            "lat": 52.622933,
-            "lng": -1.952139
+            "latitude": 52.622933,
+            "longitude": -1.952139
         },
         "svUrl": "http://maps.google.co.uk/maps?daddr=52.622933,-1.952139&cbll=52.622829,-1.95204&panoid=SYS1_v_1rT2GQMBmoOl0yA&cbp=12,50.34,,0,12.9&layer=c&output=classic"
     },
@@ -182,8 +182,8 @@
         	
         ],        
         "position": {
-            "lat": 52.607608,
-            "lng": -2.155166
+            "latitude": 52.607608,
+            "longitude": -2.155166
         },
         "svUrl": "http://maps.google.co.uk/maps?q=WV6+9JU&ie=UTF8&hq=&hnear=Wolverhampton,+West+Midlands+WV6+9JU,+United+Kingdom&gl=uk&daddr=52.607608,-2.155166&ll=52.607608,-2.155166&spn=0.008196,0.016608&z=16&layer=c&cbll=52.607692,-2.155201&panoid=HNMvVtO0rR0bV_vVb7FYdg&cbp=12,135.58,,0,7.56&output=classic"
     },
@@ -194,8 +194,8 @@
         "address": "10 Hagley Street, Town Centre, Halesowen, B63 3AF",
         "area": "Halesowen",
         "position": {
-            "lat": 52.448359,
-            "lng": -2.049567
+            "latitude": 52.448359,
+            "longitude": -2.049567
         },
         "svUrl": "https://maps.google.co.uk/maps?q=B63+3AF&hl=en&daddr=52.448359,-2.049567&ll=52.448359,-2.049567&spn=0.001244,0.004807&sll=52.433871,-2.109519&sspn=0.003899,0.009613&gl=uk&hnear=B63+3AF,+United+Kingdom&z=18&layer=c&cbll=52.448356,-2.049565&panoid=H0zsEBGe7Erxf1vN0QRJhw&cbp=11,256.68,,0,1.1&output=classic"
     },
@@ -223,8 +223,8 @@
         	
         ],        
         "position": {
-            "lat": 52.433871,
-            "lng": -2.109519
+            "latitude": 52.433871,
+            "longitude": -2.109519
         },
         "svUrl": "https://maps.google.co.uk/maps?q=rugby+club+near+Halesowen&hl=en&daddr=52.433871,-2.109519&ll=52.433871,-2.109519&spn=0.003872,0.009613&sll=52.560356,-1.820474&sspn=0.002749,0.004807&oq=halesowen+rugby+club&gl=uk&hq=rugby+club&hnear=Halesowen,+West+Midlands,+United+Kingdom&fll=52.433154,-2.10651&fspn=0.003872,0.009613&z=17&layer=c&cbll=52.433871,-2.109519&panoid=gTj3ktwqh_2rCJynlHqnGQ&cbp=12,116.42,,0,1.38&output=classic"
     },
@@ -251,8 +251,8 @@
         	"2015-08-23", "2015-08-30" 
         ],         
         "position": {
-            "lat": 52.440708,
-            "lng": -2.074977
+            "latitude": 52.440708,
+            "longitude": -2.074977
         },
         "svUrl": "https://maps.google.co.uk/maps?q=lutley+community+centre&hl=en&daddr=52.440708,-2.074977&ll=52.440708,-2.074977&spn=0.005036,0.011362&sll=52.440709,-2.074978&sspn=0.003579,0.005681&hq=lutley+community+centre&z=17&layer=c&cbll=52.440708,-2.074977&panoid=uEOPoD2wC27JK-3K57ph0g&cbp=12,265.67,,0,3.65&output=classic"
     },
@@ -278,8 +278,8 @@
         	
         ],        
         "position": {
-            "lat": 52.564125,
-            "lng": -1.824436
+            "latitude": 52.564125,
+            "longitude": -1.824436
         },
         "svUrl": "https://maps.google.co.uk/maps?q=52.564125,-1.824436&hl=en&ll=52.564125,-1.824436&spn=0.002824,0.005595&sll=52.563825,-1.824317&layer=c&cbp=13,166.44,,0,0&cbll=52.564125,-1.824436&gl=uk&t=m&z=18&iwloc=A&panoid=N6PlwXozBHBrprbdcgfDsA&output=classic"
 
