@@ -248,9 +248,8 @@ var Venue = {
     }
 };
 
-$(document).ready(function() {
-    //Venue.init();
-});
+
+
 
 var app = angular.module('dancextremeApp', [ 'ngAnimate', 'uiGmapgoogle-maps']);
 
@@ -282,6 +281,8 @@ app.controller('venueController', function($scope, $http, $location, uiGmapIsRea
     $scope.venues = [];
     $scope.mapControl = {};
     $scope.markerControl = {};
+    $scope.aMap = {};
+    $scope.loading = true;
 
     var infoWindow = new google.maps.InfoWindow();
     
@@ -290,6 +291,7 @@ app.controller('venueController', function($scope, $http, $location, uiGmapIsRea
     };
     
     function load(data) {
+        $scope.aMap['All'] = new google.maps.LatLngBounds();
         $.each(data, function(index,venue) {
             if( !venue.enabled || !venue.timetable ) return true; // continue
             venue.showInfoWindow = function() {
@@ -304,6 +306,9 @@ app.controller('venueController', function($scope, $http, $location, uiGmapIsRea
                 infoWindow.setContent(contentString);
                 infoWindow.open($scope.mapControl.getGMap(), $scope.markerControl.getPlurals().get(venue.id).gObject);
             };
+            if( !$scope.aMap[venue.area] ) $scope.aMap[venue.area] = new google.maps.LatLngBounds();
+            $scope.aMap[venue.area].extend(new google.maps.LatLng(venue.position.latitude, venue.position.longitude));
+            $scope.aMap['All'].extend(new google.maps.LatLng(venue.position.latitude, venue.position.longitude));
             $scope.venues.push(venue);
         });
         
@@ -321,7 +326,18 @@ app.controller('venueController', function($scope, $http, $location, uiGmapIsRea
                      $scope.markerControl.getPlurals().get(id).model.showInfoWindow();
                 }
             }
-        );
+            );
+            $scope.fitBounds = function(bounds) {
+                  var map = $scope.mapControl.getGMap();
+                  map.fitBounds(bounds);
+                    if (map.getZoom() > 15) {
+                        map.setZoom(15);
+                    } else {
+                        map.setZoom(map.getZoom() - 1);
+                    }
+            };
+            
+            $scope.loading = false;
         });
     
     };

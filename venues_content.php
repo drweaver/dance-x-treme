@@ -6,6 +6,9 @@
 <p>Find venues where we host dance classes and social events below.</p>
 <div id="venue-map-loading" class="hidden"><img src="img/spinner.gif"/> Loading...</div>
 <div id="venue-map">
+	<span ng-if="!loading">Zoom to:
+		<button class="btn ng-cloak btn-sm btn-warning" type="button" ng-repeat="(area, bounds) in aMap" ng-click="fitBounds(bounds)"  style="margin: 4px;">{{area}}</button>
+	</span>
 	<ui-gmap-google-map center='map.center' zoom='map.zoom' options='options' control="mapControl">
 		<ui-gmap-markers models="venues" idkey="id" coords="'position'" icon="'icon'" click="markerClick" control="markerControl"></ui-gmap-markers>
 	</ui-gmap-google-map>
