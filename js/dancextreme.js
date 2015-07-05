@@ -276,7 +276,7 @@ app.controller('GalleryController', function ($scope, $http) {
     
 });
 
-var g_api_key = 'AIzaSyAzo-Q6qXNjbhaTknSH9K7lsZnlgAkhV3I';
+var g_api_key = 'AIzaSyAnZG8goK-RU8FGq6MCS31bjgYzi5YF_rQ';
 
 app.factory('getNextEvent', ['$http',
   function($http) {
