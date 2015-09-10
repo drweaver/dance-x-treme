@@ -11,7 +11,7 @@
           {
             "day": "Monday",
             "time": 
-               [ { "startTime": "7:00pm", "duration": "45", "price": "4.50", "level": "Improvers", "style": "Ballroom & Latin" }, 
+               [ { "startTime": "7:00pm", "duration": "45", "price": "4.50", "level": "Beginners", "style": "Ballroom & Latin" }, 
                  { "startTime": "7:45pm", "duration": "45", "price": "4.50", "level": "Intermediate",  "style": "Ballroom & Latin" },
                  { "startTime": "8:30pm", "duration": "45", "price": "4.50", "level": "Higher Intermediate",  "style": "Ballroom & Latin" },
                  { "startTime": "9:15pm", "duration": "45", "price": "4.50", "level": "Advanced", "style": "Ballroom & Latin" }
@@ -105,6 +105,13 @@
                [ { "startTime": "8:00pm", "duration": "60", "price": "5.50", "level": "Improvers", "style": "Ballroom, Latin & Salsa" }, 
                  { "startTime": "9:00pm", "duration": "60", "price": "5.50", "level": "Intermediate",  "style": "Ballroom, Latin & Salsa" }
                ]
+          },
+          {
+            "day": "Tuesday",
+            "time": 
+               [ { "startTime": "7:30pm", "duration": "60", "price": "5.50", "level": "Beginners", "style": "Ballroom & Latin" }, 
+                 { "startTime": "8:30pm", "duration": "60", "price": "5.50", "level": "Intermediate",  "style": "Ballroom & Latin" }
+               ]
           }
         ],         
         "closures": [
@@ -134,7 +141,7 @@
         "id": "shelfield",
         "name": "Shelfield Community Acadamy Dance Studio",
         "nickname": "Shelfield",
-        "enabled": true,
+        "enabled": false,
         "address": "Broad Way, Pelsall, WS4 1BW",
         "area": "Pelsall",
       	"timetable":
@@ -170,10 +177,10 @@
           { 
             "day": "Sunday",
             "time": 
-               [ { "startTime": "6:15pm", "duration": "60", "price": "5.50", "level": "New Beginners", "style": "Ballroom, Latin & Salsa" }, 
-                 { "startTime": "7:15pm", "duration": "60", "price": "5.50", "level": "Improvers",  "style": "Ballroom, Latin & Salsa" },
-                 { "startTime": "8:15pm", "duration": "60", "price": "5.50", "level": "Intermediate", "style": "Ballroom, Latin & Salsa" },
-                 { "startTime": "9:15pm", "duration": "45", "price": "4.50", "level": "Advanced", "style": "Ballroom, Latin & Salsa" }
+               [ { "startTime": "5:30pm", "duration": "45", "price": "4.50", "level": "New Beginners", "style": "Ballroom, Latin & Salsa" }, 
+                 { "startTime": "6:15pm", "duration": "60", "price": "5.50", "level": "Improvers",  "style": "Ballroom, Latin & Salsa" },
+                 { "startTime": "7:15pm", "duration": "60", "price": "5.50", "level": "Intermediate", "style": "Ballroom, Latin & Salsa" },
+                 { "startTime": "8:15pm", "duration": "60", "price": "5.50", "level": "Advanced", "style": "Ballroom, Latin & Salsa" }
                ]        
           }
         ],    
@@ -259,7 +266,7 @@
 	{
 		"id": "unitedreformedchurch",
         "name": "United Reformed Church",
-        "enabled": true,
+        "enabled": false,
         "address": "1 Brassington Avenue, Sutton Coldfield, B73 6AA",
         "area": "Sutton Coldfield",
       	"timetable":
