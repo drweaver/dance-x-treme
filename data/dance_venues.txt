@@ -169,7 +169,7 @@
         "id": "claregate",
         "name": "Claregate Primary School",
         "nickname": "Claregate",
-        "enabled": true,
+        "enabled": false,
         "address": "Chester Avenue, Wolverhampton, WV6 9JU",
         "area": "Wolverhampton",
         "timetable":
