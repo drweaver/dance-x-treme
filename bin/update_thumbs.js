@@ -108,7 +108,7 @@ async.eachSeries(albums, updateThumbnail, function(err) {
 
         var outputFilename = 'fixed_thumbs.json';
         
-        fs.writeFile(outputFilename, require('util').inspect(albums), function(err) {
+        fs.writeFile(outputFilename, JSON.stringify(albums, null, 4), function(err) {
             if (err) {
                 console.log(err);
             }
