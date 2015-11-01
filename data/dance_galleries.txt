@@ -1,5 +1,11 @@
 [
     {
+        "url": "https://picasaweb.google.com/102655605108622752347/HalloweenCoven2015?authuser=0&authkey=Gv1sRgCNCmhZ3c6pnNbw&feat=embedwebsite&noredirect=1",
+        "thumbnail": "https://lh3.googleusercontent.com/-5iLOVksaJgc/VjXKXKRBOkE/AAAAAAABowA/X0GqQz0-Hcs/s160-c-Ic42/HalloweenCoven2015.jpg",
+        "name": "Halloween Dance at Coven",
+        "date": "2015-10-30"
+    },
+    {
         "url": "https://picasaweb.google.com/102655605108622752347/TropicalDanceCornbow4715?authuser=0&authkey=Gv1sRgCLzf9bvEzuTYTQ&noredirect=1",
         "thumbnail": "https://lh3.googleusercontent.com/-HEUXeObYdMc/VZk1KIZ-zAE/AAAAAAABnuw/X4D1TF5zeuU/s160-c-Ic42/TropicalDanceCornbow4715.jpg",
         "name": "Tropical Dance at Cornbow",
