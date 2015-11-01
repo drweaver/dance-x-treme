@@ -108,12 +108,6 @@
         "date": "2013-11-02"
     },
     {
-        "url": "https://picasaweb.google.com/102655605108622752347/DanceAThonClaregate26102013?authuser=0&authkey=Gv1sRgCJCx_6j74rnw1gE&feat=embedwebsite&noredirect=1",
-        "thumbnail": "https://lh3.googleusercontent.com/-NTzPvfOh304/Umw1ekS0j8E/AAAAAAABnuw/EVmF-MYIHGA/s160-c-Ic42/DanceAThonClaregate26102013.jpg",
-        "name": "Dance-A-Thon - Claregate",
-        "date": "2013-10-26"
-    },
-    {
         "url": "https://picasaweb.google.com/dance.x.treme.uk/MasqueradeBallPelsall2013?authuser=0&authkey=Gv1sRgCK_3t5yX2YT7jQE&feat=embedwebsite&noredirect=1",
         "thumbnail": "https://lh3.googleusercontent.com/-c5E5klHBt9M/UeHyBA3LhbE/AAAAAAABnuw/x-10j18wItk/s160-c-Ic42/MasqueradeBallPelsall2013.jpg",
         "name": "Masquerade Ball - Pelsall",
