@@ -37,15 +37,41 @@
 	<?php 
 	if(isset($_GET['_escaped_fragment_'])){
 		$escaped_fragment = $_GET['_escaped_fragment_'];
+		if( $escaped_fragment == '' ) {
 		?>
-		
 		<a class="btn btn-primary" type="button" href="#!/by-area" style="margin: 4px;" role="button">By Location</a>
 		<a class="btn btn-primary" type="button" href="#!/by-day"  style="margin: 4px;" role="button">By Day</a>
 		<a class="btn btn-primary" type="button" href="#!/by-venue" style="margin: 4px;" role="button">By Venue</a> 
-		
+		<br>
 		<?php
+		}
+		$print_day = function($d) {
+			print('<br/><h3>'.$d['day'].'s</h3>');
+			print('<table class="class-timetable">');
+			print('<tr><th>Time</th><th>Duration</th><th>Style</th><th>Level</th><th>Price</th></tr>');
+			$i=0;
+			foreach ($d['time'] as $t) {
+				$style = '';
+				$i = $i+1;
+				if( $i % 2 == 0 ) $style = 'alt';
+			    print('<tr class="'.$style.'"><td>'.$t['startTime'].'</td>');
+				print('<td>'.$t['duration'].' mins</td>');
+				print('<td>'.$t['style'].'</td>');
+				print('<td>'.$t['level'].'</td>');
+				print('<td>&pound;'.$t['price'].'</td></tr>');
+			}
+			print('</table>');
+		};
 		
 		$venues_data = json_decode( file_get_contents('data/dance_venues.txt'), true );
+		
+		$areas = [];
+		$venues = [];
+		$days = [];
+		
+		$make_path = function($v) {
+			return str_replace(" ", "-", strtolower($v));
+		};
 		
 		foreach ($venues_data as $g) {
 			if( $g['enabled'] == FALSE )
@@ -53,29 +79,46 @@
 			if( !array_key_exists('timetable', $g) )
 				continue;
 				
-			/**
-			print('<br/><h2 id="/class/'.$g['id'].'">'.$g['name'].'</h2>');
-			print('<h3>'.$g['area'].' Area</h3>');
-			foreach( $g['timetable'] as $day)
-				print_day($day);
-			if( array_key_exists('closures', $g) and count($g['closures']) > 0) {
-				print('<p><b>Closure Dates: </b>');
-				$c = '';
-				$sep = '';
-				foreach($g['closures'] as $closed ) {
-					$c = $c . $sep . $closed;
-					$sep = ', ';
-				}
-				print($c.'</p>');
+			$areas[$g['area']] = true;
+			$venues[$g['name']] = true;
+			foreach( $g['timetable'] as $day) {
+				$days[$day['day'].'s'] = true;
 			}
-			print('<p>'.$g['address'].'</p>');
-			print('<p><a href="venues#/venue/'.$g['id'].'">View Map</a></p>');
-			*/
+				
+			$area_path = '/by-area/in-'.$make_path($g['area']);
+			$venue_path = '/by-venue/at-'.$make_path($g['name']);
+			if( strcmp( $escaped_fragment, $area_path) == 0 || strcmp( $escaped_fragment, $venue_path) == 0 ) {
+				print('<br/>'.$g['name'].'</h2><h3>'.$g['area'].' Area</h3>');
+				foreach( $g['timetable'] as $day)
+					print_day($day);
+				print('<p>'.$g['address'].'</p><p><a href="venues#/venue/'.$g['id'].'">View Map</a></p>');
+			} else {
+				foreach( $g['timetable'] as $day) {
+					$day_path = '/by-day/on-'.$make_path($day['day'].'s');
+					if( strcmp( $escaped_fragment, $day_path ) == 0 ) {
+						print('<br/>'.$g['name'].'</h2><h3>'.$g['area'].' Area</h3>');
+						print_day($day);
+						print('<p>'.$g['address'].'</p><p><a href="venues#/venue/'.$g['id'].'">View Map</a></p>');
+					}
+				}
+			}
+			
+		}
+
+		
+		switch($escaped_fragment) {
+			case '/by-area':
+				foreach(array_keys($areas) as $a) print('<a class="btn btn-primary" type="button" href="#!/by-area/in-'.$make_path($a).'">'.$a.'</a> ');
+				break;
+			case '/by-venue': 
+				foreach(array_keys($venues) as $v) print('<a class="btn btn-primary" type="button" href="#!/by-venue/at-'.$make_path($v).'">'.$v.'</a> ');	
+				break;
+			case '/by-day': 
+				foreach(array_keys($days) as $d) print('<a class="btn btn-primary" type="button" href="#!/by-day/on-'.$make_path($d).'">'.$d.'</a> ');	
+				break;
 		}
 		
 	} else {
-		//include( 'class_controller.php');
-	}
 	?>
 
 	<div ng-controller="ClassController">
@@ -145,6 +188,11 @@
 			</div>
 		</div>
 	</div>
+	<?php
+	}
+	?>
+	
+	
 <div class="panel-group ng-cloak" id="accordion" role="tablist" aria-multiselectable="true">
 
 </div>
