@@ -52,6 +52,10 @@ var MOY = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct',
 
 var app = angular.module('dancextremeApp', [ 'ngAnimate', 'uiGmapgoogle-maps']);
 
+app .config(function($locationProvider) {
+  $locationProvider.html5Mode(false).hashPrefix('!');
+});
+
 app.filter('splitCommas', function() {
   return function(text) {
     return text.split(/,/g);
@@ -155,18 +159,15 @@ app.controller('ClassController', function($scope, $http, $location) {
     $scope.byDay = [];
     $scope.byVenue = [];
     $scope.order = '';
-    var dayOrder = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    $scope.query = { type: "unset"};
+    var dayOrder = ['on-sundays', 'on-mondays', 'on-tuesdays', 'on-wednesdays', 'on-thursdays', 'on-fridays', 'on-saturdays'];
     $scope.dayIndex = function(data) {
-        var dayStripped = data.index.replace(/^on /, '').replace(/s$/, '');
-        return dayOrder.indexOf(dayStripped);
+        return dayOrder.indexOf(data.index);
     };
-    $scope.search = function(type, query, order) {
-        $scope.query = { type: type, index: query };
-        $scope.order = order;
-    };
-    $scope.searchByType = function(query, order) {
-        $scope.query = { type: query };
-        $scope.order = order;
+    $scope.search = function(type, query) {
+        $scope.query = { type: type };
+        if( query !== undefined ) $scope.query.index = query;
+        $scope.order = type == 'by-day' ? $scope.dayIndex : '+index';
     };
     $scope.typeButtonClass = function(type) {
         if( $scope.query.type == type ) 
@@ -181,7 +182,7 @@ app.controller('ClassController', function($scope, $http, $location) {
     $scope.getTime = function(dateString) {
         return DateUtil.parse(dateString).getTime();
     };
-    $scope.searchByType('by-area', '+index');
+    //$scope.search('by-area');
     function load(data) {
         var aMap = {};
         var dMap = {};
@@ -202,34 +203,37 @@ app.controller('ClassController', function($scope, $http, $location) {
             if( !vMap[vKey] ) vMap[vKey] = [];
             vMap[vKey].push(venue);
         });
+        var makePath = function(index) {
+            return index.replace(/ /g, "-").toLowerCase();
+        };
         $.each( aMap, function(i,v) {
-           $scope.byArea.push( { index: i, venues: v, btnClass: 'btn-warning', type: 'by-area' } );
+           $scope.byArea.push( { name: i, venues: v, btnClass: 'btn-warning', type: 'by-area', index: makePath(i) } );
         });
         $.each( dMap, function(i,v) {
-           $scope.byDay.push( { index: i, venues: v, btnClass: 'btn-info', type: 'by-day' } );
+           $scope.byDay.push( { name: i, venues: v, btnClass: 'btn-info', type: 'by-day', index: makePath(i) } );
         });
         $.each( vMap, function(i,v) {
-           $scope.byVenue.push( { index: i, venues: v, btnClass: 'btn-success', type: 'by-venue' } );
+           $scope.byVenue.push( { name: i, venues: v, btnClass: 'btn-success', type: 'by-venue', index: makePath(i) } );
         });
         $scope.dataArray = $scope.byArea.concat($scope.byDay).concat($scope.byVenue);
         $scope.$watch(
             function() {return $location.path();},
             function(newVal, oldVal) {
-                var results = /class\/(.*)/.exec(newVal);
-                if( results !== null ) {
-                    var id = results[1];
-                    //console.log(id);
-                    $.each(data, function(i,v) {
-                       if( id === v.id ) {
-                           var venueName = v.nickname || v.name;
-                           //console.log( venueName );
-                           $scope.search('by-venue', 'at '+ venueName, '+index');
-                           return false;
-                       } 
-                    });
+                //var results = /^(\/.+)(\/.+)?$/.exec(newVal);
+                var results = newVal.split("/");
+                results.shift();
+                var by = results.shift();
+                var index = results.shift();
+                if( by !== undefined ) {
+                    $scope.search(by, index)
+                    console.log("calling search with: " + by  +" "+index);
                 } 
             }
         );
+        if( $location.path() == '' ) {
+            console.log("setting default path");
+            $location.path('/by-area').replace();
+        }
         $scope.loading = false;
     }
     $http.get('data/dance_venues.txt?_='+ new Date().getTime()).success(load);

@@ -20,6 +20,20 @@
             </div>
           </div>
           <hr class="featurette-divider">
+          
+          <div class="row featurette">
+            
+          <div class=" col-sm-5 col-md-5">
+<a class="twitter-timeline" href="https://twitter.com/search?q=%23merryxmas%20from%3ADance_X_Treme%20since%3A2015-10-24" data-widget-id="658567123309043712">Tweets about #merryxmas from:Dance_X_Treme since:2015-10-24</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          </div>
+          
+              <div class=" col-sm-7 col-md-7">
+              <h2 class="featurette-heading">Your <strong>2015</strong> Christmas Greetings</h2>
+              <p class="lead">Make your donation and submit your message in class. Last year you raised <strong>£200</strong>!</p>  
+            </div>
+          
+          </div>
+          <hr class="featurette-divider">
     </div>
 
       <!-- /END THE FEATURETTES -->
