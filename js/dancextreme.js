@@ -93,10 +93,29 @@ app.controller('venueController', function($scope, $http, $location, uiGmapIsRea
       obj.showInfoWindow();
     };
     
+    $scope.fitBounds = function(bounds) {
+    uiGmapIsReady.promise(1).then(function(instances) {
+      var map = $scope.mapControl.getGMap();
+      map.fitBounds(bounds);
+        if (map.getZoom() > 15) {
+            map.setZoom(15);
+        } else {
+            map.setZoom(map.getZoom() - 1);
+        }
+    });
+    };
+    
+    
+    var makePath = function(index) {
+        return index.replace(/ /g, "-").replace(/'/g, "").toLowerCase();
+    };
+    
     function load(data) {
-        $scope.aMap['All'] = new google.maps.LatLngBounds();
+        $scope.aMap['all'] = { name: 'All', bounds: new google.maps.LatLngBounds() };
         $.each(data, function(index,venue) {
             if( !venue.enabled || !venue.timetable ) return true; // continue
+            var areaPath = 'in-'+makePath(venue.area);
+            var venuePath = 'at-'+makePath(venue.name);
             venue.showInfoWindow = function() {
                 var contentString = "<img src='img/dance-x-treme-small.jpg'/>" +
                     "<p><b>" + venue.name + "</b><br/>" +
@@ -104,43 +123,39 @@ app.controller('venueController', function($scope, $http, $location, uiGmapIsRea
                     "<a target=\"_blank\" href=\"" + venue.svUrl + "\">Get Directions</a>" +
                     "</p>";
                 if (venue.timetable && venue.timetable.length) {
-                    contentString = contentString + "<p><a href=\"classes#/class/" + venue.id + "\">Class timetable</a></p>";
+                    contentString = contentString + "<p><a href=\"classes#!/by-venue/" + venuePath + "\">Class timetable</a></p>";
                 }
                 infoWindow.setContent(contentString);
-                infoWindow.open($scope.mapControl.getGMap(), $scope.markerControl.getPlurals().get(venue.id).gObject);
+                infoWindow.open($scope.mapControl.getGMap(), $scope.markerControl.getPlurals().get(venuePath).gObject);
             };
-            if( !$scope.aMap[venue.area] ) $scope.aMap[venue.area] = new google.maps.LatLngBounds();
-            $scope.aMap[venue.area].extend(new google.maps.LatLng(venue.position.latitude, venue.position.longitude));
-            $scope.aMap['All'].extend(new google.maps.LatLng(venue.position.latitude, venue.position.longitude));
+            if( !$scope.aMap[areaPath] ) $scope.aMap[areaPath] = { name: venue.area, bounds: new google.maps.LatLngBounds() };
+            $scope.aMap[areaPath].bounds.extend(new google.maps.LatLng(venue.position.latitude, venue.position.longitude));
+            $scope.aMap['all'].bounds.extend(new google.maps.LatLng(venue.position.latitude, venue.position.longitude));
+            venue.path = venuePath;
             $scope.venues.push(venue);
         });
         
-
-        
         uiGmapIsReady.promise(1).then(function(instances) {
-            $scope.$watch(
-                function() {
-                return $location.path();
-            },
-            function(newVal, oldVal) {
-                var results = /venue\/(.*)/.exec(newVal);
-                if (results !== null) {
-                    var id = results[1];
-                     $scope.markerControl.getPlurals().get(id).model.showInfoWindow();
-                }
-            }
-            );
-            $scope.fitBounds = function(bounds) {
-                  var map = $scope.mapControl.getGMap();
-                  map.fitBounds(bounds);
-                    if (map.getZoom() > 15) {
-                        map.setZoom(15);
-                    } else {
-                        map.setZoom(map.getZoom() - 1);
-                    }
-            };
             
             $scope.loading = false;
+            
+            $scope.$watch(
+                function() {
+                    return $location.path();
+                },
+                function(newVal, oldVal) {
+                    var results = newVal.split("/");
+                    results.shift();
+                    var by = results.shift();
+                    var index = results.shift();
+                    if (by == 'by-venue' && index !== undefined && $scope.markerControl.getPlurals().get(index) !== undefined ) {
+                        $scope.markerControl.getPlurals().get(index).model.showInfoWindow();
+                    } else if( by == 'by-area' && $scope.aMap[index] !== undefined ) {
+                        $scope.fitBounds($scope.aMap[index].bounds);
+                    }
+                }
+            );
+
         });
     
     };
@@ -187,8 +202,12 @@ app.controller('ClassController', function($scope, $http, $location) {
         var aMap = {};
         var dMap = {};
         var vMap = {};
+        var makePath = function(index) {
+            return index.replace(/ /g, "-").replace(/'/g, "").toLowerCase();
+        };
         $.each(data, function(index,venue) {
             if( !venue.enabled || !venue.timetable ) return true; // continue
+            venue.path = makePath('at-'+venue.name);
             var aKey = 'in '+venue.area;
             if( !aMap[aKey] ) aMap[aKey] = [];
             aMap[aKey].push(venue);
@@ -203,9 +222,6 @@ app.controller('ClassController', function($scope, $http, $location) {
             if( !vMap[vKey] ) vMap[vKey] = [];
             vMap[vKey].push(venue);
         });
-        var makePath = function(index) {
-            return index.replace(/ /g, "-").toLowerCase();
-        };
         $.each( aMap, function(i,v) {
            $scope.byArea.push( { name: i, venues: v, btnClass: 'btn-warning', type: 'by-area', index: makePath(i) } );
         });
@@ -213,7 +229,7 @@ app.controller('ClassController', function($scope, $http, $location) {
            $scope.byDay.push( { name: i, venues: v, btnClass: 'btn-info', type: 'by-day', index: makePath(i) } );
         });
         $.each( vMap, function(i,v) {
-           $scope.byVenue.push( { name: i, venues: v, btnClass: 'btn-success', type: 'by-venue', index: makePath(i) } );
+           $scope.byVenue.push( { name: i, venues: v, btnClass: 'btn-success', type: 'by-venue', index: makePath('at '+v[0].name) } );
         });
         $scope.dataArray = $scope.byArea.concat($scope.byDay).concat($scope.byVenue);
         $scope.$watch(
