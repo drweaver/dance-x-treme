@@ -6,7 +6,8 @@ $t_title_append = ' - Venues';
 $t_description = 'Location details for class venues';
 $t_content_inc = './venues_content.php';
 $t_rightbox_inc = './empty_content.php';
-$t_head_inc = './venues_head.php';
+$t_script_inc = './venues_head.php';
+$t_head_inc = './ajax_crawl.php';
 $t_navname = 'nav-venues';
 
 include('./master.php');

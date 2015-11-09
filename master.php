@@ -8,6 +8,7 @@
     <meta name="author" content="Shane Weaver">
     <meta name="google-site-verification" content="iuU87m1_t5kHxmS4dGSAkdAiOWXvZPvKb5zUwLDf4Gg" />
     <link rel="icon" href="favicon.ico">
+    <?php include($t_head_inc); ?>
 
     <title>Dance-X-Treme<?php $t_title_append ?></title>
 
@@ -89,7 +90,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular-animate.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-maps/2.1.5/angular-google-maps.min.js"></script>
-    <?php include($t_head_inc); ?>
+    <?php include($t_script_inc); ?>
     <!--
     <script src="../../assets/js/docs.min.js"></script>
     -->
