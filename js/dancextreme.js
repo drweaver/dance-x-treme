@@ -287,6 +287,7 @@ app.controller('GalleryController', function ($scope, $http, $location) {
             value.dateParsed = DateUtil.parse(value.date);
             value.datePretty = value.dateParsed.toLocaleDateString();
             value.dateYear = value.dateParsed.getFullYear();
+            value.dateMonth = DateUtil.MONTH_LONG[value.dateParsed.getMonth()]; 
         });
         json.sort(function(a, b) {
             return b.dateParsed.getTime() - a.dateParsed.getTime();
@@ -309,7 +310,7 @@ app.controller('GalleryController', function ($scope, $http, $location) {
         parseAndSortDate(data);
         $.each(data, function(index, value) { index < 8 ? value.latest = 'latest' : value.latest = 'oldest' });
         $scope.albums = data;
-        $scope.canned = ['Latest'].concat(years(data).concat(['Pelsall', 'Coven', 'Tower', 'Cornbow', 'Halloween', 'Fish/Chips']));
+        $scope.canned = ['Latest'].concat(years(data).concat(['Pelsall', 'Coven', 'Tower', 'Cornbow', 'Halloween', 'Christmas']));
         if( $location.path() == '' ) {
             console.log("setting default path");
             $location.path('/Latest').replace();

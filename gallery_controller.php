@@ -20,7 +20,7 @@
             </a>
         </div>
         <div class="panel-footer">
-            <p class="small" style="min-height: 35px;" title="{{album.datePretty}}">{{album.name}}</p>
+            <p class="small text-nowrap" style="min-height: 35px; overflow: hidden;text-overflow: ellipsis;" title="{{album.name}}">{{album.name}}<br/><small>{{album.dateMonth}} {{album.dateYear}}</small></p>
             <p><a ng-href="{{album.url}}" target="_blank" class="btn btn-default" role="button">View Album &raquo;</a></p>
         </div>
     </div>

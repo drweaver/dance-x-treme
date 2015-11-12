@@ -98,13 +98,13 @@
     {
         "url": "https://picasaweb.google.com/102655605108622752347/XmasCrackerCornbowHall20122013?authuser=0&authkey=Gv1sRgCJi_mY_6z5PbyAE&feat=embedwebsite&noredirect=1",
         "thumbnail": "https://lh3.googleusercontent.com/-2OMVlSfTiqY/UrTqhwhiBUE/AAAAAAABnuw/ga4fQalhRhE/s160-c-Ic42/XmasCrackerCornbowHall20122013.jpg",
-        "name": "Xmas Cracker - Cornbow Hall",
+        "name": "Christmas Cracker - Cornbow Hall",
         "date": "2013-12-20"
     },
     {
         "url": "https://picasaweb.google.com/102655605108622752347/XmasDanceCoven14122013?authuser=0&authkey=Gv1sRgCJrzuMaN5tPIgwE&feat=embedwebsite&noredirect=1",
         "thumbnail": "https://lh3.googleusercontent.com/-en3gNVBwrrU/Uq0JWAcGMeE/AAAAAAABnuw/vSJoB5mFWck/s160-c-Ic42/XmasDanceCoven14122013.jpg",
-        "name": "Xmas Dance - Coven",
+        "name": "Christmas Dance - Coven",
         "date": "2013-12-14"
     },
     {
@@ -254,7 +254,7 @@
     {
         "url": "https://picasaweb.google.com/dance.x.treme.uk/XmasDanceJaguar?authuser=0&authkey=Gv1sRgCIeyhvrXpOj12QE&feat=embedwebsite&noredirect=1",
         "thumbnail": "https://lh3.googleusercontent.com/-EujsnIN-Rd0/TttA3pg4Y9E/AAAAAAABnuw/8TjGs9Tb7vg/s160-c-Ic42/XmasDanceJaguar.jpg",
-        "name": "Xmas Dance - Jaguar",
+        "name": "Christmas Dance - Jaguar",
         "date": "2011-12-04"
     },
     {

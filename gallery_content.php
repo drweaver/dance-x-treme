@@ -20,7 +20,7 @@
 			foreach($gallery_data as $g) {
 				$years[substr($g['date'], 0, 4)] = 1;
 			}
-			$canned = array_merge( array('Pelsall', 'Coven', 'Tower', 'Cornbow', 'Latest'), array_keys($years));
+			$canned = array_merge( array('Pelsall', 'Coven', 'Tower', 'Cornbow', 'Halloween', 'Fish/Chips', 'Latest'), array_keys($years));
 			foreach($canned as $can) {
 				print('<a href="#!/'.$can.'">'.$can.' Photo Albums</a><br/>');
 			}
