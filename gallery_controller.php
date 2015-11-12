@@ -7,12 +7,12 @@
     <div class="jumbotron ng-cloak" nf-if="!loading">
         <form class="form-inline">
             Search:
-            <input ng-model="query" class="form-control form-inline">
-            <a class="btn btn-primary ng-cloak" type="button" ng-href="#!/{{can}}" ng-repeat="can in canned" style="margin: 4px;">{{can}}</a>
+            <input ng-model="query" ng-keyup="keyup($event.which === 13)" class="form-control form-inline">
+            <a class="btn btn-primary ng-cloak" type="button" ng-href="#!/{{can}}" ng-repeat="can in canned" style="margin: 4px;">{{can.replace('/',' ')}}</a>
         </form>
     </div>
 
-    <div class="panel panel-default ng-cloak album-animate" ng-repeat="album in albums | filter:query" style="width: 190px; display:inline-block; margin:5px;">
+    <div class="panel panel-default ng-cloak album-animate" ng-repeat="album in albums | filter:album_filter" style="width: 190px; display:inline-block; margin:5px;">
 
         <div class="panel-body">
             <a ng-href="{{album.url}}" target="_blank">

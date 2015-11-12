@@ -257,8 +257,29 @@ app.controller('ClassController', function($scope, $http, $location) {
 
 app.controller('GalleryController', function ($scope, $http, $location) {
     $scope.loading = true;
+    $scope.query_terms = [];
     $scope.search = function(query) {
         $scope.query = query;  
+    };
+    $scope.keyup = function(enter_pressed) {
+        if( enter_pressed ) {
+            $location.path('/'+$scope.query.replace(/ /g, '/'));
+        } else {
+            $scope.query_terms = $scope.query.split(" ");
+        }
+    };
+    
+    $scope.album_filter = function(value, index, array) {
+        if( $scope.query_terms.length == 0 ) 
+            return false;
+            
+        for (var i in $scope.query_terms) {
+            var term = $scope.query_terms[i].toLowerCase();
+            if( value.date.substring(0,4) != term && value.name.toLowerCase().indexOf(term) == -1 && value.latest != term ) 
+                return false;
+        }
+        return true;
+        
     };
     
     function parseAndSortDate(json) {
@@ -287,9 +308,8 @@ app.controller('GalleryController', function ($scope, $http, $location) {
         //$scope.query = 'latest';
         parseAndSortDate(data);
         $.each(data, function(index, value) { index < 8 ? value.latest = 'latest' : value.latest = 'oldest' });
-        $.each(data, function(index, value) { value.all = 'all'; });
         $scope.albums = data;
-        $scope.canned = years(data).concat(['Pelsall', 'Coven', 'Tower', 'Cornbow', 'Latest', 'All' ]);
+        $scope.canned = ['Latest'].concat(years(data).concat(['Pelsall', 'Coven', 'Tower', 'Cornbow', 'Halloween', 'Fish/Chips']));
         if( $location.path() == '' ) {
             console.log("setting default path");
             $location.path('/Latest').replace();
@@ -299,9 +319,9 @@ app.controller('GalleryController', function ($scope, $http, $location) {
             function() {return $location.path();},
             function(newVal, oldVal) {
                 var results = newVal.split("/");
-                results.shift();
-                var q = results.shift();
-                $scope.query=q; 
+                $scope.query_terms = [];
+                $.each(results, function(i,v) { v != '' ? $scope.query_terms.push(v):false; });
+                $scope.query=$scope.query_terms.join(' '); 
             }
         );
 
