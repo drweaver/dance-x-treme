@@ -9,7 +9,7 @@
 		<div class="jumbotron ng-cloak" nf-if="!loading">
 			<form class="form-inline">
 			Search: <input ng-model="query" class="form-control form-inline">
-			<button  class="btn btn-primary ng-cloak" type="button" ng-click="search(can)" ng-repeat="can in canned" style="margin: 4px;">{{can}}</button>
+			<a  class="btn btn-primary ng-cloak" type="button" ng-href="#!/{{can}}" ng-repeat="can in canned" style="margin: 4px;">{{can}}</a>
 			</form>
 		</div>
 	

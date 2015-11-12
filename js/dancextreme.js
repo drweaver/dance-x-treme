@@ -255,9 +255,9 @@ app.controller('ClassController', function($scope, $http, $location) {
     $http.get('data/dance_venues.txt?_='+ new Date().getTime()).success(load);
 });
 
-app.controller('GalleryController', function ($scope, $http) {
+app.controller('GalleryController', function ($scope, $http, $location) {
     $scope.loading = true;
-        $scope.search = function(query) {
+    $scope.search = function(query) {
         $scope.query = query;  
     };
     
@@ -284,13 +284,27 @@ app.controller('GalleryController', function ($scope, $http) {
         return yearsArray.sort().reverse();
     }
     $http.get('data/dance_galleries.txt?_='+ new Date().getTime()).success(function(data) {
-        $scope.query = 'latest';
+        //$scope.query = 'latest';
         parseAndSortDate(data);
         $.each(data, function(index, value) { index < 8 ? value.latest = 'latest' : value.latest = 'oldest' });
         $.each(data, function(index, value) { value.all = 'all'; });
         $scope.albums = data;
         $scope.canned = years(data).concat(['Pelsall', 'Coven', 'Tower', 'Cornbow', 'Latest', 'All' ]);
+        if( $location.path() == '' ) {
+            console.log("setting default path");
+            $location.path('/Latest').replace();
+        }        
         $scope.loading = false;
+        $scope.$watch(
+            function() {return $location.path();},
+            function(newVal, oldVal) {
+                var results = newVal.split("/");
+                results.shift();
+                var q = results.shift();
+                $scope.query=q; 
+            }
+        );
+
     });
 
     
