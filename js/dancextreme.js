@@ -158,7 +158,7 @@ app.controller('venueController', function($scope, $http, $location, uiGmapIsRea
 
         });
     
-    };
+    }
     
     $http.get('data/dance_venues.txt?_='+ new Date().getTime()).success(load);
 
@@ -241,7 +241,7 @@ app.controller('ClassController', function($scope, $http, $location) {
                 var by = results.shift();
                 var index = results.shift();
                 if( by !== undefined ) {
-                    $scope.search(by, index)
+                    $scope.search(by, index);
                     console.log("calling search with: " + by  +" "+index);
                 } 
             }
@@ -301,7 +301,7 @@ app.controller('GalleryController', function ($scope, $http, $location) {
         });
         var yearsArray = [];
         $.each(years, function(iy, y) {
-            yearsArray.push(iy)
+            yearsArray.push(iy);
         });
         return yearsArray.sort().reverse();
     }
