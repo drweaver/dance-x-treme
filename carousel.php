@@ -16,7 +16,7 @@
           <div class="container">
             <div class="carousel-caption">
               <!--<h1>we teach Ballroom and Latin with a great selection of music</h1>-->
-              <h1>New Beginners classes starting January 2015</h1>
+              <h1>New Beginners classes starting January 2016</h1>
               <p></p>
               <p><a class="btn btn-lg btn-primary" href="/classes" role="button">View Class Timetables</a></p>
             </div>
