@@ -1,5 +1,11 @@
 [
     {
+        "url": "https://picasaweb.google.com/102655605108622752347/ChristmasDanceCoven5122015?authuser=0&authkey=Gv1sRgCPDP25af2r285gE&noredirect=1",
+        "thumbnail": "https://lh3.googleusercontent.com/-C7yAomusxu8/VmORRqCEr9E/AAAAAAABqG0/GCjP3eu3XS8/s160-c-Ic42/ChristmasDanceCoven5122015.jpg",
+        "name": "Christmas Dance at Coven",
+        "date": "2015-12-05"
+    },
+    {
         "url": "https://picasaweb.google.com/102655605108622752347/HalloweenCoven2015?authuser=0&authkey=Gv1sRgCNCmhZ3c6pnNbw&feat=embedwebsite&noredirect=1",
         "thumbnail": "https://lh3.googleusercontent.com/-5iLOVksaJgc/VjXKXKRBOkE/AAAAAAABowA/X0GqQz0-Hcs/s160-c-Ic42/HalloweenCoven2015.jpg",
         "name": "Halloween Dance at Coven",
