@@ -331,6 +331,77 @@ app.controller('GalleryController', function ($scope, $http, $location) {
     
 });
 
+app.controller('NewsletterController', function ($scope, $http, $location) {
+    $scope.loading = true;
+    
+    $scope.selection = '';
+    $scope.makePath = function(newsletter) {
+        return '/' + newsletter.date + '/' + newsletter.title.replace(/[-' ]/g, '-').toLowerCase();
+    };
+    $scope.isAnyNews = function() {
+        for (var i in $scope.newsletters) {
+            if( $scope.newsletters[i].date == $scope.selection ) 
+                return true;
+        }
+        return false;
+    };
+    $http.get('data/newsletters.txt?_='+ new Date().getTime()).success(function(data) {
+        $scope.newsletters = data;
+        $.each($scope.newsletters, function(i,value) {
+            var dateParsed = DateUtil.parse(value.date);
+            value.dateYear = dateParsed.getFullYear();
+            value.dateMonth = DateUtil.MONTH_LONG[dateParsed.getMonth()]; 
+        });
+        $scope.loading = false;
+        
+        $scope.enablePathWatch = function() {
+            $scope.$watch(
+                function() {return $location.path();},
+                function(newVal, oldVal) {
+                    var results = newVal.split("/");
+                    var query_terms = [];
+                    $.each(results, function(i,v) { v != '' ? query_terms.push(v):false; });
+                    $scope.selection = query_terms.length > 0 ? query_terms[0] : '';
+                }
+            );
+            if( $location.path() == '' ) {
+                $location.path($scope.makePath($scope.newsletters[0])).replace();
+            }
+        }
+        $scope.selectDefaultPath = function() {
+            $scope.selection = $scope.newsletters[0].date;
+        }
+    });
+
+});
+
+app.directive('selectDefaultPath', function() {
+   return {
+       controller:
+        ['$scope', function($scope) {
+          $scope.$watch(
+              function(){return $scope.selectDefaultPath},
+              function(newVal) {
+                 if( newVal !== undefined ) newVal();
+              });  
+        }]
+   };
+});
+
+app.directive('enablePathWatch', function() {
+   return {
+       controller: 
+            ['$scope', function($scope) {
+                console.log('enabling path watch');
+                $scope.$watch(
+                    function() {return $scope.enablePathWatch},
+                    function(newVal) {
+                       if( newVal !== undefined ) newVal();
+                    });
+            }]
+   };
+});
+
 var g_api_key = 'AIzaSyAnZG8goK-RU8FGq6MCS31bjgYzi5YF_rQ';
 
 app.factory('getNextEvent', ['$http',

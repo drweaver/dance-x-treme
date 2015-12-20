@@ -23,17 +23,34 @@
           
           <div class="row featurette">
             
-          <div class=" col-sm-5 col-md-5">
-<a class="twitter-timeline" href="https://twitter.com/search?q=%23merryxmas%20from%3ADance_X_Treme%20since%3A2015-10-24" data-widget-id="658567123309043712">Tweets about #merryxmas from:Dance_X_Treme since:2015-10-24</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-          </div>
-          
-              <div class=" col-sm-7 col-md-7">
+            <div class="col-md-7 col-md-push-5">
               <h2 class="featurette-heading">Your <strong>2015</strong> Christmas Greetings</h2>
               <p class="lead">Make your donation and submit your message in class. Last year you raised <strong>£200</strong>!</p>  
             </div>
+            
+          <div class=" col-md-5 col-md-pull-7">
+<a class="twitter-timeline" href="https://twitter.com/search?q=%23merryxmas%20from%3ADance_X_Treme%20since%3A2015-10-24" data-widget-id="658567123309043712">Tweets about #merryxmas from:Dance_X_Treme since:2015-10-24</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          </div>
+          
+
           
           </div>
           <hr class="featurette-divider">
+          <h2 class="featurette-heading">Our last newsletter</h2>
+          <div ng-controller="NewsletterController" select-default-path>
+                <div class="ng-cloak" ng-if="!loading">
+                  <div  ng-repeat="newsletter in newsletters" ng-if="selection == newsletter.date" class="album-animate">
+                      <div class="panel panel-default" >
+                          <div class="panel-heading"><div class="row"><div class="col-sm-8">{{newsletter.title}}</div><div class="col-sm-4 text-right"><small >{{newsletter.dateMonth}} {{newsletter.dateYear}}</small></div> </div></div>
+                          <div class="panel-body"><p>{{newsletter.content}}</p></div>
+                      </div>
+                  </div>
+                  
+              </div>  
+          </div>
+          <p class="lead">Visit our <a href="/newsletters">newsletters page</a> to subscribe to the newsletter or view the archive.</p>
+          <hr class="featurette-divider">
+          
     </div>
 
       <!-- /END THE FEATURETTES -->
