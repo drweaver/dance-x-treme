@@ -34,10 +34,7 @@
 
 			$areas[$g['area']] = true;
 			$venues[$g['name']] = true;
-			foreach( $g['timetable'] as $day) {
-				$days[$day['day'].'s'] = true;
-			}
-				
+
 			$area_path = '/by-area/in-'.make_path($g['area']);
 			$venue_path = '/by-venue/at-'.make_path($g['name']);
 			if( strcmp( $escaped_fragment, $area_path) == 0 || strcmp( $escaped_fragment, $venue_path) == 0 ) {
@@ -49,6 +46,7 @@
 		if( $escaped_fragment == '' ) {
 			print('<a class="btn btn-primary" type="button" href="#!/by-area">By Area</a> ');
 			print('<a class="btn btn-primary" type="button" href="#!/by-venue">By Venue</a> ');
+			print('<br/>');
 			$markers = '';
 			$sep = '';
 			foreach ($venues_data as $g) {
@@ -60,14 +58,13 @@
 			}
 			print('<img src="//maps.googleapis.com/maps/api/staticmap?size=600x600&maptype=roadmap&sensor=false&markers='.$markers.$key_param.'">'); 
 		}
-		
-		switch($escaped_fragment) {
-			case '/by-area':
-				foreach(array_keys($areas) as $a) print('<a class="btn btn-primary" type="button" href="#!/by-area/in-'.make_path($a).'">'.$a.'</a> ');
-				break;
-			case '/by-venue': 
-				foreach(array_keys($venues) as $v) print('<a class="btn btn-primary" type="button" href="#!/by-venue/at-'.make_path($v).'">'.$v.'</a> ');	
-				break;
+		if( $escaped_fragment == '/by-area') {
+				foreach(array_keys($areas) as $a) 
+					print('<a class="btn btn-primary" type="button" href="#!/by-area/in-'.make_path($a).'">'.$a.'</a> ');
+		}
+		if( $escaped_fragment == '/by-venue') {
+				foreach(array_keys($venues) as $v) 
+					print('<a class="btn btn-primary" type="button" href="#!/by-venue/at-'.make_path($v).'">'.$v.'</a> ');	
 		}
 		
 	} else {
