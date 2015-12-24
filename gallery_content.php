@@ -29,7 +29,7 @@
 		
 		function match_all_queries($g, $query_terms, $n) {
 			foreach( $query_terms as $q ) {
-				if( !( ( $q == 'latest' && $n<8 ) || strpos( strtolower($g['name']), $q) !== false || substr($g['date'],0,4) == $q ) )
+				if( !( ( $q == 'latest' && $n<8 ) || strpos( strtolower($g['name']), $q) !== false || strpos($g['date'], $q) !== false ) )
 					return false;
 			}
 			return true;
