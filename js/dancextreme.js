@@ -275,7 +275,7 @@ app.controller('GalleryController', function ($scope, $http, $location) {
             
         for (var i in $scope.query_terms) {
             var term = $scope.query_terms[i].toLowerCase();
-            if( value.date.substring(0,4) != term && value.name.toLowerCase().indexOf(term) == -1 && value.latest != term ) 
+            if( value.date.indexOf(term) == -1 && value.name.toLowerCase().indexOf(term) == -1 && value.latest != term ) 
                 return false;
         }
         return true;
