@@ -1,4 +1,7 @@
 
+/*global google*/
+/*global angular*/
+
 var DateUtil = {
     DAY_LONG: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     MONTH_SHORT: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -88,10 +91,7 @@ app.controller('venueController', function($scope, $http, $location, uiGmapIsRea
     $scope.loading = true;
 
     var infoWindow = new google.maps.InfoWindow();
-    
-    $scope.markerClick = function(marker, event, obj) {
-      obj.showInfoWindow();
-    };
+
     
     $scope.fitBounds = function(bounds) {
     uiGmapIsReady.promise(1).then(function(instances) {
@@ -137,7 +137,24 @@ app.controller('venueController', function($scope, $http, $location, uiGmapIsRea
         
         uiGmapIsReady.promise(1).then(function(instances) {
             
+            $scope.search = function(by, index) {
+                if (by == 'by-venue' && index !== undefined && $scope.markerControl.getPlurals().get(index) !== undefined ) {
+                    $scope.markerControl.getPlurals().get(index).model.showInfoWindow();
+                } else if( by == 'by-area' && $scope.aMap[index] !== undefined ) {
+                    $scope.fitBounds($scope.aMap[index].bounds);
+                }
+                $location.path('/'+by+(index!==undefined?'/'+index:'')).replace();
+            };
+            
+            $scope.markerClick = function(marker, event, obj) {
+                $scope.search('by-venue', obj.path);
+            };
+            
             $scope.loading = false;
+            
+            if( $location.path() == '' ) {
+                $scope.search('by-area', 'all');
+            }
             
             $scope.$watch(
                 function() {
@@ -148,11 +165,7 @@ app.controller('venueController', function($scope, $http, $location, uiGmapIsRea
                     results.shift();
                     var by = results.shift();
                     var index = results.shift();
-                    if (by == 'by-venue' && index !== undefined && $scope.markerControl.getPlurals().get(index) !== undefined ) {
-                        $scope.markerControl.getPlurals().get(index).model.showInfoWindow();
-                    } else if( by == 'by-area' && $scope.aMap[index] !== undefined ) {
-                        $scope.fitBounds($scope.aMap[index].bounds);
-                    }
+                    $scope.search(by, index);
                 }
             );
 
@@ -183,6 +196,7 @@ app.controller('ClassController', function($scope, $http, $location) {
         $scope.query = { type: type };
         if( query !== undefined ) $scope.query.index = query;
         $scope.order = type == 'by-day' ? $scope.dayIndex : '+index';
+        $location.path('/'+type+(query!==undefined?'/'+query:'')).replace();
     };
     $scope.typeButtonClass = function(type) {
         if( $scope.query.type == type ) 
@@ -248,7 +262,7 @@ app.controller('ClassController', function($scope, $http, $location) {
         );
         if( $location.path() == '' ) {
             console.log("setting default path");
-            $location.path('/by-area').replace();
+            $scope.search('by-area');
         }
         $scope.loading = false;
     }
@@ -259,11 +273,11 @@ app.controller('GalleryController', function ($scope, $http, $location) {
     $scope.loading = true;
     $scope.query_terms = [];
     $scope.search = function(query) {
-        $scope.query = query;  
+        $location.path('/'+query.replace(/ /g, '/')).replace();
     };
     $scope.keyup = function(enter_pressed) {
         if( enter_pressed ) {
-            $location.path('/'+$scope.query.replace(/ /g, '/'));
+            $location.path('/'+$scope.query.replace(/ /g, '/')).replace();
         } else {
             $scope.query_terms = $scope.query.split(" ");
         }
@@ -367,10 +381,10 @@ app.controller('NewsletterController', function ($scope, $http, $location) {
             if( $location.path() == '' ) {
                 $location.path($scope.makePath($scope.newsletters[0])).replace();
             }
-        }
+        };
         $scope.selectDefaultPath = function() {
             $scope.selection = $scope.newsletters[0].date;
-        }
+        };
     });
 
 });

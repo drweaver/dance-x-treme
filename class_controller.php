@@ -7,13 +7,13 @@
 						<h5 >Class Filter:</h5> 
 					</div>	
 					<div class="col-sm-11">
-						<a class="btn btn-primary" type="button" href="#!/by-area" ng-class="typeButtonClass('by-area')" style="margin: 4px;" role="button">By Location</a>
-						<a class="btn btn-primary" type="button" href="#!/by-day"  ng-class="typeButtonClass('by-day')"style="margin: 4px;" role="button">By Day</a>
-						<a class="btn btn-primary" type="button" href="#!/by-venue" ng-class="typeButtonClass('by-venue')"style="margin: 4px;" role="button">By Venue</a> 
+						<a class="btn btn-primary" type="button" ng-click="search('by-area)" ng-class="typeButtonClass('by-area')" style="margin: 4px;" role="button">By Location</a>
+						<a class="btn btn-primary" type="button" ng-click="search('by-day')"  ng-class="typeButtonClass('by-day')"style="margin: 4px;" role="button">By Day</a>
+						<a class="btn btn-primary" type="button" ng-click="search('by-venue')" ng-class="typeButtonClass('by-venue')"style="margin: 4px;" role="button">By Venue</a> 
 						<br/>
-						<a class="btn ng-cloak btn-sm album-animate" ng-if="query.type == 'by-area'" ng-class="data.btnClass" type="button" ng-href="#!/by-area/{{data.index}}" ng-repeat="data in byArea | orderBy:'+index'" style="margin: 4px;">{{data.name}}</a>
-						<a class="btn ng-cloak btn-sm album-animate" ng-if="query.type == 'by-day'" ng-class="data.btnClass" type="button" ng-href="#!/by-day/{{data.index}}" ng-repeat="data in byDay | orderBy:dayIndex" style="margin: 4px;">{{data.name}}</a>
-						<a class="btn ng-cloak btn-sm album-animate" ng-if="query.type == 'by-venue'" ng-class="data.btnClass" type="button" ng-href="#!/by-venue/{{data.index}}" ng-repeat="data in byVenue | orderBy:'+index'" style="margin: 4px;">{{data.name}}</a>
+						<a class="btn ng-cloak btn-sm album-animate" ng-if="query.type == 'by-area'" ng-class="data.btnClass" type="button" ng-click="search('by-area', data.index)" ng-repeat="data in byArea | orderBy:'+index'" style="margin: 4px;">{{data.name}}</a>
+						<a class="btn ng-cloak btn-sm album-animate" ng-if="query.type == 'by-day'" ng-class="data.btnClass" type="button" ng-click="search('by-day', data.index)" ng-repeat="data in byDay | orderBy:dayIndex" style="margin: 4px;">{{data.name}}</a>
+						<a class="btn ng-cloak btn-sm album-animate" ng-if="query.type == 'by-venue'" ng-class="data.btnClass" type="button" ng-click="search('by-venue', data.index)" ng-repeat="data in byVenue | orderBy:'+index'" style="margin: 4px;">{{data.name}}</a>
 
 					</div>
 				</div>

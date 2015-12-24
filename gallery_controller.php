@@ -8,7 +8,7 @@
         <form class="form-inline">
             Search:
             <input ng-model="query" ng-keyup="keyup($event.which === 13)" class="form-control form-inline">
-            <a class="btn btn-primary ng-cloak" type="button" ng-href="#!/{{can}}" ng-repeat="can in canned" style="margin: 4px;">{{can.replace('/',' ')}}</a>
+            <a class="btn btn-primary ng-cloak" type="button" ng-click="search(can)" ng-repeat="can in canned" style="margin: 4px;">{{can.replace('/',' ')}}</a>
         </form>
     </div>
 

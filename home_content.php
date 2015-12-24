@@ -35,6 +35,9 @@
 
           
           </div>
+          
+          <!--
+          
           <hr class="featurette-divider">
           <h2 class="featurette-heading">Our last newsletter</h2>
           <div ng-controller="NewsletterController" select-default-path>
@@ -49,6 +52,9 @@
               </div>  
           </div>
           <p class="lead">Visit our <a href="/newsletters">newsletters page</a> to subscribe to the newsletter or view the archive.</p>
+          
+          --> 
+          
           <hr class="featurette-divider">
           
     </div>
