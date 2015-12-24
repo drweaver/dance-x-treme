@@ -20,13 +20,28 @@
   or see us in class.
 </p>
 <hr>
-<iframe id="events-list"
+
+<div class="row">
+  
+<div class="col-md-5">
+  
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe id="events-list" class="embed-responsive-item"
   style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px"
   height="300" frameborder="0" width="750" scrolling="no"
   src="https://www.google.com/calendar/embed?title=Upcoming%20Social%20and%20Practice%20Dances&amp;showNav=0&amp;showDate=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=mtjt1tm2mjrgf0mnan2or7su50%40group.calendar.google.com&amp;color=%23125A12&amp;src=k9r659lk7fiqdshd2eql8ss1v8%40group.calendar.google.com&amp;color=%23060D5E&amp;ctz=Europe%2FLondon"></iframe>
-<hr>
-<iframe id="events-calendar"
+</div>
+</div>
+<div class="col-md-7">
+  
+<div class="embed-responsive embed-responsive-4by3">
+  <iframe id="events-calendar"
   style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px"
   height="600" frameborder="0" width="750" scrolling="no"
   src="https://www.google.com/calendar/embed?title=Dance%20Calendar&amp;showTabs=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=eekb8u8h6bc0ode46dqveji0mo%40group.calendar.google.com&amp;color=%2342104A&amp;src=mtjt1tm2mjrgf0mnan2or7su50%40group.calendar.google.com&amp;color=%23125A12&amp;src=k9r659lk7fiqdshd2eql8ss1v8%40group.calendar.google.com&amp;color=%23060D5E&amp;ctz=Europe%2FLondon"></iframe>
+</div>
+</div>
+
+</div>
+
 </div>

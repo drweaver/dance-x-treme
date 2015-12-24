@@ -128,76 +128,6 @@
         "svUrl": "https://maps.google.co.uk/maps?q=B75+7SN&daddr=52.563132,-1.803415&hl=en&ll=52.563132,-1.803415&spn=0.001017,0.005681&sll=52.448356,-2.049567&sspn=0.002262,0.005681&gl=uk&hnear=Sutton+Coldfield+B75+7SN,+United+Kingdom&t=m&z=18&layer=c&cbll=52.563132,-1.803416&panoid=zJxqP22FUpCeKZull63CdA&cbp=11,291.59,,0,-3.48&output=classic"
     },
     {
-        "id": "pelsall",
-        "name": "Pelsall Community Centre",
-        "nickname": "Pelsall",
-        "enabled": true,
-        "address": "Station Road, Pelsall, WS3 4BQ",
-        "area": "Pelsall",
-        "position": {
-            "latitude": 52.627305,
-            "longitude": -1.965877
-        },
-        "svUrl": "http://maps.google.co.uk/maps?daddr=52.627305,-1.965877&cbll=52.627207,-1.965807&panoid=SzU8h26nq6--wUWy0NBCRg&cbp=12,64.14,,0,6.6&layer=c&output=classic"
-    },
-    {
-        "id": "shelfield",
-        "name": "Shelfield Community Acadamy Dance Studio",
-        "nickname": "Shelfield",
-        "enabled": false,
-        "address": "Broad Way, Pelsall, WS4 1BW",
-        "area": "Pelsall",
-      	"timetable":
-        [
-          {
-            "day": "Tuesday",
-            "time": 
-               [ { "startTime": "7:00pm", "duration": "45", "price": "5.00", "level": "New Beginners", "style": "Ballroom & Latin" }, 
-                 { "startTime": "7:45pm", "duration": "60", "price": "5.50", "level": "Advanced",  "style": "Ballroom & Latin" }
-               ]
-          }
-        ],         
-        "closures": [
-        	"2015-10-13", "2015-07-28"
-        	
-        ],        
-        
-        "position": {
-            "latitude": 52.622933,
-            "longitude": -1.952139
-        },
-        "svUrl": "http://maps.google.co.uk/maps?daddr=52.622933,-1.952139&cbll=52.622829,-1.95204&panoid=SYS1_v_1rT2GQMBmoOl0yA&cbp=12,50.34,,0,12.9&layer=c&output=classic"
-    },
-    {
-        "id": "claregate",
-        "name": "Claregate Primary School",
-        "nickname": "Claregate",
-        "enabled": false,
-        "address": "Chester Avenue, Wolverhampton, WV6 9JU",
-        "area": "Wolverhampton",
-        "timetable":
-        [
-          { 
-            "day": "Sunday",
-            "time": 
-               [ { "startTime": "5:30pm", "duration": "45", "price": "4.50", "level": "New Beginners", "style": "Ballroom, Latin & Salsa" }, 
-                 { "startTime": "6:15pm", "duration": "60", "price": "5.50", "level": "Improvers",  "style": "Ballroom, Latin & Salsa" },
-                 { "startTime": "7:15pm", "duration": "60", "price": "5.50", "level": "Intermediate", "style": "Ballroom, Latin & Salsa" },
-                 { "startTime": "8:15pm", "duration": "60", "price": "5.50", "level": "Advanced", "style": "Ballroom, Latin & Salsa" }
-               ]        
-          }
-        ],    
-        "closures": [
-        	"2015-08-30"
-        	
-        ],        
-        "position": {
-            "latitude": 52.607608,
-            "longitude": -2.155166
-        },
-        "svUrl": "http://maps.google.co.uk/maps?q=WV6+9JU&ie=UTF8&hq=&hnear=Wolverhampton,+West+Midlands+WV6+9JU,+United+Kingdom&gl=uk&daddr=52.607608,-2.155166&ll=52.607608,-2.155166&spn=0.008196,0.016608&z=16&layer=c&cbll=52.607692,-2.155201&panoid=HNMvVtO0rR0bV_vVb7FYdg&cbp=12,135.58,,0,7.56&output=classic"
-    },
-    {
         "id": "cornbowhall",
         "name": "Cornbow Hall",
         "enabled": true,
@@ -265,33 +195,5 @@
             "longitude": -2.074977
         },
         "svUrl": "https://maps.google.co.uk/maps?q=lutley+community+centre&hl=en&daddr=52.440708,-2.074977&ll=52.440708,-2.074977&spn=0.005036,0.011362&sll=52.440709,-2.074978&sspn=0.003579,0.005681&hq=lutley+community+centre&z=17&layer=c&cbll=52.440708,-2.074977&panoid=uEOPoD2wC27JK-3K57ph0g&cbp=12,265.67,,0,3.65&output=classic"
-    },
-	{
-		"id": "unitedreformedchurch",
-        "name": "United Reformed Church",
-        "enabled": false,
-        "address": "1 Brassington Avenue, Sutton Coldfield, B73 6AA",
-        "area": "Sutton Coldfield",
-      	"timetable":
-        [
-          {
-            "day": "Monday",
-            "time": 
-               [  
-                 { "startTime": "7:30pm", "duration": "60", "price": "5.00", "level": "Improvers", "style": "Ballroom, Latin & Salsa" }, 
-                 { "startTime": "8:30pm", "duration": "60", "price": "5.00", "level": "Intermediate",  "style": "Ballroom, Latin & Salsa" }
-               ]
-          }
-        ],
-        "closures": [
-        	"2015-08-31", "2015-10-12", "2015-07-27"
-        	
-        ],        
-        "position": {
-            "latitude": 52.564125,
-            "longitude": -1.824436
-        },
-        "svUrl": "https://maps.google.co.uk/maps?q=52.564125,-1.824436&hl=en&ll=52.564125,-1.824436&spn=0.002824,0.005595&sll=52.563825,-1.824317&layer=c&cbp=13,166.44,,0,0&cbll=52.564125,-1.824436&gl=uk&t=m&z=18&iwloc=A&panoid=N6PlwXozBHBrprbdcgfDsA&output=classic"
-
-	}
+    }
 ]

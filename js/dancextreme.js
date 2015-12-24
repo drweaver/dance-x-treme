@@ -113,7 +113,7 @@ app.controller('venueController', function($scope, $http, $location, uiGmapIsRea
     function load(data) {
         $scope.aMap['all'] = { name: 'All', bounds: new google.maps.LatLngBounds() };
         $.each(data, function(index,venue) {
-            if( !venue.enabled || !venue.timetable ) return true; // continue
+            if( !venue.enabled ) return true; // continue
             var areaPath = 'in-'+makePath(venue.area);
             var venuePath = 'at-'+makePath(venue.name);
             venue.showInfoWindow = function() {
