@@ -25,8 +25,8 @@
 			print('<br/><br/><hr/>');
 		};
 
-		$areas = [];
-		$venues = [];
+		$areas = array();
+		$venues = array();
 
 		foreach ($venues_data as $g) {
 			if( $g['enabled'] == FALSE )

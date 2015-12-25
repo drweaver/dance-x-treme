@@ -66,9 +66,9 @@
 		
 		$venues_data = json_decode( file_get_contents('data/dance_venues.txt'), true );
 		
-		$areas = [];
-		$venues = [];
-		$days = [];
+		$areas = array();
+		$venues = array();
+		$days = array();
 		
 		function make_path($v) {
 			return str_replace(" ", "-", str_replace("'", "", strtolower($v)));
