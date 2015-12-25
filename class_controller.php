@@ -7,7 +7,7 @@
 						<h5 >Class Filter:</h5> 
 					</div>	
 					<div class="col-sm-11">
-						<a class="btn btn-primary" type="button" ng-click="search('by-area)" ng-class="typeButtonClass('by-area')" style="margin: 4px;" role="button">By Location</a>
+						<a class="btn btn-primary" type="button" ng-click="search('by-area')" ng-class="typeButtonClass('by-area')" style="margin: 4px;" role="button">By Location</a>
 						<a class="btn btn-primary" type="button" ng-click="search('by-day')"  ng-class="typeButtonClass('by-day')"style="margin: 4px;" role="button">By Day</a>
 						<a class="btn btn-primary" type="button" ng-click="search('by-venue')" ng-class="typeButtonClass('by-venue')"style="margin: 4px;" role="button">By Venue</a> 
 						<br/>
