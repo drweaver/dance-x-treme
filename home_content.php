@@ -4,13 +4,13 @@
     <!-- START THE FEATURETTES -->
     <div class="container">
           <div class="row featurette">
-            <div class=" col-sm-7 col-md-7">
+            <div class=" col-sm-7">
               <h2 class="featurette-heading">Welcome to <strong>Dance-X-Treme.</strong></h2>
               <p class="lead">Learn to dance ballroom and latin with the West Midlands premier dance school. 
               Come and join Sue & George and the Dance-X-Treme team, there is something for everyone to learn and the 
               emphasis is on <strong>enjoyment</strong> and <strong>fun</strong>.
             </div>
-            <div class=" col-sm-5 col-md-5">
+            <div class=" col-sm-5">
                             	<a class="twitter-timeline" data-widget-id="358887851666055168"
     		href="https://twitter.com/Dance_X_Treme" > Tweets by
     		@Dance_X_Treme</a>
@@ -23,12 +23,12 @@
           
           <div class="row featurette">
             
-            <div class="col-md-7 col-md-push-5">
+            <div class="col-sm-7 col-sm-push-5">
               <h2 class="featurette-heading">Your <strong>2015</strong> Christmas Greetings</h2>
               <p class="lead">Make your donation and submit your message in class. Last year you raised <strong>£200</strong>!</p>  
             </div>
             
-          <div class=" col-md-5 col-md-pull-7">
+          <div class=" col-sm-5 col-sm-pull-7">
 <a class="twitter-timeline" href="https://twitter.com/search?q=%23merryxmas%20from%3ADance_X_Treme%20since%3A2015-10-24" data-widget-id="658567123309043712">Tweets about #merryxmas from:Dance_X_Treme since:2015-10-24</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
           </div>
           
