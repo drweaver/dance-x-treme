@@ -34,10 +34,6 @@
 	
 	<hr/>
 
-	<div class="alert alert-warning" role="alert">
-  		Class timetables below are now <b>updated for 2016</b>.  Hope you had a good Christmas and see you in January!
-	</div>
-
 	<?php 
 	if(isset($_GET['_escaped_fragment_'])){
 		$escaped_fragment = $_GET['_escaped_fragment_'];
