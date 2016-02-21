@@ -7,7 +7,7 @@
 	
 	if(isset($_GET['_escaped_fragment_'])){
 		$escaped_fragment = str_replace('/', '', strtolower($_GET['_escaped_fragment_']));
-		$query_terms_raw = preg_split('/', strtolower($_GET['_escaped_fragment_']));
+		$query_terms_raw = preg_split('/\//', strtolower($_GET['_escaped_fragment_']));
 		$query_terms = array();
 		foreach( $query_terms_raw as $q ) {
 			if( $q != '' ) array_push($query_terms, $q);
