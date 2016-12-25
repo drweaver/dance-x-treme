@@ -40,6 +40,7 @@ app.controller('venueController', function($scope, $http) {
     });
     
     $scope.submit = function() {
+        
         $http.post('venue_update.php', $scope.venues).success(function(data) {
            console.log("update successful"); 
         });
