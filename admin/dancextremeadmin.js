@@ -2,6 +2,21 @@
 
 var app = angular.module('dancextremeadmin', [ ]);
 
+app.controller('navController', function($scope) {
+    $scope.tabs = [
+        { id: "venues", name: "Venues" },
+        { id: "gallery", name: "Gallery" }
+        ] ;
+      
+    $scope.activeTab = $scope.tabs[0];    
+    $scope.active = function(tab) {
+        $scope.activeTab = tab;
+    };
+    $scope.isActive = function(tab) {
+        return tab.id == $scope.activeTab.id;  
+    };
+});
+
 app.controller('venueController', function($scope, $http) {
 
     $scope.selectedVenue = {};
@@ -23,5 +38,11 @@ app.controller('venueController', function($scope, $http) {
         $scope.venues = data;   
         $scope.selectedVenue = $scope.venues[0];
     });
+    
+    $scope.submit = function() {
+        $http.post('venue_update.php', $scope.venues).success(function(data) {
+           console.log("update successful"); 
+        });
+    };
     
 });
