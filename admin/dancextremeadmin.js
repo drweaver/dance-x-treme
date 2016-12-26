@@ -40,9 +40,32 @@ app.controller('venueController', function($scope, $http) {
     });
     
     $scope.submit = function() {
-        
-        $http.post('venue_update.php', $scope.venues).success(function(data) {
-           console.log("update successful"); 
+        $http.post('update_venue.php', $scope.venues).success(function(data) {
+           console.log("venue update successful"); 
+        });
+    };
+    
+});
+
+app.controller('galleryController', function($scope, $http) {
+   
+   $scope.currentAlbumId=0;
+   $scope.albums = [];
+       
+    $http.get('dance_galleries.txt?_='+ new Date().getTime()).success(function(data) {
+        $scope.albums = data;   
+    });
+    
+    $scope.thumbnailFix = function() {
+        var t = $scope.albums[$scope.currentAlbumId].thumbnail;
+        // from: =w925-h784-no
+        //   to: =w160-h160-p-k-no
+        $scope.albums[$scope.currentAlbumId].thumbnail = t.replace(/=w\d+-h\d+-no$/, '=w160-h160-p-k-no');
+    };
+    
+    $scope.submit = function() {
+        $http.post('update_gallery.php', $scope.albums).success(function(data) {
+           console.log("gallery update successful"); 
         });
     };
     
