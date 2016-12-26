@@ -22,6 +22,7 @@ app.controller('venueController', function($scope, $http) {
     $scope.selectedVenue = {};
     $scope.venues = [];
     $scope.selectedClass = {};
+    $scope.success = false;
 
     $scope.deleteVenue = function(venueId) {
       console.info( "deleting " + venueId);  
@@ -42,6 +43,7 @@ app.controller('venueController', function($scope, $http) {
     $scope.submit = function() {
         $http.post('update_venue.php', $scope.venues).success(function(data) {
            console.log("venue update successful"); 
+           $scope.success = true;
         });
     };
     
@@ -51,6 +53,7 @@ app.controller('galleryController', function($scope, $http) {
    
    $scope.currentAlbumId=0;
    $scope.albums = [];
+   $scope.success = false;
        
     $http.get('dance_galleries.txt?_='+ new Date().getTime()).success(function(data) {
         $scope.albums = data;   
@@ -66,6 +69,7 @@ app.controller('galleryController', function($scope, $http) {
     $scope.submit = function() {
         $http.post('update_gallery.php', $scope.albums).success(function(data) {
            console.log("gallery update successful"); 
+           $scope.success = true;
         });
     };
     
