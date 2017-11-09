@@ -75,8 +75,10 @@
             }
         ],
         "closures": [
-            "2017-05-29",
-            "2016-12-26"
+            "2017-08-21",
+            "2017-08-23",
+            "2017-08-28",
+            "2017-08-30"
         ],
         "position": {
             "latitude": 52.66024,
@@ -143,32 +145,32 @@
                 "day": "Thursday",
                 "time": [
                     {
-                        "startTime": "6:45pm",
+                        "startTime": "7:00pm",
                         "duration": "45",
                         "price": "5.00",
-                        "level": "New Beginners",
+                        "level": "Beginners",
                         "style": "Ballroom & Latin"
                     },
                     {
-                        "startTime": "7:30pm",
+                        "startTime": "7:45pm",
                         "duration": "45",
                         "price": "5.00",
                         "level": "Improvers",
                         "style": "Ballroom & Latin"
                     },
                     {
-                        "startTime": "8:15pm",
-                        "duration": "75",
-                        "price": "7.50",
-                        "level": "Combined Intermediate \/ Advanced",
+                        "startTime": "8:30pm",
+                        "duration": "60",
+                        "price": "5.50",
+                        "level": "Advanced",
                         "style": "Ballroom & Latin"
                     }
                 ]
             }
         ],
         "closures": [
-            "2016-12-22",
-            "2016-12-29"
+            "2017-08-24",
+            "2017-08-31"
         ],
         "position": {
             "latitude": 52.5807768,
@@ -189,13 +191,13 @@
                 "time": [
                     {
                         "startTime": "7:30pm",
-                        "duration": "45",
-                        "price": "5.00",
+                        "duration": "60",
+                        "price": "5.50",
                         "level": "New Beginners",
                         "style": "Ballroom & Latin"
                     },
                     {
-                        "startTime": "8:15pm",
+                        "startTime": "8:30pm",
                         "duration": "60",
                         "price": "5.50",
                         "level": "Improvers",
@@ -290,7 +292,8 @@
             }
         ],
         "closures": [
-            "2016-12-27"
+            "2017-08-22",
+            "2017-08-29"
         ],
         "position": {
             "latitude": 52.433871,
@@ -341,7 +344,8 @@
             }
         ],
         "closures": [
-            "2017-05-28"
+            "2017-08-20",
+            "2017-08-27"
         ],
         "position": {
             "latitude": 52.440708,
