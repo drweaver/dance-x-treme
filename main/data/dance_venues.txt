@@ -250,11 +250,11 @@
         "svUrl": "https:\/\/maps.google.co.uk\/maps?q=B63+3AF&hl=en&daddr=52.448359,-2.049567&ll=52.448359,-2.049567&spn=0.001244,0.004807&sll=52.433871,-2.109519&sspn=0.003899,0.009613&gl=uk&hnear=B63+3AF,+United+Kingdom&z=18&layer=c&cbll=52.448356,-2.049565&panoid=H0zsEBGe7Erxf1vN0QRJhw&cbp=11,256.68,,0,1.1&output=classic"
     },
     {
-        "id": "halesowenrugbyclub",
-        "name": "Old Halesonians Rugby Club",
-        "nickname": "Halesowen Rugby Club",
+        "id": "pedmoretc",
+        "name": "Pedmore Technology College and Community School",
+        "nickname": "Pedmore College",
         "enabled": true,
-        "address": "Wassell Grove Lane, Hagley, Stourbridge, DY9 9JP",
+        "address": "Grange Lane, Pedmore, Stourbridge, DY9 7HS (Classes located in Sports Hall accessed via rear car park)",
         "area": "Stourbridge",
         "timetable": [
             {
@@ -291,15 +291,12 @@
                 ]
             }
         ],
-        "closures": [
-            "2017-08-22",
-            "2017-08-29"
-        ],
+        "closures": [],
         "position": {
-            "latitude": 52.433871,
-            "longitude": -2.109519
+            "latitude": "52.4497729",
+            "longitude": "-2.126825"
         },
-        "svUrl": "https:\/\/maps.google.co.uk\/maps?q=rugby+club+near+Halesowen&hl=en&daddr=52.433871,-2.109519&ll=52.433871,-2.109519&spn=0.003872,0.009613&sll=52.560356,-1.820474&sspn=0.002749,0.004807&oq=halesowen+rugby+club&gl=uk&hq=rugby+club&hnear=Halesowen,+West+Midlands,+United+Kingdom&fll=52.433154,-2.10651&fspn=0.003872,0.009613&z=17&layer=c&cbll=52.433871,-2.109519&panoid=gTj3ktwqh_2rCJynlHqnGQ&cbp=12,116.42,,0,1.38&output=classic"
+        "svUrl": "https:\/\/www.google.co.uk\/maps\/dir\/\/Pedmore+Technology+College+and+Community+School,+Grange+Ln,+Stourbridge+DY9+7HS\/@52.4497814,-2.127138,19z\/data=!4m15!1m6!3m5!1s0x4870910b3e173035:0xe7d91f552c61376b!2sPedmore+Technology+College+and+Community+School!8m2!3d52.4497731!4d-2.1268248!4m7!1m0!1m5!1m1!1s0x4870910b3e173035:0xe7d91f552c61376b!2m2!1d-2.126825!2d52.4497729?hl=en"
     },
     {
         "id": "lutley",
