@@ -13,21 +13,22 @@ app.controller('navController', function($scope) {
         $scope.activeTab = tab;
     };
     $scope.isActive = function(tab) {
-        return tab.id == $scope.activeTab.id;  
+        return tab.id === $scope.activeTab.id;  
     };
 });
 
-app.controller('venueController', function($scope, $http) {
+app.controller('venueController', function($scope, $http, $timeout) {
 
     $scope.selectedVenue = {};
     $scope.venues = [];
     $scope.selectedClass = {};
-    $scope.success = false;
+    $scope.success = undefined;
+    $scope.submitting = false;
 
     $scope.deleteVenue = function(venueId) {
       console.info( "deleting " + venueId);  
       for( var i=0; i<$scope.venues.length; i++ ) {
-        if( $scope.venues[i].id == venueId ) {
+        if( $scope.venues[i].id === venueId ) {
             $scope.venues.splice(i, 1);
             break;
         }
@@ -35,27 +36,35 @@ app.controller('venueController', function($scope, $http) {
       $scope.selectedVenue = $scope.venues[0];
     };
 
-    $http.get('dance_venues.txt?_='+ new Date().getTime()).success(function(data) {
+    $http.get('https://storage.googleapis.com/dance-x-treme-data/dance_venues.txt?_='+ new Date().getTime()).success(function(data) {
         $scope.venues = data;   
         $scope.selectedVenue = $scope.venues[0];
     });
     
     $scope.submit = function() {
-        $http.post('update_venue.php', $scope.venues).success(function(data) {
+    	$scope.submitting = true;
+        $http.post('update_venue.php', $scope.venues).success(function() {
            console.log("venue update successful"); 
            $scope.success = true;
+           $timeout(()=>{ $scope.success = undefined; }, 5000);
+           $scope.submitting = false;
+        }).error(()=>{
+        	$scope.success = false;
+        	$timeout(()=>{ $scope.success = undefined; }, 5000);
+        	$scope.submitting = false;        
         });
     };
     
 });
 
-app.controller('galleryController', function($scope, $http) {
+app.controller('galleryController', function($scope, $http, $timeout) {
    
    $scope.currentAlbumId=0;
    $scope.albums = [];
-   $scope.success = false;
+   $scope.success = undefined;
+   $scope.submitting = false;
        
-    $http.get('dance_galleries.txt?_='+ new Date().getTime()).success(function(data) {
+    $http.get('https://storage.googleapis.com/dance-x-treme-data/dance_galleries.txt?_='+ new Date().getTime()).success(function(data) {
         $scope.albums = data;   
     });
     
@@ -67,9 +76,16 @@ app.controller('galleryController', function($scope, $http) {
     };
     
     $scope.submit = function() {
-        $http.post('update_gallery.php', $scope.albums).success(function(data) {
+    	$scope.submitting = true;
+        $http.post('update_gallery.php', $scope.albums).success(function() {
            console.log("gallery update successful"); 
            $scope.success = true;
+           $timeout(()=>{ $scope.success = undefined; }, 5000);
+           $scope.submitting = false;
+        }).error(()=>{
+        	$scope.success = false;
+        	$timeout(()=>{ $scope.success = undefined; }, 5000);
+        	$scope.submitting = false;
         });
     };
     

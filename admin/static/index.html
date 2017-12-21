@@ -194,11 +194,15 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-2">
-                        <button type="submit" class="btn btn-default" ng-click="submit()">Submit</button>
+                        <button type="submit" class="btn btn-default" ng-click="submit()" ng-disabled="submitting">Submit</button>
                     </div>
                     <div class="col-sm-6 alert alert-success" role="alert" ng-if="success">
                         Venues update successfully submitted
                     </div>                    
+                    <div class="col-sm-6 alert alert-danger" role="alert" ng-if="success == false">
+                        Venues update failed
+                    </div>
+                
                 </div>
             </form>
         </div>
@@ -273,11 +277,15 @@
                 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-2">
-                        <button type="submit" class="btn btn-default" ng-click="submit()">Submit</button>
+                        <button type="submit" class="btn btn-default" ng-click="submit()" ng-disabled="submitting">Submit</button>
                     </div>
                     <div class="col-sm-6 alert alert-success" role="alert" ng-if="success">
                         Gallery update successfully submitted
                     </div>
+                    <div class="col-sm-6 alert alert-danger" role="alert" ng-if="success == false">
+                        Gallery update failed
+                    </div>
+
                 </div>
                 
             </form>

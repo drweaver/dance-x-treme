@@ -1,23 +1,24 @@
 'use strict';
 
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const Storage = require('@google-cloud/storage');
+
+const DANCE_VENUES = 'dance_venues.txt';
+const DANCE_GALLERIES = 'dance_galleries.txt';
 
 // Instantiate a storage client
 const storage = Storage();
 const bucket = storage.bucket('dance-x-treme-data');
 
 app.use(express.static('static'));
+const jsonParser = bodyParser.json();
 
-app.get('/', (req, res) => {
-  res.status(200).send('Hello, world!').end();
-});
-
-app.get('/dance_galleries.txt', (req, res) => {
-  //console.log('req', req);
-  getFile('dance_galleries.txt')
+app.get('/'+DANCE_GALLERIES, (req, res) => {
+  getFile(DANCE_GALLERIES)
     .then(data => {
+    	console.log('Successfully loaded galleries');
       res.status(200).send(data).end();
     })
     .catch(err => {
@@ -26,10 +27,10 @@ app.get('/dance_galleries.txt', (req, res) => {
     });
 });
 
-app.get('/dance_venues.txt', (req, res) => {
-  //console.log('req', req);
-  getFile('dance_venues.txt')
+app.get('/'+DANCE_VENUES, (req, res) => {
+  getFile(DANCE_VENUES)
     .then(data => {
+    	console.log('Successfully loaded venues');
       res.status(200).send(data).end();
     })
     .catch(err => {
@@ -38,9 +39,26 @@ app.get('/dance_venues.txt', (req, res) => {
     });
 });
 
-app.post('update_venue.php', (req, res) => {
-	
+app.post('/update_venue.php', jsonParser, (req, res) => {
+	saveFile(DANCE_VENUES, JSON.stringify(req.body))
+	  .then( () => {
+	  	console.log('Successfully saved updated venues');
+		res.status(200).end();
+	  })
+	  .catch( err => {
+	  	console.error('Failed to save file to storage', err);
+	  	res.status(500).end();
+	  });
 });
+
+function saveFile( name, data ) {
+	let file = bucket.file(name);
+	return file
+		  .save(Buffer.from(data))
+		  .then( () => {
+		  	return file.makePublic();
+		  });
+}
 
 function getFile( name ) {
 	return new Promise( res => {
@@ -48,6 +66,7 @@ function getFile( name ) {
     	.file(name)
     	.download()
     	.then(data => {
+    		console.log(name, data.toString());
       	 res(data.toString());
     	});
 	});

@@ -18,10 +18,12 @@
     "pretest": "npm run lint",
     "system-test": "samples test app",
     "test": "npm run system-test",
-    "e2e-test": "samples test deploy"
+    "e2e-test": "samples test deploy",
+    "set-cors": "gsutil cors set cors-json-file.json gs://dance-x-treme-data"
   },
   "dependencies": {
     "express": "4.15.4",
+    "body-parser": "1.18.2",
     "@google-cloud/storage": "1.2.1"
   },
   "devDependencies": {
