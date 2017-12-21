@@ -1,0 +1,39 @@
+{
+  "name": "dance-x-treme-admin",
+  "description": "Dance-X-Treme admin page deployed using Google App Engine.",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "author": "Shane Weaver",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dance-x-treme.git"
+  },
+  "engines": {
+    "node": ">=4.3.2"
+  },
+  "scripts": {
+    "deploy": "gcloud app deploy",
+    "start": "node app.js",
+    "lint": "samples lint",
+    "pretest": "npm run lint",
+    "system-test": "samples test app",
+    "test": "npm run system-test",
+    "e2e-test": "samples test deploy"
+  },
+  "dependencies": {
+    "express": "4.15.4",
+    "@google-cloud/storage": "1.2.1"
+  },
+  "devDependencies": {
+    "@google-cloud/nodejs-repo-tools": "1.4.17"
+  },
+  "cloud-repo-tools": {
+    "test": {
+      "app": {
+        "msg": "Hello, world!"
+      }
+    },
+    "requiresKeyFile": true,
+    "requiresProjectId": true
+  }
+}
