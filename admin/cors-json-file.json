@@ -1,6 +1,6 @@
 [
     {
-      "origin": ["https://8080-dot-3230525-dot-devshell.appspot.com"],
+      "origin": ["https://8080-dot-3230525-dot-devshell.appspot.com", "https://dance-x-treme-987.appspot.com", "http://www.dance-x-treme.co.uk", "http://dance-x-treme.co.uk"],
       "responseHeader": ["Content-Type"],
       "method": ["GET", "HEAD", "DELETE"],
       "maxAgeSeconds": 3600
