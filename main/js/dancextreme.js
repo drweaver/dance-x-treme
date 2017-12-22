@@ -51,7 +51,8 @@ var DateUtil = {
 var DOW = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var MOY = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-
+var GALLERY_DATA = 'https://storage.googleapis.com/dance-x-treme-data/dance_galleries.txt?_='+ new Date().getTime();
+var VENUE_DATA = 'https://storage.googleapis.com/dance-x-treme-data/dance_venues.txt?_='+ new Date().getTime();
 
 var app = angular.module('dancextremeApp', [ 'ngAnimate', 'uiGmapgoogle-maps']);
 
@@ -173,7 +174,7 @@ app.controller('venueController', function($scope, $http, $location, uiGmapIsRea
     
     }
     
-    $http.get('data/dance_venues.txt?_='+ new Date().getTime()).success(load);
+    $http.get(VENUE_DATA).success(load);
 
 
 });
@@ -266,7 +267,7 @@ app.controller('ClassController', function($scope, $http, $location) {
         }
         $scope.loading = false;
     }
-    $http.get('data/dance_venues.txt?_='+ new Date().getTime()).success(load);
+    $http.get(VENUE_DATA).success(load);
 });
 
 app.controller('GalleryController', function ($scope, $http, $location) {
@@ -319,7 +320,7 @@ app.controller('GalleryController', function ($scope, $http, $location) {
         });
         return yearsArray.sort().reverse();
     }
-    $http.get('data/dance_galleries.txt?_='+ new Date().getTime()).success(function(data) {
+    $http.get(GALLERY_DATA).success(function(data) {
         //$scope.query = 'latest';
         parseAndSortDate(data);
         $.each(data, function(index, value) { index < 8 ? value.latest = 'latest' : value.latest = 'oldest' });
@@ -452,7 +453,7 @@ app.controller('NextDanceImageController', function( $scope, $interval, $http ) 
     $scope.selected = 0;
     $scope.count = 0;
     $scope.images = [];
-    $http.get('data/dance_galleries.txt?_='+ new Date().getTime()).success(function(data) {
+    $http.get(GALLERY_DATA).success(function(data) {
         var start = Math.floor((Math.random() * (data.length-5)));
         for( var i=start; i<(start+5); i++) {
             $scope.images.push( { src: data[i].thumbnail });

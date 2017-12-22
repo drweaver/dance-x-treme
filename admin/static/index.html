@@ -194,7 +194,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-2">
-                        <button type="submit" class="btn btn-default" ng-click="submit()" ng-disabled="submitting">Submit</button>
+                        <button type="submit" class="btn btn-primary" ng-click="submit()" ng-disabled="submitting">Submit</button>
                     </div>
                     <div class="col-sm-6 alert alert-success" role="alert" ng-if="success">
                         Venues update successfully submitted
@@ -252,6 +252,7 @@
                     <label for="inputAlbumThumbnail" class="col-sm-2 control-label">Album Thumbnail Image URL</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="inputAlbumThumbnail" placeholder="Thumbnail Image URL" ng-model="albums[currentAlbumId].thumbnail" ng-change="thumbnailFix()">
+                        Open chosen image within google photos website, right click and select Copy Image Link. Paste that URL in above box.
                     </div>
                 </div>
                 <div class="row">
@@ -272,12 +273,13 @@
                     <label for="inputAlbumDate" class="col-sm-2 control-label">Album Date</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="inputAlbumDate" placeholder="YYYY-MM-DD" ng-model="albums[currentAlbumId].date">
+                        Ensure this is in format YYYY-MM-DD e.g. for 9th March 2018 use 2018-03-09
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-2">
-                        <button type="submit" class="btn btn-default" ng-click="submit()" ng-disabled="submitting">Submit</button>
+                        <button type="submit" class="btn btn-primary" ng-click="submit()" ng-disabled="submitting">Submit</button>
                     </div>
                     <div class="col-sm-6 alert alert-success" role="alert" ng-if="success">
                         Gallery update successfully submitted
