@@ -63,7 +63,8 @@ app.controller('galleryController', function($scope, $http, $timeout) {
    $scope.albums = [];
    $scope.success = undefined;
    $scope.submitting = false;
-       
+   $scope.datePattern = /\d\d\d\d-\d\d-\d\d/;
+
     $http.get('https://storage.googleapis.com/dance-x-treme-data/dance_galleries.txt?_='+ new Date().getTime()).success(function(data) {
         $scope.albums = data;   
     });
