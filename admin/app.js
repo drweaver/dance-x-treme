@@ -43,7 +43,19 @@ app.post('/update_venue.php', jsonParser, (req, res) => {
 	saveFile(DANCE_VENUES, JSON.stringify(req.body))
 	  .then( () => {
 	  	console.log('Successfully saved updated venues');
-		res.status(200).end();
+			res.status(200).end();
+	  })
+	  .catch( err => {
+	  	console.error('Failed to save file to storage', err);
+	  	res.status(500).end();
+	  });
+});
+
+app.post('/update_gallery.php', jsonParser, (req, res) => {
+	saveFile(DANCE_GALLERIES, JSON.stringify(req.body))
+	  .then( () => {
+	  	console.log('Successfully saved updated galleries');
+			res.status(200).end();
 	  })
 	  .catch( err => {
 	  	console.error('Failed to save file to storage', err);
