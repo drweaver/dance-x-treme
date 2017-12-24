@@ -98,7 +98,7 @@
     <!--
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
     -->
-    <script src="js/dancextreme.js"></script>
+    <script src="js/dancextreme.js?_=20171224"></script>
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-12475745-1']);
