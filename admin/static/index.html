@@ -136,7 +136,7 @@
 
                                 </div>
                                 <div class="col-sm-1">
-                                    <button type="button" class="btn btn-default btn-sm" ng-click="selectedVenue.closures.push('')">
+                                    <button type="button" class="btn btn-default btn-sm" ng-click="selectedVenue.closures ? selectedVenue.closures.push('') : selectedVenue.closures = ['']">
                                         <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> new
                                     </button>
                                 </div>
@@ -155,7 +155,7 @@
 
 
                                 <div class="col-sm-2">
-                                    <button type="button" class="btn btn-default btn-sm" ng-click="selectedVenue.timetable.push({day:'New Day', time: []});selectedClass=selectedVenue.timetable[selectedVenue.timetable.length-1]">
+                                    <button type="button" class="btn btn-default btn-sm" ng-click="selectedVenue.timetable?selectedVenue.timetable.push({day:'New Day', time: []}):selectedVenue.timetable=[{day:'New Day', time: []}];selectedClass=selectedVenue.timetable[selectedVenue.timetable.length-1]">
                                         <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> new day
                                     </button>
                                 </div>
