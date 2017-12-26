@@ -111,7 +111,7 @@
           <img class="img-circle" src="img/venues-snapshot.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
           </a>
           <h2>Find Us</h2>
-          <a href="/classes">Classes</a> start at just £4.50 and are held in Wolverhampton, Stourbridge, Halesowen, Walsall and Sutton Coldfield.</p>
+          <a href="/classes">Classes</a> start at just £5.00 and are held in Bromsgrove, Wolverhampton, Stourbridge, Halesowen, Walsall and Sutton Coldfield.</p>
           <p><a class="btn btn-default" href="/venues" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->

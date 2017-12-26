@@ -15,8 +15,17 @@
 
 	<div class="jumbotron">
     
-<p><strong>Private lessons</strong> are available on Sunday's at <a href="/venues#!/by-venue/at-lutley-community-centre">Lutley community centre</a>, Brookwillow Road, Halesowen via 
-    school entrance. 
+<p><strong>Private lessons</strong> are available on:</p>
+<p>
+    <ul>
+        <li>Sunday's at <a href="/venues#!/by-venue/at-lutley-community-centre">Lutley community centre</a>, 
+        Brookwillow Road, Halesowen (via 
+        school entrance)</li>
+        <li>Saturday's at <a href="/venues#!/by-venue/at-trinity-methodist-church">Trinity Methodist Church</a>, 
+        Histons Hill, Codsall</li>
+    </ul>
+</p>
+<p>
 Lessons cost &pound;22 for 1 hour and are pre-bookable by seeing Sue at class or using the 
 contact details above.
 </p>

@@ -47,7 +47,7 @@
           <img src="img/main_image4.jpg" alt="Forth slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>our classes are held in Wolverhampton, Stourbridge, Halesowen, Walsall and Sutton Coldfield</h1>
+              <h1>our classes are held in Bromsgrove, Wolverhampton, Stourbridge, Halesowen, Walsall and Sutton Coldfield</h1>
               <p></p>
               <p><a class="btn btn-lg btn-primary" href="/venues" role="button">Find Venues</a></p>
             </div>
@@ -57,7 +57,7 @@
           <img src="img/main_image5.jpg" alt="Fifth slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>we also teach private lessons on Sunday's in Halesowen</h1>
+              <h1>we also teach private lessons on Sunday's in Halesowen and Saturday's at Codsall in Wolverhampton</h1>
               <p></p>
               <p><a class="btn btn-lg btn-primary" href="/contact" role="button">Book Now</a></p>
             </div>
