@@ -34,17 +34,18 @@
 	
 	<hr/>
 	
-	<!--
-	<div class="alert alert-warning" role="alert">
-   		Class timetables below are now <b>updated for 2017</b>.  See you in January!
- 	</div>
- 	-->
 	
-
+	<div class="alert alert-warning" role="alert">
+   		Class timetables below are now <b>updated for 2018</b>.  See you in January!
+ 	</div>
+ 	
+	
+		<!-- 
         <div class="alert alert-warning" role="alert">
                 <b>Tuesday classes</b> at Old Halesonians Rugby Club are <b>moving to a new venue on 21-Nov-2017</b> see updated Tuesday classes at 
 		Pedmore Technology College below! 
-        </div>
+        </div> 
+		-->
 
 	<?php 
 	if(isset($_GET['_escaped_fragment_'])){
