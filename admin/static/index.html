@@ -267,27 +267,19 @@
                                 <label for="inputAlbumUrl" class="col-sm-2 control-label">Album URL</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="inputAlbumUrl" placeholder="Album URL" ng-model="albums[currentAlbumId].url">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-10 col-sm-offset-2">
-                                    <a ng-href="{{albums[currentAlbumId].url}}" target="_blank">Test Album URL</a>
+                                    <span class="help-block"><a ng-href="{{albums[currentAlbumId].url}}" target="_blank">Test Album URL</a></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputAlbumThumbnail" class="col-sm-2 control-label">Album Thumbnail Image URL</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="inputAlbumThumbnail" placeholder="Thumbnail Image URL" ng-model="albums[currentAlbumId].thumbnail"
-                                        ng-change="thumbnailFix()"> Open chosen image within google photos website, right click and select Copy Image Link.
-                                    Paste that URL in above box.
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-5 col-sm-offset-2">
-                                    <a ng-href="{{albums[currentAlbumId].thumbnail}}" target="_blank">Test Thumnail URL</a>
-                                </div>
-                                <div class="col-sm-5">
-                                    <img ng-src="{{albums[currentAlbumId].thumbnail}}" width=160 height=160>
+                                        ng-change="thumbnailFix()"> 
+                                        <span class="help-block">Open chosen image within google photos website, right click and select Copy Image Link.
+                                    Paste that URL in above box.</span>
+                                    <span class="help-block"><button class="btn btn-default btn-sm" type="submit" ng-click="albums[currentAlbumId].thumbnail = ''">Clear Thumbnail URL</button></span>
+                                    <span class="help-block"><a ng-href="{{albums[currentAlbumId].thumbnail}}" target="_blank">Test Thumnail URL</a></span>
+                                    <span class="help-block"><img ng-hide="albums[currentAlbumId].thumbnail == null || albums[currentAlbumId].thumbnail.length == 0" ng-src="{{albums[currentAlbumId].thumbnail}}" width=160 height=160></span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -299,7 +291,8 @@
                             <div class="form-group">
                                 <label for="inputAlbumDate" class="col-sm-2 control-label">Album Date</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputAlbumDate" name="inputAlbumDate" placeholder="YYYY-MM-DD" ng-model="albums[currentAlbumId].date"> Ensure this is in format YYYY-MM-DD e.g. for 9th March 2018 use 2018-03-09
+                                    <input type="text" class="form-control" id="inputAlbumDate" name="inputAlbumDate" placeholder="YYYY-MM-DD" ng-model="albums[currentAlbumId].date"> 
+                                <span class="help-block">Ensure this is in format YYYY-MM-DD e.g. for 9th March 2018 use 2018-03-09</span>
                                 </div>
                             </div>
                         </form>
