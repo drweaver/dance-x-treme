@@ -52,7 +52,6 @@
                 <li id="nav-classes"><a href="/classes">Classes</a></li>
                 <li id="nav-venues"><a href="/venues">Venues</a></li>
                 <li id="nav-events"><a href="/events">Events</a></li>
-                <li id="nav-holidays"><a href="/holidays">Holidays</a></li>
                 <li id="nav-gallery"><a href="/gallery">Gallery</a></li>
                 <!--
                 <li id="nav-about"><a href="/about">About</a></li>
