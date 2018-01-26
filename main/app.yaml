@@ -1,30 +1,31 @@
 runtime: php55
 api_version: 1
 manual_scaling:
-  instances: 5
-service: dance-x-treme
+  instances: 1
 
 handlers:
 # Serve assets as static resources.
 - url: /css
   static_dir: css
-  secure: never
+  secure: always
+  application_readable: true
 
 - url: /img
   static_dir: img
-  secure: never
+  secure: always
 
 - url: /js
   static_dir: js
-  secure: never
+  secure: always
 
 - url: /data
   static_dir: data
-  secure: never
+  secure: always
   application_readable: true
 
 - url: /favicon.ico
   static_files: favicon.ico
+  upload: favicon.ico
 
 # Dont serve internal files
 - url: /(master|default_vars|.*_content|.*_controller|.*_head)(\.(php|html))?
@@ -33,7 +34,8 @@ handlers:
 # Serve php scripts.
 - url: /
   script: index.php
+  secure: always
 
 - url: /(.+)(\.html)?$
   script: \1.php
-
+  secure: always

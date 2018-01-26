@@ -417,7 +417,7 @@ app.directive('enablePathWatch', function() {
    };
 });
 
-var g_api_key = 'AIzaSyAnZG8goK-RU8FGq6MCS31bjgYzi5YF_rQ';
+var g_api_key =  'AIzaSyDm0r4q0ScAz4-UCBQO3KdxM38Fo-1Z2jo';
 
 app.factory('getNextEvent', ['$http',
   function($http) {
