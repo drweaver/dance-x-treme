@@ -325,7 +325,7 @@ app.controller('GalleryController', function ($scope, $http, $location) {
         parseAndSortDate(data);
         $.each(data, function(index, value) { index < 8 ? value.latest = 'latest' : value.latest = 'oldest' });
         $scope.albums = data;
-        $scope.canned = ['Latest'].concat(years(data).concat(['Pelsall', 'Coven', 'Tower', 'Cornbow', 'Halloween', 'Christmas', 'Valentines']));
+        $scope.canned = ['Latest'].concat(years(data).concat(['Pelsall', 'Coven', 'Cornbow', 'Halloween', 'Christmas', 'Valentines']));
         if( $location.path() == '' ) {
             console.log("setting default path");
             $location.path('/Latest').replace();

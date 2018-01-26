@@ -1,7 +1,6 @@
 runtime: php55
 api_version: 1
-manual_scaling:
-  instances: 1
+automatic_scaling:
 
 handlers:
 # Serve assets as static resources.
