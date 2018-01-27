@@ -26,6 +26,10 @@ handlers:
   static_files: favicon.ico
   upload: favicon.ico
 
+- url: /robots.txt
+  static_files: robots.txt
+  upload: robots.txt
+
 # Dont serve internal files
 - url: /(master|default_vars|.*_content|.*_controller|.*_head)(\.(php|html))?
   script: 404.php
@@ -35,6 +39,10 @@ handlers:
   script: index.php
   secure: always
 
-- url: /(.+)(\.html)?$
+- url: /(index|classes|venues|events|gallery|contact)(\.html)?$
   script: \1.php
   secure: always
+
+- url: /.*
+  script: 404.php
+

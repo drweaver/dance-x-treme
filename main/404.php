@@ -1,5 +1,7 @@
 <?php
 
+http_response_code(404);
+
 include('./default_vars.php');
 
 $t_description = 'Page not found!';
