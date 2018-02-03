@@ -34,11 +34,11 @@
 	
 	<hr/>
 	
-	
+<!--	
 	<div class="alert alert-warning" role="alert">
    		Class timetables below are now <b>updated for 2018</b>.  See you in January!
  	</div>
- 	
+--> 	
 	
 		<!-- 
         <div class="alert alert-warning" role="alert">
