@@ -5,7 +5,8 @@ var app = angular.module('dancextremeadmin', [ ]);
 app.controller('navController', function($scope) {
     $scope.tabs = [
         { id: "venues", name: "Venues" },
-        { id: "gallery", name: "Gallery" }
+        { id: "gallery", name: "Gallery" },
+        { id: "holiday_gallery", name: "Holiday Gallery" }
         ] ;
       
     $scope.activeTab = $scope.tabs[0];    
@@ -65,9 +66,15 @@ app.controller('galleryController', function($scope, $http, $timeout) {
    $scope.submitting = false;
    $scope.datePattern = /\d\d\d\d-\d\d-\d\d/;
 
-    $http.get('https://storage.googleapis.com/dance-x-treme-data/dance_galleries.txt?_='+ new Date().getTime()).success(function(data) {
-        $scope.albums = data;   
-    });
+
+   $scope.init = function( data_url, post_url ) {
+        $scope.data_url = data_url;
+        $scope.post_url = post_url;
+        $http.get($scope.data_url+'?_='+ new Date().getTime()).success(function(data) {
+            $scope.albums = data;   
+        });    
+   };
+
     
     $scope.thumbnailFix = function() {
         var t = $scope.albums[$scope.currentAlbumId].thumbnail;
@@ -78,7 +85,7 @@ app.controller('galleryController', function($scope, $http, $timeout) {
     
     $scope.submit = function() {
     	$scope.submitting = true;
-        $http.post('update_gallery.php', $scope.albums).success(function() {
+        $http.post($scope.post_url, $scope.albums).success(function() {
            console.log("gallery update successful"); 
            $scope.success = true;
            $timeout(()=>{ $scope.success = undefined; }, 5000);
