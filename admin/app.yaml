@@ -19,6 +19,9 @@ handlers:
 - url: /update_gallery.php
   script: update_gallery.php
 
+- url: /update_holiday_gallery.php
+  script: update_holiday_gallery.php
+
 skip_files:
 - node_modules/
 - package.*
