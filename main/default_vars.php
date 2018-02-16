@@ -16,4 +16,6 @@ $t_banner_num = rand(1,5);
 $t_content_inc = './empty_content.php';
 $t_rightbox_inc = './right_box.php';
 $t_navname = 'none';
+$t_navbar_inc = './navbar.php';
+$t_copyright = 'Dance-X-Treme';
 ?>

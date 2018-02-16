@@ -1,4 +1,4 @@
-<div ng-controller="GalleryController">
+<div ng-controller="<?php echo $t_gallery_controller; ?>">
 
     <div class="alert alert-info" ng-if="loading">
         <div class="loader">Loading...</div>Loading galleries, best dress, dance partner, please wait...

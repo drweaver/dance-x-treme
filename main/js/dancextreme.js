@@ -52,7 +52,12 @@ var DOW = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Sa
 var MOY = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 var GALLERY_DATA = 'https://storage.googleapis.com/dance-x-treme-data/dance_galleries.txt?_='+ new Date().getTime();
+var HOLIDAY_GALLERY_DATA = 'https://storage.googleapis.com/dance-x-treme-data/holiday_dance_galleries.txt?_='+ new Date().getTime();
+
 var VENUE_DATA = 'https://storage.googleapis.com/dance-x-treme-data/dance_venues.txt?_='+ new Date().getTime();
+
+var CANNED_ALBUMS = ['Pelsall', 'Coven', 'Cornbow', 'Halloween', 'Christmas', 'Valentines'];
+var HOLIDAY_CANNED_ALBUMS = ['Tower', 'Weekend'];
 
 var app = angular.module('dancextremeApp', [ 'ngAnimate', 'uiGmapgoogle-maps']);
 
@@ -270,81 +275,85 @@ app.controller('ClassController', function($scope, $http, $location) {
     $http.get(VENUE_DATA).success(load);
 });
 
-app.controller('GalleryController', function ($scope, $http, $location) {
-    $scope.loading = true;
-    $scope.query_terms = [];
-    $scope.search = function(query) {
-        $location.path('/'+query.replace(/ /g, '/')).replace();
-    };
-    $scope.keyup = function(enter_pressed) {
-        if( enter_pressed ) {
-            $location.path('/'+$scope.query.replace(/ /g, '/')).replace();
-        } else {
-            $scope.query_terms = $scope.query.split(" ");
-        }
-    };
-    
-    $scope.album_filter = function(value, index, array) {
-        if( $scope.query_terms.length == 0 ) 
-            return false;
-            
-        for (var i in $scope.query_terms) {
-            var term = $scope.query_terms[i].toLowerCase();
-            if( value.date.indexOf(term) == -1 && value.name.toLowerCase().indexOf(term) == -1 && value.latest != term ) 
-                return false;
-        }
-        return true;
-        
-    };
-    
-    function parseAndSortDate(json) {
-        $.each(json, function(index, value) {
-            value.dateParsed = DateUtil.parse(value.date);
-            value.datePretty = value.dateParsed.toLocaleDateString();
-            value.dateYear = value.dateParsed.getFullYear();
-            value.dateMonth = DateUtil.MONTH_LONG[value.dateParsed.getMonth()]; 
-        });
-        json.sort(function(a, b) {
-            return b.dateParsed.getTime() - a.dateParsed.getTime();
-        });
-    }
-    
-    function years(json) {
-        var years = {};
-        $.each(json, function(index, value) {
-            years[value.dateYear] = true;
-        });
-        var yearsArray = [];
-        $.each(years, function(iy, y) {
-            yearsArray.push(iy);
-        });
-        return yearsArray.sort().reverse();
-    }
-    $http.get(GALLERY_DATA).success(function(data) {
-        //$scope.query = 'latest';
-        parseAndSortDate(data);
-        $.each(data, function(index, value) { index < 8 ? value.latest = 'latest' : value.latest = 'oldest' });
-        $scope.albums = data;
-        $scope.canned = ['Latest'].concat(years(data).concat(['Pelsall', 'Coven', 'Cornbow', 'Halloween', 'Christmas', 'Valentines']));
-        if( $location.path() == '' ) {
-            console.log("setting default path");
-            $location.path('/Latest').replace();
-        }        
-        $scope.loading = false;
-        $scope.$watch(
-            function() {return $location.path();},
-            function(newVal, oldVal) {
-                var results = newVal.split("/");
-                $scope.query_terms = [];
-                $.each(results, function(i,v) { v != '' ? $scope.query_terms.push(v):false; });
-                $scope.query=$scope.query_terms.join(' '); 
+function CommonGalleryController( gallery_url, canned_albums ) {
+    return function ($scope, $http, $location) {
+        $scope.loading = true;
+        $scope.query_terms = [];
+        $scope.search = function(query) {
+            $location.path('/'+query.replace(/ /g, '/')).replace();
+        };
+        $scope.keyup = function(enter_pressed) {
+            if( enter_pressed ) {
+                $location.path('/'+$scope.query.replace(/ /g, '/')).replace();
+            } else {
+                $scope.query_terms = $scope.query.split(" ");
             }
-        );
+        };
+        
+        $scope.album_filter = function(value, index, array) {
+            if( $scope.query_terms.length == 0 ) 
+                return false;
+                
+            for (var i in $scope.query_terms) {
+                var term = $scope.query_terms[i].toLowerCase();
+                if( value.date.indexOf(term) == -1 && value.name.toLowerCase().indexOf(term) == -1 && value.latest != term ) 
+                    return false;
+            }
+            return true;
+            
+        };
+        
+        function parseAndSortDate(json) {
+            $.each(json, function(index, value) {
+                value.dateParsed = DateUtil.parse(value.date);
+                value.datePretty = value.dateParsed.toLocaleDateString();
+                value.dateYear = value.dateParsed.getFullYear();
+                value.dateMonth = DateUtil.MONTH_LONG[value.dateParsed.getMonth()]; 
+            });
+            json.sort(function(a, b) {
+                return b.dateParsed.getTime() - a.dateParsed.getTime();
+            });
+        }
+        
+        function years(json) {
+            var years = {};
+            $.each(json, function(index, value) {
+                years[value.dateYear] = true;
+            });
+            var yearsArray = [];
+            $.each(years, function(iy, y) {
+                yearsArray.push(iy);
+            });
+            return yearsArray.sort().reverse();
+        }
+        $http.get(gallery_url).success(function(data) {
+            //$scope.query = 'latest';
+            parseAndSortDate(data);
+            $.each(data, function(index, value) { index < 8 ? value.latest = 'latest' : value.latest = 'oldest' });
+            $scope.albums = data;
+            $scope.canned = ['Latest'].concat(years(data).concat(canned_albums));
+            if( $location.path() == '' ) {
+                console.log("setting default path");
+                $location.path('/Latest').replace();
+            }        
+            $scope.loading = false;
+            $scope.$watch(
+                function() {return $location.path();},
+                function(newVal, oldVal) {
+                    var results = newVal.split("/");
+                    $scope.query_terms = [];
+                    $.each(results, function(i,v) { v != '' ? $scope.query_terms.push(v):false; });
+                    $scope.query=$scope.query_terms.join(' '); 
+                }
+            );
 
-    });
+        });
+    }
+}
 
-    
-});
+app.controller('GalleryController', CommonGalleryController(GALLERY_DATA, CANNED_ALBUMS));
+app.controller('HolidayGalleryController', CommonGalleryController(HOLIDAY_GALLERY_DATA, HOLIDAY_CANNED_ALBUMS));
+
 
 app.controller('NewsletterController', function ($scope, $http, $location) {
     $scope.loading = true;

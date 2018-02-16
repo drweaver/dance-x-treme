@@ -32,11 +32,7 @@ handlers:
 
 # Serve php scripts.
 - url: /
-  script: index.php
-  secure: always
-
-- url: /(index|classes|venues|events|gallery|contact)(\.html)?$
-  script: \1.php
+  script: holidays_gallery.php
   secure: always
 
 - url: /.*
