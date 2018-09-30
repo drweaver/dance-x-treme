@@ -4,44 +4,11 @@
         "name": "Coven Memorial Hall",
         "nickname": "Coven",
         "enabled": true,
-        "address": "Brewood Road, Coven,Wolverhampton, WV9 5DL",
+        "address": "Brewood Road, Coven, Wolverhampton, WV9 5DL",
         "area": "Wolverhampton",
         "timetable": [
             {
                 "day": "Monday",
-                "time": [
-                    {
-                        "startTime": "7:00pm",
-                        "duration": "45",
-                        "price": "5.00",
-                        "level": "New Beginners",
-                        "style": "Ballroom & Latin"
-                    },
-                    {
-                        "startTime": "7:45pm",
-                        "duration": "45",
-                        "price": "5.00",
-                        "level": "Improvers",
-                        "style": "Ballroom & Latin"
-                    },
-                    {
-                        "startTime": "8:30pm",
-                        "duration": "45",
-                        "price": "5.00",
-                        "level": "Intermediate",
-                        "style": "Ballroom & Latin"
-                    },
-                    {
-                        "startTime": "9:15pm",
-                        "duration": "45",
-                        "price": "5.00",
-                        "level": "Advanced",
-                        "style": "Ballroom & Latin"
-                    }
-                ]
-            },
-            {
-                "day": "Wednesday",
                 "time": [
                     {
                         "startTime": "7:00pm",
@@ -72,13 +39,44 @@
                         "style": "Ballroom & Latin"
                     }
                 ]
+            },
+            {
+                "day": "Wednesday",
+                "time": [
+                    {
+                        "startTime": "7:00pm",
+                        "duration": "45",
+                        "price": "5.00",
+                        "level": "New Beginners",
+                        "style": "Ballroom & Latin"
+                    },
+                    {
+                        "startTime": "7:45pm",
+                        "duration": "45",
+                        "price": "5.00",
+                        "level": "Intermediate",
+                        "style": "Ballroom & Latin"
+                    },
+                    {
+                        "startTime": "8:30pm",
+                        "duration": "45",
+                        "price": "5.00",
+                        "level": "Higher Intermediate",
+                        "style": "Ballroom & Latin"
+                    },
+                    {
+                        "startTime": "9:15pm",
+                        "duration": "45",
+                        "price": "5.00",
+                        "level": "Advanced",
+                        "style": "Ballroom & Latin"
+                    }
+                ]
             }
         ],
         "closures": [
-            "2017-08-21",
-            "2017-08-23",
-            "2017-08-28",
-            "2017-08-30"
+            "2018-08-29",
+            "2018-08-27"
         ],
         "position": {
             "latitude": 52.66024,
@@ -101,7 +99,7 @@
                         "startTime": "6:00pm",
                         "duration": "45",
                         "price": "5.00",
-                        "level": "Improvers",
+                        "level": "New Beginners",
                         "style": "Ballroom & Latin"
                     },
                     {
@@ -115,17 +113,14 @@
                         "startTime": "7:45pm",
                         "duration": "60",
                         "price": "5.50",
-                        "level": "Combined Higher Intermediate \/ Advanced",
+                        "level": "Advanced",
                         "style": "Ballroom & Latin"
                     }
                 ]
             }
         ],
         "closures": [
-            "2017-05-28",
-            "2017-07-09",
-            "2017-07-30",
-            "2017-08-27"
+            "2018-08-26"
         ],
         "position": {
             "latitude": 52.556929,
@@ -148,14 +143,14 @@
                         "startTime": "7:00pm",
                         "duration": "45",
                         "price": "5.00",
-                        "level": "Beginners",
+                        "level": "New Beginners",
                         "style": "Ballroom & Latin"
                     },
                     {
                         "startTime": "7:45pm",
                         "duration": "45",
                         "price": "5.00",
-                        "level": "Improvers",
+                        "level": "Intermediate",
                         "style": "Ballroom & Latin"
                     },
                     {
@@ -169,8 +164,7 @@
             }
         ],
         "closures": [
-            "2017-08-24",
-            "2017-08-31"
+            "2018-07-19"
         ],
         "position": {
             "latitude": 52.5807768,
@@ -226,10 +220,8 @@
             }
         ],
         "closures": [
-            "2017-07-04",
-            "2017-07-05",
-            "2017-08-01",
-            "2017-08-02"
+            "2018-07-17",
+            "2018-07-18"
         ],
         "position": {
             "latitude": 52.564114,
@@ -271,14 +263,14 @@
                         "startTime": "7:45pm",
                         "duration": "45",
                         "price": "5.00",
-                        "level": "Improvers",
+                        "level": "Intermediate",
                         "style": "Ballroom & Latin"
                     },
                     {
                         "startTime": "8:30pm",
                         "duration": "45",
                         "price": "5.00",
-                        "level": "Intermediate",
+                        "level": "Higher Intermediate",
                         "style": "Ballroom & Latin"
                     },
                     {
@@ -291,7 +283,10 @@
                 ]
             }
         ],
-        "closures": [],
+        "closures": [
+            "2018-08-21",
+            "2018-08-28"
+        ],
         "position": {
             "latitude": "52.4497729",
             "longitude": "-2.126825"
@@ -341,13 +336,82 @@
             }
         ],
         "closures": [
-            "2017-08-20",
-            "2017-08-27"
+            "2018-08-26"
         ],
         "position": {
             "latitude": 52.440708,
             "longitude": -2.074977
         },
         "svUrl": "https:\/\/maps.google.co.uk\/maps?q=lutley+community+centre&hl=en&daddr=52.440708,-2.074977&ll=52.440708,-2.074977&spn=0.005036,0.011362&sll=52.440709,-2.074978&sspn=0.003579,0.005681&hq=lutley+community+centre&z=17&layer=c&cbll=52.440708,-2.074977&panoid=uEOPoD2wC27JK-3K57ph0g&cbp=12,265.67,,0,3.65&output=classic"
+    },
+    {
+        "id": "trinitymethodistchurch",
+        "name": "Trinity Methodist Church",
+        "nickname": "Trinity Methodist Church",
+        "enabled": true,
+        "address": "Histons Hill, Codsall, Wolverhampton, WV8 2ER",
+        "area": "Wolverhampton",
+        "position": {
+            "latitude": "52.625366",
+            "longitude": "-2.195219"
+        },
+        "svUrl": "https:\/\/www.google.co.uk\/maps\/dir\/\/Trinity+Methodist+Church+Codsall,+Histons+Hill,+Codsall,+Wolverhampton+WV8+2ER\/@52.6254588,-2.1959141,19z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x48709cccccc98a09:0x250df2ffe8dd533c!2m2!1d-2.1953656!2d52.625458?hl=en"
+    },
+    {
+        "id": "dodfordvillagehall",
+        "name": "Dodford Village Hall",
+        "nickname": "Dodford Village Hall",
+        "enabled": true,
+        "address": "Pirory Road, Bromsgrove, B61 9DD",
+        "area": "Bromsgrove",
+        "position": {
+            "latitude": "52.355096",
+            "longitude": "-2.100431"
+        },
+        "svUrl": "https:\/\/www.google.co.uk\/maps\/dir\/\/Unnamed+Road,+Dodford,+Bromsgrove+B61+9DB\/@52.3551025,-2.1009417,17.86z\/data=!4m8!4m7!1m0!1m5!1m1!1s0x48709338451b93a7:0xe2b8c3ac88e0628c!2m2!1d-2.1005826!2d52.3552625",
+        "timetable": [
+            {
+                "day": "Thursday",
+                "time": [
+                    {
+                        "startTime": "7:00pm",
+                        "duration": "45",
+                        "price": "5.00",
+                        "level": "New beginners",
+                        "style": "Ballroom & Latin"
+                    },
+                    {
+                        "startTime": "7:45",
+                        "duration": "45",
+                        "price": "5.00",
+                        "level": "New Beginners",
+                        "style": "Salsa \/ Argentine Tango"
+                    },
+                    {
+                        "startTime": "8:30",
+                        "duration": "45",
+                        "price": "5.00",
+                        "level": "Intermediate \/ Advanced",
+                        "style": "Ballroom & Latin"
+                    }
+                ]
+            }
+        ],
+        "closures": [
+            "2018-08-30"
+        ]
+    },
+    {
+        "id": "wilsonhall",
+        "address": "Cradley Labour Club, Colley Gate, Halesowen, B63 2BU",
+        "area": "Halesowen",
+        "svUrl": "https:\/\/www.google.co.uk\/maps\/dir\/\/Cradley+Labour+Club,+Wilson+Hall,+Colley+Gate,+Halesowen+B63+2BU\/@52.4596345,-2.0860878,19.15z\/data=!4m9!4m8!1m0!1m5!1m1!1s0x48709132068db3a5:0xf0cfe0a4af36796!2m2!1d-2.0860816!2d52.4594722!3e0",
+        "position": {
+            "latitude": "52.459474",
+            "longitude": "-2.086081"
+        },
+        "enabled": true,
+        "name": "Wilson Hall",
+        "nickname": "Wilson Hall"
     }
 ]
