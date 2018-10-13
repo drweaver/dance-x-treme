@@ -52,9 +52,12 @@ var DOW = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Sa
 var MOY = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 var GALLERY_DATA = 'https://storage.googleapis.com/dance-x-treme-data/dance_galleries.txt?_='+ new Date().getTime();
+var GALLERY_DATA_LOCAL = 'data/dance_galleries.txt?_='+ new Date().getTime();
 var HOLIDAY_GALLERY_DATA = 'https://storage.googleapis.com/dance-x-treme-data/holiday_dance_galleries.txt?_='+ new Date().getTime();
+var HOLIDAY_GALLERY_DATA_LOCAL = 'data/holiday_dance_galleries.txt?_='+ new Date().getTime();
 
 var VENUE_DATA = 'https://storage.googleapis.com/dance-x-treme-data/dance_venues.txt?_='+ new Date().getTime();
+var VENUE_DATA_LOCAL = 'data/dance_venues.txt?_='+ new Date().getTime();
 
 var CANNED_ALBUMS = ['Pelsall', 'Coven', 'Cornbow', 'Halloween', 'Christmas', 'Valentines'];
 var HOLIDAY_CANNED_ALBUMS = ['Tower', 'Weekend'];
@@ -179,7 +182,13 @@ app.controller('venueController', function($scope, $http, $location, uiGmapIsRea
     
     }
     
-    $http.get(VENUE_DATA).success(load);
+     $http.get(VENUE_DATA, {timeout: 3000})
+     .then(null,err=>{
+     	console.log("Failed to load "+VENUE_DATA+": "+err+"\nLoading local copy...");
+     	return $http.get(VENUE_DATA_LOCAL);
+     })
+     .then(r=>{load(r.data);})
+   	 .then(null,err=>{console.log("Failed to load "+VENUE_DATA_LOCAL+": "+err);});
 
 
 });
@@ -266,16 +275,25 @@ app.controller('ClassController', function($scope, $http, $location) {
                 } 
             }
         );
-        if( $location.path() == '' ) {
+        if( $location.path() === '' ) {
             console.log("setting default path");
             $scope.search('by-area');
         }
         $scope.loading = false;
     }
-    $http.get(VENUE_DATA).success(load);
+    
+     $http.get(VENUE_DATA, {timeout: 3000})
+     .then(null,err=>{
+     	console.log("Failed to load "+VENUE_DATA+": "+err+"\nLoading local copy...");
+     	return $http.get(VENUE_DATA_LOCAL);
+     })
+     .then(r=>{load(r.data);})
+   	 .then(null,err=>{console.log("Failed to load "+VENUE_DATA_LOCAL+": "+err);});
+      
+
 });
 
-function CommonGalleryController( gallery_url, canned_albums ) {
+function CommonGalleryController( gallery_url, gallery_url_local, canned_albums ) {
     return function ($scope, $http, $location) {
         $scope.loading = true;
         $scope.query_terms = [];
@@ -326,7 +344,7 @@ function CommonGalleryController( gallery_url, canned_albums ) {
             });
             return yearsArray.sort().reverse();
         }
-        $http.get(gallery_url).success(function(data) {
+        function load(data) {
             //$scope.query = 'latest';
             parseAndSortDate(data);
             $.each(data, function(index, value) { index < 8 ? value.latest = 'latest' : value.latest = 'oldest' });
@@ -347,12 +365,21 @@ function CommonGalleryController( gallery_url, canned_albums ) {
                 }
             );
 
-        });
-    }
+        }
+        
+     $http.get(gallery_url, {timeout: 3000})
+     .then(null,err=>{
+     	console.log("Failed to load "+gallery_url+": "+err+"\nLoading local copy...");
+     	return $http.get(gallery_url_local);
+     })
+     .then(r=>{load(r.data);})
+   	 .then(null,err=>{console.log("Failed to load "+gallery_url_local+": "+err);});
+        
+    };
 }
 
-app.controller('GalleryController', CommonGalleryController(GALLERY_DATA, CANNED_ALBUMS));
-app.controller('HolidayGalleryController', CommonGalleryController(HOLIDAY_GALLERY_DATA, HOLIDAY_CANNED_ALBUMS));
+app.controller('GalleryController', CommonGalleryController(GALLERY_DATA, GALLERY_DATA_LOCAL, CANNED_ALBUMS));
+app.controller('HolidayGalleryController', CommonGalleryController(HOLIDAY_GALLERY_DATA, HOLIDAY_GALLERY_DATA_LOCAL, HOLIDAY_CANNED_ALBUMS));
 
 
 app.controller('NewsletterController', function ($scope, $http, $location) {
