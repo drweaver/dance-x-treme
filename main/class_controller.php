@@ -31,7 +31,7 @@
 						<!-- timetable column -->
 						<div class="col-xs-12 col-sm-8">
 							<div ng-repeat="day in venue.timetable">
-								<h4 class="ng-cloak">{{day.day}}</h4>
+                                <h4 class="ng-cloak">{{day.day}}<span ng-show="day.notice"> - {{day.notice}}</span></h4>
 									<table class="table table-striped table-hover small">
 										<thead><tr><th>Time</th><th>Duration</th><th>Style</th><th>Level</th><th>Price</th></tr></thead>
 										<tbody>
