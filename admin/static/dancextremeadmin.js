@@ -80,7 +80,7 @@ app.controller('galleryController', function($scope, $http, $timeout) {
         var t = $scope.albums[$scope.currentAlbumId].thumbnail;
         // from: =w925-h784-no
         //   to: =w160-h160-p-k-no
-        $scope.albums[$scope.currentAlbumId].thumbnail = t.replace(/=w\d+-h\d+-no$/, '=w160-h160-p-k-no');
+        $scope.albums[$scope.currentAlbumId].thumbnail = t.replace(/=w\d+-h\d+-no/, '=w160-h160-p-k-no');
     };
     
     $scope.submit = function() {

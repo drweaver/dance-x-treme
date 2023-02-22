@@ -13,32 +13,33 @@
                     {
                         "startTime": "7:00pm",
                         "duration": "45",
-                        "price": "5.00",
+                        "price": "6.50",
                         "level": "Improvers",
                         "style": "Ballroom & Latin"
                     },
                     {
                         "startTime": "7:45pm",
                         "duration": "45",
-                        "price": "5.00",
+                        "price": "6.50",
                         "level": "Intermediate",
                         "style": "Ballroom & Latin"
                     },
                     {
                         "startTime": "8:30pm",
                         "duration": "45",
-                        "price": "5.00",
+                        "price": "6.50",
                         "level": "Higher Intermediate",
                         "style": "Ballroom & Latin"
                     },
                     {
                         "startTime": "9:15pm",
                         "duration": "45",
-                        "price": "5.00",
+                        "price": "6.50",
                         "level": "Advanced",
                         "style": "Ballroom & Latin"
                     }
-                ]
+                ],
+                "notice": ""
             },
             {
                 "day": "Wednesday",
@@ -46,37 +47,45 @@
                     {
                         "startTime": "7:00pm",
                         "duration": "45",
-                        "price": "5.00",
+                        "price": "6.50",
                         "level": "New Beginners",
                         "style": "Ballroom & Latin"
                     },
                     {
                         "startTime": "7:45pm",
                         "duration": "45",
-                        "price": "5.00",
+                        "price": "6.50",
                         "level": "Intermediate",
                         "style": "Ballroom & Latin"
                     },
                     {
                         "startTime": "8:30pm",
                         "duration": "45",
-                        "price": "5.00",
+                        "price": "6.50",
                         "level": "Higher Intermediate",
                         "style": "Ballroom & Latin"
                     },
                     {
-                        "startTime": "9:15pm",
                         "duration": "45",
-                        "price": "5.00",
-                        "level": "Advanced",
-                        "style": "Ballroom & Latin"
+                        "startTime": "9:15pm",
+                        "price": "6.50",
+                        "style": "Ballroom & Latin",
+                        "level": "Advanced"
                     }
-                ]
+                ],
+                "notice": ""
             }
         ],
         "closures": [
-            "2018-08-29",
-            "2018-08-27"
+            "2022-03-28",
+            "2022-03-30",
+            "2022-04-04",
+            "2022-04-06",
+            "2022-04-18",
+            "2022-08-22",
+            "2022-08-24",
+            "2022-08-29",
+            "2022-08-31"
         ],
         "position": {
             "latitude": 52.66024,
@@ -97,30 +106,37 @@
                 "time": [
                     {
                         "startTime": "6:00pm",
-                        "duration": "45",
-                        "price": "5.00",
-                        "level": "New Beginners",
+                        "duration": "60",
+                        "price": "7.00",
+                        "level": "Improvers",
                         "style": "Ballroom & Latin"
                     },
                     {
-                        "startTime": "6:45pm",
+                        "startTime": "7:00pm",
                         "duration": "60",
-                        "price": "5.50",
+                        "price": "7.00",
                         "level": "Intermediate",
                         "style": "Ballroom & Latin"
                     },
                     {
-                        "startTime": "7:45pm",
+                        "startTime": "8:00pm",
                         "duration": "60",
-                        "price": "5.50",
+                        "price": "7.00",
                         "level": "Advanced",
                         "style": "Ballroom & Latin"
                     }
-                ]
+                ],
+                "notice": ""
             }
         ],
         "closures": [
-            "2018-08-26"
+            "2022-04-17",
+            "2022-05-22",
+            "2022-05-26",
+            "2022-08-28",
+            "2022-12-18",
+            "2022-12-25",
+            "2023-01-01"
         ],
         "position": {
             "latitude": 52.556929,
@@ -140,31 +156,36 @@
                 "day": "Thursday",
                 "time": [
                     {
-                        "startTime": "7:00pm",
-                        "duration": "45",
-                        "price": "5.00",
-                        "level": "New Beginners",
+                        "startTime": "6:45pm",
+                        "duration": "60",
+                        "price": "7.00",
+                        "level": "Improvers",
                         "style": "Ballroom & Latin"
                     },
                     {
                         "startTime": "7:45pm",
-                        "duration": "45",
-                        "price": "5.00",
+                        "duration": "60",
+                        "price": "7.00",
                         "level": "Intermediate",
                         "style": "Ballroom & Latin"
                     },
                     {
-                        "startTime": "8:30pm",
-                        "duration": "60",
-                        "price": "5.50",
+                        "startTime": "8:45pm",
+                        "duration": "45",
+                        "price": "6.50",
                         "level": "Advanced",
                         "style": "Ballroom & Latin"
                     }
-                ]
+                ],
+                "notice": ""
             }
         ],
         "closures": [
-            "2018-07-19"
+            "2022-03-31",
+            "2022-08-25",
+            "2022-12-22",
+            "2022-12-29",
+            "2023-01-05"
         ],
         "position": {
             "latitude": 52.5807768,
@@ -176,7 +197,7 @@
         "id": "stchads",
         "name": "St Chad's Church Hall",
         "nickname": "St Chad's",
-        "enabled": true,
+        "enabled": false,
         "address": "Hollyfield Road, Sutton Coldfield, B75 7SN",
         "area": "Sutton Coldfield",
         "timetable": [
@@ -186,42 +207,24 @@
                     {
                         "startTime": "7:30pm",
                         "duration": "60",
-                        "price": "5.50",
-                        "level": "New Beginners",
+                        "price": "6.50",
+                        "level": "Improvers",
                         "style": "Ballroom & Latin"
                     },
                     {
                         "startTime": "8:30pm",
                         "duration": "60",
-                        "price": "5.50",
-                        "level": "Improvers",
-                        "style": "Ballroom & Latin"
-                    }
-                ]
-            },
-            {
-                "day": "Wednesday",
-                "time": [
-                    {
-                        "startTime": "8:00pm",
-                        "duration": "60",
-                        "price": "5.50",
+                        "price": "6.50",
                         "level": "Intermediate",
                         "style": "Ballroom & Latin"
-                    },
-                    {
-                        "startTime": "9:00pm",
-                        "duration": "60",
-                        "price": "5.50",
-                        "level": "Advanced",
-                        "style": "Ballroom & Latin"
                     }
-                ]
+                ],
+                "notice": ""
             }
         ],
         "closures": [
-            "2018-07-17",
-            "2018-07-18"
+            "2021-12-28",
+            "2022-01-04"
         ],
         "position": {
             "latitude": 52.564114,
@@ -243,9 +246,9 @@
     },
     {
         "id": "pedmoretc",
-        "name": "Pedmore Technology College and Community School",
-        "nickname": "Pedmore College",
-        "enabled": true,
+        "name": "Pedmore High School",
+        "nickname": "Pedmore High School",
+        "enabled": false,
         "address": "Grange Lane, Pedmore, Stourbridge, DY9 7HS (Classes located in Sports Hall accessed via rear car park)",
         "area": "Stourbridge",
         "timetable": [
@@ -256,7 +259,7 @@
                         "startTime": "7:00pm",
                         "duration": "45",
                         "price": "5.00",
-                        "level": "New Beginners",
+                        "level": "New Beginners Jan-2020",
                         "style": "Ballroom & Latin"
                     },
                     {
@@ -284,8 +287,8 @@
             }
         ],
         "closures": [
-            "2018-08-21",
-            "2018-08-28"
+            "2019-12-24",
+            "2019-12-31"
         ],
         "position": {
             "latitude": "52.4497729",
@@ -307,36 +310,80 @@
                     {
                         "startTime": "6:15pm",
                         "duration": "45",
-                        "price": "5.00",
-                        "level": "New Beginners",
+                        "price": "6.50",
+                        "level": "Improvers",
                         "style": "Ballroom & Latin"
                     },
                     {
                         "startTime": "7:00pm",
                         "duration": "45",
-                        "price": "5.00",
-                        "level": "Improvers",
+                        "price": "6.50",
+                        "level": "Intermediate",
                         "style": "Ballroom & Latin"
                     },
                     {
                         "startTime": "7:45pm",
                         "duration": "45",
-                        "price": "5.00",
-                        "level": "Intermediate",
+                        "price": "6.50",
+                        "level": "Higher Intermediate",
+                        "style": "Ballroom & Latin"
+                    },
+                    {
+                        "startTime": "8:30pm",
+                        "level": "Advanced",
+                        "style": "Ballroom & Latin",
+                        "price": "6.50",
+                        "duration": "45"
+                    }
+                ],
+                "notice": ""
+            },
+            {
+                "day": "Tuesday",
+                "time": [
+                    {
+                        "startTime": "7:00pm",
+                        "duration": "45",
+                        "price": "6.50",
+                        "level": "New Beginners",
+                        "style": "Ballroom & Latin"
+                    },
+                    {
+                        "startTime": "7:45pm",
+                        "duration": "45",
+                        "price": "6.50",
+                        "level": "Improvers",
                         "style": "Ballroom & Latin"
                     },
                     {
                         "startTime": "8:30pm",
                         "duration": "45",
-                        "price": "5.00",
+                        "price": "6.50",
+                        "level": "Intermediate",
+                        "style": "Ballroom & Latin"
+                    },
+                    {
+                        "startTime": "9:15pm",
+                        "duration": "45",
+                        "price": "6.50",
                         "level": "Advanced",
                         "style": "Ballroom & Latin"
                     }
-                ]
+                ],
+                "notice": ""
             }
         ],
         "closures": [
-            "2018-08-26"
+            "2022-03-27",
+            "2022-03-29",
+            "2022-04-03",
+            "2022-04-05",
+            "2022-04-17",
+            "2022-08-21",
+            "2022-08-23",
+            "2022-08-28",
+            "2022-08-30",
+            "2022-09-04"
         ],
         "position": {
             "latitude": 52.440708,
@@ -376,29 +423,34 @@
                     {
                         "startTime": "7:00pm",
                         "duration": "45",
-                        "price": "5.00",
-                        "level": "New beginners",
+                        "price": "6.50",
+                        "level": "New Beginners",
                         "style": "Ballroom & Latin"
                     },
                     {
-                        "startTime": "7:45",
+                        "startTime": "7:45pm",
                         "duration": "45",
-                        "price": "5.00",
-                        "level": "New Beginners",
-                        "style": "Salsa \/ Argentine Tango"
+                        "price": "6.50",
+                        "level": "Improvers",
+                        "style": "Ballroom & Latin"
                     },
                     {
-                        "startTime": "8:30",
+                        "startTime": "8:30pm",
                         "duration": "45",
-                        "price": "5.00",
-                        "level": "Intermediate \/ Advanced",
+                        "price": "6.50",
+                        "level": "Intermediate\/Advanced",
                         "style": "Ballroom & Latin"
                     }
-                ]
+                ],
+                "notice": ""
             }
         ],
         "closures": [
-            "2018-08-30"
+            "2022-03-31",
+            "2022-04-07",
+            "2022-06-02",
+            "2022-08-25",
+            "2022-09-01"
         ]
     },
     {
@@ -410,8 +462,78 @@
             "latitude": "52.459474",
             "longitude": "-2.086081"
         },
-        "enabled": true,
+        "enabled": false,
         "name": "Wilson Hall",
-        "nickname": "Wilson Hall"
+        "nickname": "Wilson Hall",
+        "timetable": [
+            {
+                "day": "Monday",
+                "time": [
+                    {
+                        "startTime": "7:00",
+                        "duration": "8:00",
+                        "price": "5.00",
+                        "level": "Beginners",
+                        "style": "Ballroom & Latin"
+                    }
+                ],
+                "notice": "Test Notice"
+            }
+        ]
+    },
+    {
+        "id": "pelsall",
+        "name": "Pelsall Community Centre",
+        "nickname": "Pelsall",
+        "enabled": false,
+        "address": "Station Road, Pelsall, WS3 4BQ",
+        "area": "Pelsall",
+        "timetable": [
+            {
+                "day": "Sunday",
+                "time": [
+                    {
+                        "startTime": "3.00pm",
+                        "duration": "45",
+                        "price": "5.00",
+                        "level": "Singles Intermediate",
+                        "style": "Ballroom & Latin"
+                    },
+                    {
+                        "startTime": "4.00pm",
+                        "duration": "45",
+                        "price": "5.00",
+                        "level": "Beginners",
+                        "style": "Ballroom & Latin"
+                    },
+                    {
+                        "startTime": "5.00pm",
+                        "duration": "45",
+                        "price": "5.00",
+                        "level": "Intermediate",
+                        "style": "Ballroom & Latin"
+                    },
+                    {
+                        "startTime": "6.00pm",
+                        "duration": "45",
+                        "price": "5.00",
+                        "level": "Intermediate",
+                        "style": "Ballroom & Latin"
+                    },
+                    {
+                        "startTime": "7.00pm",
+                        "duration": "45",
+                        "price": "5.00",
+                        "level": "Advanced",
+                        "style": "Ballroom & Latin"
+                    }
+                ]
+            }
+        ],
+        "position": {
+            "latitude": "52.6272088",
+            "longitude": "-1.9663055"
+        },
+        "svUrl": "https:\/\/www.google.com\/maps\/@52.6272541,-1.9658037,3a,75y,86.73h,86.19t\/data=!3m6!1e1!3m4!1sRYDmYGtuluOy1QTYWFDOSQ!2e0!7i13312!8i6656"
     }
 ]

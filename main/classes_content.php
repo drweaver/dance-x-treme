@@ -1,18 +1,14 @@
 <!-- classes -->
 <div class="container">
-	
 	<div class="page-header">
 	    <h1>Classes</h1>
 	</div>
-	
 	<div class="row">
 		<div class="col-lg-6 col-md-4">
 			<p>Dance classes for adults of all ages and abilities, couples and singles. We teach Ballroom and Latin with a great selection of music. 
 			Our classes are held at safe, superb facilities at all our <a href="/venues">venues</a>. <a href="/contact">Private lessons</a> are also available.</p>
 		</div>	
-	
 		<div class="col-lg-6 col-md-8">
-		
 			<dl class="dl-horizontal">
 			  <dt>Do I need to book?</dt>
 			  <dd>No, just turn up at a class at the appropriate time</dd>
@@ -33,12 +29,18 @@
 	</div>
 	
 	<hr/>
-	
-<!--	
+    <!--
+<div class="alert alert-danger" role="alert">
+<strong>CORONAVIRUS update <em>15-May-2021</em></strong><br/><br/>
+Dance classes will be restarting from 17th May 2021. Please see updates to timetables below and remember to prebook your place.
+</div>
+-->
 	<div class="alert alert-warning" role="alert">
-   		Class timetables below are now <b>updated for 2018</b>.  See you in January!
+		<b>New comers</b> are always welcome <b>anytime</b> during the year.
+		<br/>
+		Please <b><a href="/contact">contact us</a></b> if interested in <b>private lessons</b>.
  	</div>
---> 	
+ 	
 	
 		<!-- 
         <div class="alert alert-warning" role="alert">

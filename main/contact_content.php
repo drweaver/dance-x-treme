@@ -21,12 +21,14 @@
         <li>Sunday's at <a href="/venues#!/by-venue/at-lutley-community-centre">Lutley community centre</a>, 
         Brookwillow Road, Halesowen (via 
         school entrance)</li>
+<!--
         <li>Saturday's at <a href="/venues#!/by-venue/at-dodford-village-hall">Dodford Village Hall</a>, 
         Priory Road, Bromsgrove</li>
+-->
     </ul>
 </p>
 <p>
-Lessons cost &pound;24 for 1 hour and are pre-bookable by seeing Sue at class or using the 
+Lessons cost &pound;27 for 1 hour and are pre-bookable by seeing Sue at class or using the 
 contact details above.
 </p>
 </div>
