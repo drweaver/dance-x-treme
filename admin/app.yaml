@@ -1,10 +1,8 @@
-runtime: php55
-api_version: 1
+runtime: php81
 
-automatic_scaling:
+entrypoint: serve front-controller.php
 
 handlers:
-
 - url: /
   static_files: static/index.html
   upload: static/index.html
@@ -13,18 +11,7 @@ handlers:
   static_files: static/dancextremeadmin.js
   upload: static/dancextremeadmin.js
 
-- url: /update_venue.php
-  script: update_venue.php
+- url: /.*
+  script: auto
 
-- url: /update_gallery.php
-  script: update_gallery.php
-
-- url: /update_holiday_gallery.php
-  script: update_holiday_gallery.php
-
-skip_files:
-- node_modules/
-- package.*
-- app.js
-- cors*  
 

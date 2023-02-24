@@ -1,13 +1,12 @@
-runtime: php55
-api_version: 1
-automatic_scaling:
+runtime: php81
+
+entrypoint: serve front-controller.php
 
 handlers:
 # Serve assets as static resources.
 - url: /css
   static_dir: css
   secure: always
-  application_readable: true
 
 - url: /img
   static_dir: img
@@ -20,7 +19,6 @@ handlers:
 - url: /data
   static_dir: data
   secure: always
-  application_readable: true
 
 - url: /favicon.ico
   static_files: favicon.ico
@@ -31,14 +29,7 @@ handlers:
   upload: robots.txt
 
 # Serve php scripts.
-- url: /
-  script: index.php
-  secure: always
-
-- url: /(index|classes|venues|events|gallery|contact)(\.html)?$
-  script: \1.php
-  secure: always
-
 - url: /.*
-  script: 404.php
+  script: auto
+  secure: always
 
